@@ -1,0 +1,125 @@
+@import "/pages/component/modal.wxss";
+
+page {
+  background: #f3f3f3;
+}
+
+.container {
+  width: 100%;
+  margin: auto;
+}
+
+.stepwrap {
+  width: 100%;
+  height: 57px;
+  background: #fff;
+}
+
+.step {
+  width: 188px;
+  height: 57px;
+  text-align: center;
+  margin: auto;
+}
+
+.step text {
+  display: block;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  float: left;
+  border-radius: 50%;
+  margin-left: 12px;
+  text-align: center;
+  background: #f3f3f3;
+  color: #6f6f6f;
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.active {
+  background: #489775 !important;
+  color: #fff !important;
+}
+
+.sickWrap {
+  padding-left: 18px;
+  padding-right: 18px;
+  background: #fff;
+  margin-top: 10px;
+  padding-bottom: 60px;
+}
+
+.special {
+  text-align: center;
+  font-size: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.sickinfo {
+  margin-top: 10px;
+}
+
+.cusMsgInfo {
+  width: 100%;
+  background-color: #fff;
+  padding-top: 30rpx;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.choice {
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  height: 40rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+  margin-right: 20rpx;
+  border: 1px solid #489775;
+  font-size: 24rpx;
+  color: #489775;
+  background-color: #fff;
+}
+
+.onchoice {
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  height: 40rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+  margin-right: 20rpx;
+  border: 1px solid #489775;
+  font-size: 24rpx;
+  color: #fff;
+  background-color: #489775;
+}
+
+.ft16 {
+  font-size: 16px;
+}
+
+.other {
+  text-align: left;
+  font-size: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+textarea {
+  height: 100px;
+  background: #f3f3f3;
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-left: 10px;
+  font-size: 15px;
+}

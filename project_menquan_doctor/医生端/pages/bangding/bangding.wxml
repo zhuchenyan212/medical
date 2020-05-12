@@ -1,0 +1,9 @@
+<!--pages/bangding/bangding.wxml-->
+<image src='/imgSrc/logo.png' class='logo' mode='widthFix'></image>
+<form bindsubmit="bangding">
+  <view class="inputwrap">
+    <view>激活码：</view>
+    <input placeholder="请粘贴激活码" value="{{code}}" name='code' placeholder-style="color:#CCC8C8;" />
+  </view>
+  <button class='loginBtn' form-type="submit">绑定</button>
+</form>

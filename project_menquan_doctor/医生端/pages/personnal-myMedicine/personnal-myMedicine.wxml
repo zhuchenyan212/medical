@@ -1,0 +1,27 @@
+<!--pages/personnal-myMedicine/personnal-myMedicine.wxml-->
+<view class='listItem' wx:for='{{medincineList}}' bindtap='showInfo' data-item='{{item}}' data-type='0'>
+	<view class='contentItem'>
+		<view class='nameInfo'>
+			<text class='nameInfo-name'>处方名称：</text>
+			<text class='nameInfo-info'>{{item.prescriptionName}}</text>
+		</view>
+		<text class='positionBtn nameInfo-info3' catchtap='editMedicine' data-item='{{item}}' data-type='1'>编辑</text>
+	</view>
+	<view class='contentItem'>
+		<view class='nameInfo'>
+			<text class='nameInfo-name2'>处方内容：</text>
+			<text class='nameInfo-info2'>{{item.drugNames}}</text>
+		</view>
+	</view>
+	<view class='contentItem' style='margin-bottom:0rpx'>
+		<view class='nameInfo'>
+			<text class='nameInfo-name2'>药品用法：</text>
+			<text class='nameInfo-info2' wx:for='{{item.prescriptionContent}}' wx:if='{{index1==0}}' wx:for-item='item1' wx:for-index='index1'>{{item1.useWay}}</text>
+		</view>
+		<text class='positionBtn' catchtap='deleteMedicine' data-itemID='{{item.prescriptionId}}'>删除</text>
+	</view>
+</view>
+<view class='btn' catchtap='addMedicine'>
+	<image src='/imgSrc/addMed.png'></image>
+	<text>新建处方</text>
+</view>

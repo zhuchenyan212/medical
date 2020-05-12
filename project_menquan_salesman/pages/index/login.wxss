@@ -1,0 +1,39 @@
+@import "/pages/component/modal.wxss";
+
+.imgWrap{
+  width:100%;
+  height:200px;
+  margin:10px auto;
+  text-align:center;
+}
+
+.imgWrap image{
+  width:320px;
+  height:200px;
+  margin:0 auto;
+  text-align:center;
+}
+
+.Btn input{
+  width: 320px;
+  height: 40px;
+  line-height: 40px;
+  margin: 20px auto;
+  font-size: 15px;
+  border-radius: 10rpx;
+  text-align: center;
+  background: #F3F3F3;
+  color: #333;
+}
+
+.Btn button{
+  width: 320px;
+  height: 40px;
+  line-height: 40px;
+  margin: 20px auto;
+  font-size: 15px;
+  border-radius: 10rpx;
+  text-align: center;
+  background: #449271;
+  color: #fff;
+}

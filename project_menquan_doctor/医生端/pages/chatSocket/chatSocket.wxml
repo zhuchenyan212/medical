@@ -1,0 +1,47 @@
+<view class='news'>
+  <view class="historycon">
+    <scroll-view scroll-y="true" class="history" upper-threshold="1" bindscrolltoupper='scrollToTop' style='height: 100%' scroll-top="{{scrollTop}}" bindscroll='scroll'>
+      <block wx:for="{{newsList}}" wx:key="index">
+        <!--此处为other -->
+        <view wx:if="{{item.isSelf==1}}">
+          <view class='chat-timeV' style='height: {{item.time!==0? "120rpx" : "20rpx"}}'>
+            <text class='chat-time' wx:if="{{item.time != ''}}">{{item.time}}</text>
+          </view>
+          <view class='other-record'>
+            <image class='other-head-img' src='{{patientImg}}' bindtap="changedetail" data-id="{{patientId}}"></image>
+            <view class='other-record-content-triangle' wx:if='{{item.type==0}}'></view>
+            <view class='other-record-content' wx:if='{{item.type==0}}'>
+              {{item.msg}}</view>
+            <image src='{{item.msg}}' wx:else class='img' mode='widthFix' catchtap='previewImg' data-imgSrc='{{item.msg}}' lazy-load="true"></image>
+          </view>
+        </view>
+        <!--此处为own  -->
+        <view wx:else>
+          <view class='chat-timeV' style='height: {{item.time!==0? "120rpx" : "20rpx"}}'>
+            <text class='chat-time' wx:if="{{item.time != ''}}">{{item.time}}</text>
+          </view>
+          <view class='own-record'>
+            <view class='own-record-content' wx:if='{{item.type==0}}'>{{item.msg}}</view>
+            <image src='{{item.msg}}' wx:else class='img' mode='widthFix' catchtap='previewImg' data-imgSrc='{{item.msg}}' lazy-load="true"></image>
+            <view class='own-record-content-triangle' wx:if='{{item.type==0}}'></view>
+            <image class='own-head-img' src='{{doctorImg}}'></image>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>
+<view class='hei' id="hei"></view>
+<view class='message' id='msg' catchtap="getupdata">
+  <view class="sendmessage">
+    <input class="chat-input" type="emoji" bindinput="bindChange" confirm-type="done" value='{{input}}' placeholder="" />
+    <view class="add" bindtap='increase'>+</view>
+    <button class="btn" type="primary" plain="true" bindtap='send'>
+      <text>发送</text>
+    </button>
+    <input style='display:none' type="" bindinput="bindChange" confirm-type="done" placeholder="" />
+  </view>
+  <view class='increased {{aniStyle?"slideup":"slidedown"}}' wx:if="{{increase}}">
+    <view class="image" bindtap='chooseImage'>相册 </view>
+  </view>
+</view>

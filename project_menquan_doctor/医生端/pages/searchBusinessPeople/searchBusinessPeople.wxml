@@ -1,0 +1,25 @@
+<!--pages/searchBusinessPeople/searchBusinessPeople.wxml-->
+<scroll-view class='maskList' wx:if='{{showSearchList}}' scroll-y style='height: {{scrollH}}rpx'>
+  <view class='maskItem' wx:for='{{searchList}}' catchtap='selectMedicine' data-item='{{item}}'>
+    <view class='maskItem-right'>
+      <image src='{{item.wxLoc}}'></image>
+      <view class='margin-right-right'>
+        <view class='maskItem-right'>
+          <text class='name'>{{item.name}}</text>
+          <text class='age' style='margin-left:40rpx'>{{item.age}}岁</text>
+        </view>
+        <view class='maskItem-right' style='margin-top:20rpx;'>
+          <text class='age'>{{item.hospital}}</text>
+          <text class='age' style='margin-left:34rpx'>{{item.phone}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='arrow'></view>
+  </view>
+</scroll-view>
+<view class='searchView'>
+  <view class='searchView2'>
+    <input placeholder='请输入业务员号码' placeholder-class='placeholder' bindinput='showMask'></input>
+    <image src='/imgSrc/search.png'></image>
+  </view>
+</view>

@@ -1,0 +1,41 @@
+<view class='container'>
+	<!-- 选择疾病 -->
+	<view class="keshiItem">
+		<view class='wid left ellipsis' style='width:100%;color:#489775;'>
+			<text class='font' data-id='{{id}}'>{{keshi}}</text>
+		</view>
+	</view>
+	<view class='ft12' wx:if='{{departmentDoctorList.length == 0}}'>暂无医生</view>
+	<view class='ft12' wx:else>推荐医生</view>
+	<!-- 我的医生列表 -->
+	<view class='myDoctor'>
+		<view class='Doctoritem' wx:for='{{departmentDoctorList}}' wx:key='index' bindtap='navigateToDoctor' data-id='{{item.doctorId}}'>
+			<view class='pro-img'>
+				<image src="{{item.wxLoc}}" />
+			</view>
+			<view class='pro-info-box'>
+				<view class='clear'>
+					<view class='left'>
+						<text class='ft-16'>{{item.name}}</text>
+						<text class='lable_Doc'>{{item.title}}</text>
+					</view>
+					<view class='right money'>{{item.fee}}元/次</view>
+				</view>
+				<view class='clear'>
+					<view class='left'>
+						<text class='ft-12'>{{item.hospital}}</text>
+						<text class='lable_hos' style='padding-left:10px;'>{{item.hospitalProperty==0?'公立':'私立'}} </text>
+					</view>
+				</view>
+				<view class='clear'>
+					<view class='left'>
+						<text class='lable_hos' wx:for='{{item.goodAt}}' wx:key='index'>{{item.name}}</text>
+					</view>
+					<view class='right service'>已服务：{{item.patientSize}}人</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+<import src="/pages/component/modal.wxml" />
+<template is="toolips" data="{{toolips}}" />

@@ -1,0 +1,9 @@
+<!--pages/standardMedicine/standardMedicine.wxml-->
+<view class='item' bindtap='chose' wx:for='{{departmentList}}' data-id='{{item.id}}'>
+	<image src='{{item.pic}}'></image>
+	<text>{{item.name}}</text>
+</view>
+<view class='item' bindtap='mydetail'>
+	<image src='/imgSrc/cfBtn.png'></image>
+	<text>私有处方</text>
+</view>

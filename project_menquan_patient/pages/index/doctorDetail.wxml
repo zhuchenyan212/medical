@@ -1,0 +1,47 @@
+<!--pages/index/doctorDetail.wxml-->
+<view class="container">
+  <view class="head_t">
+    <view class="get_score">
+      <image src="{{doctorMsg.wxLoc}}" class="score" />
+    </view>
+    <view class="total_score">
+      <text class='docName'>{{doctorMsg.name}}</text>
+      <text class='lable_doc'>{{doctorMsg.title}}</text>
+    </view>
+    <view class="total_score">
+      <text class='docAd'>{{doctorMsg.hospital}}</text>
+      <text class='docAd speor'>{{doctorMsg.hospitalProperty}}</text>
+    </view>
+  </view>
+  <view class='doctorWrap'>
+    <view class='doctorInfo'>
+      <!-- <view class='doctorInfoitem'>
+        <text>服务人数:</text>
+        <text class='spaceline speor'>{{doctorMsg.patientSize}}人</text>
+      </view> -->
+      <view class='doctorInfoitem'>
+        <text>出诊费用:</text>
+        <text class='spaceline'>{{doctorMsg.fee}}元/次</text>
+      </view>
+      <view class='doctorInfoitem'>
+        <text>出诊时间:</text>
+        <text class='spaceline'>{{workTime}}</text>
+      </view>
+      <view class='doctorInfoitem'>
+        <text>擅长科室:</text>
+        <view style='padding-bottom:35px;'>
+          <view wx:for='{{doctorMsg.goodAt}}' wx:key='index' class='doc_type ellipsis'>{{item.name}}</view>
+        </view>
+      </view>
+      <view class='doctorInfoitem'>
+        <view class='left' style='width:15%;'>医生简介:</view>
+        <view class='right' style='width:72%;padding-right:25px;line-height:40px;'>{{detail}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='bottomOperate' bindtap='askill'>
+    <view class='bottomFont'>立即咨询</view>
+  </view>
+</view>
+<import src="/pages/component/modal.wxml" />
+<template is="toolips" data="{{toolips}}" />

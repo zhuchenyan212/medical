@@ -1,0 +1,70 @@
+@import "/pages/component/modal.wxss";
+
+page {
+  height: auto;
+}
+
+.container {
+  min-height: 600px;
+}
+
+.searchHead {
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  padding: 12rpx 24rpx 0;
+  box-sizing: border-box;
+  border-top: 1px solid #f8f8f8;
+  border-bottom: 1px solid #f8f8f8;
+}
+
+.searchContent {
+  width: 100%;
+  height: 75rpx;
+  border-radius: 20px;
+  font-size: 13px;
+  display: flex;
+  word-break: break-all;
+  color: #b5b5b5;
+  background: #f8f8f8;
+}
+
+.searchContent input {
+  width: 92%;
+  height: 75rpx;
+  padding-left: 30rpx;
+  font-size: 26rpx;
+}
+
+.searchContent image {
+  width: 8%;
+  height: 50rpx;
+  margin-right: 10px;
+  margin-top: 10rpx;
+}
+
+.member-list .item {
+  width: 33%;
+  height: 130rpx;
+  float: left;
+  margin-top: 24rpx;
+  margin-bottom: 24rpx;
+}
+
+.member-list .item .icon {
+  width: 80rpx;
+  height: 80rpx;
+  text-align: center;
+  margin: auto;
+}
+
+.member-list .item .icon image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+.member-list .item .text {
+  font-size: 28rpx;
+  margin-top: 20rpx;
+}

@@ -1,0 +1,66 @@
+<!--pages/wallet/wallet.wxml-->
+<view class='walletBackContainer'>
+  <image src='/imgSrc/walletBack.png' class='walletBack'></image>
+  <text class='title'>余额</text>
+  <text class='price'>¥{{yejiInfo.score}}</text>
+  <view class='btn' catchtap='walletToCash'>立即提现</view>
+</view>
+<view class='menu'>
+  <view class='menuItem {{selectedMenu==0? "menuItemSelected" : ""}}' data-index='0' bindtap='menu'>业绩</view>
+  <view style='margin-left:294rpx' class='menuItem {{selectedMenu==1? "menuItemSelected" : ""}}' data-index='1' bindtap='menu'>提现</view>
+</view>
+<view class='timeSelect'>
+  <view class='timeSelect-item'>
+    <text class='timeSelect-date'>时间段</text>
+    <view class='timeSelect-item-left'>
+      <picker mode='date' value="{{startDate}}" bindchange='changeStr'>
+        <view class='scoreContainer'>
+          <text class='timeSelect-date'>{{startDate}}</text>
+          <view class='arrow'></view>
+        </view>
+      </picker>
+      <view class='line'></view>
+      <picker mode='date' value='{{endDate}}' bindchange='changeEnd'>
+        <view class='scoreContainer'>
+          <text class='timeSelect-date'>{{endDate}}</text>
+          <view class='arrow'></view>
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class='timeSelect-item' style='margin-top:50rpx'>
+    <text class='timeSelect-date'>{{selectedMenu==0? "总金额" : "总积分"}}</text>
+    <text class='infoItem-price {{selectedMenu==1? "cashPrice" : ""}}'>¥{{selectedMenu==0? yejiInfo.totalMoney : scoreInfo.totalScore}}</text>
+  </view>
+  <view class='timeSelect-item' style='margin-top:5rpx'>
+    <text class='timeSelect-date'>{{selectedMenu==0? "总积分" : "已兑换"}}</text>
+    <text class='score {{selectedMenu==1? "cashScore" : ""}}'>+{{selectedMenu==0?  yejiInfo.totalScore : scoreInfo.cutScore}}</text>
+  </view>
+</view>
+<!-- 明细列表 -->
+<view class='infoContainer'>
+  <block wx:if='{{selectedMenu==0}}'>
+    <view class='infoItem' wx:for='{{achievementLis}}' wx:key="index">
+      <view class='infoItem-item'>
+        <view class='infoItem-item-left'>
+          <text class='timeSelect-title'>患者：</text>
+          <text class='timeSelect-name'>{{item.patientName}}</text>
+        </view>
+        <text class='infoItem-price'>¥{{item.money}}</text>
+      </view>
+      <view class='infoItem-item' style=' justify-content: flex-end;'>
+        <text class='score'>+{{item.score}}</text>
+      </view>
+      <view class='infoItem-item' style='margin-top:15rpx;'>
+        <text class='timeSelect-date'>{{item.time}}</text>
+        <text class='timeSelect-date'>{{item.type}}</text>
+      </view>
+    </view>
+  </block>
+  <block wx:if='{{selectedMenu==1}}'>
+    <view class='cashItem' wx:for='{{scoreList}}' wx:key="index">
+      <text class='cashTime'>{{item.time}}</text>
+      <text class='cashCount'>{{item.changeStyle}}{{item.score}}</text>
+    </view>
+  </block>
+</view>

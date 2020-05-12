@@ -1,0 +1,93 @@
+<view class='container'>
+	<view class='stepwrap'>
+		<view class='step'>
+			<text>1</text>
+			<text>2</text>
+			<text>3</text>
+			<text class='active'>4</text>
+		</view>
+	</view>
+	<form bindsubmit='saveAll'>
+		<view class='addsick'>
+			<view class='ft16'>
+				<text class='red'>*</text>患者基本信息：</view>
+			<view class='choosesickness' catchtap='navigator'>
+				<view class='left'>{{patientInfo.name}}</view>
+				<view class='algin'>请选择就诊人
+					<image src='/images/nav.png'></image>
+				</view>
+			</view>
+			<view class='thisillness' wx:if='{{patientInfo != ""}}'>
+				<view class='duqi'>
+					<text>性别：{{patientInfo.sex}}</text>
+					<text class='linespace'>年龄：{{patientInfo.age}}岁</text>
+				</view>
+				<view class='duqi'>
+					<text>手机：{{patientInfo.phone}}</text>
+				</view>
+				<view class='duqi'>
+					<text>地址：{{patientInfo.address}}</text>
+				</view>
+				<view class='Editinfo'>
+					<text>过往病史：</text> {{patientInfo.medicalHistory}}
+				</view>
+				<view class='Editinfo'>
+					<text>补充描述</text> {{patientInfo.description}}
+				</view>
+			</view>
+		</view>
+		<view class='Editwrap'>
+			<view class='illList'>
+				<view class='illwrap'>
+					<view class='ft16'>
+						<text class='red'>*</text>主诉：</view>
+					<textarea class='Editinfo' name='chief' value='{{chief}}' placeholder='请输入您的主要症状等基本情况。'></textarea>
+				</view>
+			</view>
+			<view class='illList'>
+				<view class='illwrap'>
+					<view class='ft16'>
+						<text class='red'>*</text>患者照片：</view>
+					<view class='showTitle'>请上传舌苔和舌底照片，若患者是0-3岁的儿童，可上传双关手纹(及双手食指)照片代替。</view>
+					<view class='showTitle red' bindtap='chooseImage'>点击此处上传</view>
+					<!-- 添加照片 -->
+					<view class='imgwrap'>
+						<view class='images' wx:for="{{imageList}}" wx:key="index">
+							<image src='{{item}}' class="upload" data-index='{{index}}'></image>
+						</view>
+					</view>
+				</view>
+			</view>
+			<view class='illList'>
+				<view class='illwrap'>
+					<view class='ft16'>患处照片：</view>
+					<view class='showTitle'>请上传患病处照片、化验单、检查报告。</view>
+					<view class='showTitle red' bindtap='chooseImage1'>点击此处上传</view>
+					<!-- 添加照片 -->
+					<view class='imgwrap'>
+						<view class='images' wx:for="{{imageList1}}" wx:key="index">
+							<image src='{{item}}' class="upload" data-index='{{index}}'></image>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class='bottomOperate clear'>
+			<view class='left bottomFont' style='background:#f3f3f3;color:#333;' bindtap='backFor'>上一步</view>
+			<button form-type="submit" type="default" size="defaultSize" hover-class="none" disabled="{{!buttonClicked ? '':'disabled'}}">提交问诊单</button>
+		</view>
+	</form>
+	<!-- 弹窗 -->
+	<view hidden="{{hide}}">
+		<mask hover-style="none" class="mask" />
+		<view class='modal'>
+			<view class='middleBox'>
+				<view class='txtInfo'>是否支付{{money}}元问诊费？</view>
+				<button class='primary' bindtap='surePay' hover-class='none'>确认支付</button>
+				<button class="back" bindtap='backpack' hover-class="none">取消支付</button>
+			</view>
+		</view>
+	</view>
+</view>
+<import src="/pages/component/modal.wxml" />
+<template is="toolips" data="{{toolips}}" />

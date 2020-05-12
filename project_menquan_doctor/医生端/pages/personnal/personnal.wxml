@@ -1,0 +1,22 @@
+<!--pages/personnal/personnal.wxml-->
+<view class='personnalInfo'>
+	<image src='{{personnalInfo.wxLoc}}' class='usrIcon'></image>
+	<view class='userInfo'>
+		<view>
+			<text class='userInfo-name'>{{personnalInfo.name}}</text>
+			<!-- <text class='userInfo-realName' style='margin-left:24rpx'>真实姓名：{{personnalInfo.name}}</text> -->
+			<!-- <image src='/imgSrc/QRCode.png' class='QRCode'></image> -->
+		</view>
+		<view style='margin-top:11rpx'>
+			<text class='userInfo-realName'>{{personnalInfo.hospital}}</text>
+			<text class='userInfo-tag {{personnalInfo.examineStatus==0? "examSuccess" : ""}}'>{{personnalInfo.examineStatus==0? personnalInfo.title:personnalInfo.examineStatus==1? "当前医生异常": personnalInfo.examineStatus==2? "认证中":'认证失败'}}</text>
+		</view>
+		<text class='userInfo-realName' style='margin-top:11rpx'>出诊时间：{{personnalInfo.workTime}}</text>
+	</view>
+</view>
+<view class='functionType'>
+	<view class='btnView' wx:for='{{list}}' style='margin-right:{{index==2 || index==5? "0rpx" : "134rpx"}};' catchtap='menuInfo' data-index='{{index}}'>
+		<image src='{{item.url}}'></image>
+		<text>{{item.text}}</text>
+	</view>
+</view>

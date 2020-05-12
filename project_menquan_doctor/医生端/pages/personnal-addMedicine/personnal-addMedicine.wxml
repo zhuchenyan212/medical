@@ -1,0 +1,39 @@
+<!--pages/personnal-addMedicine/personnal-addMedicine.wxml-->
+<view class='topItem'>
+	<text class='topItem-name'>诊断：</text>
+	<input class='topItem-info' placeholder='请输入处方名称' value='{{prescriptionName}}' bindinput='inputName'></input>
+	<image src='/imgSrc/fix.png'></image>
+</view>
+<view class='medicineItem' catchtap='showInfo' data-item='{{item}}' data-index='{{index}}' wx:for='{{prescriptionList1}}'>
+	<view class='medicineContent' style='margin-bottom:34rpx;'>
+		<text class='medicineContent-name'>属性:</text>
+		<view class='medicineContent-tag' style='margin-left: {{tagIndex==0? "" : "14rpx"}}' wx:for='{{item.propertyList}}' wx:for-index='tagIndex'>{{item}}</view>
+	</view>
+	<view class='medicineContent' style='margin-bottom:20rpx'>
+		<text class='medicineContent-name'>药品内容：</text>
+		<text class='medicineContent-info'>{{item.contentText}}</text>
+	</view>
+	<view class='medicineContent' style='margin-bottom:20rpx'>
+		<text class='medicineContent-name'>药品功效：</text>
+		<text class='medicineContent-info'>{{item.prescriptionEffect}}</text>
+	</view>
+	<view class='medicineContent' style='margin-bottom:26rpx'>
+		<text class='medicineContent-name'>药品用法：</text>
+		<text class='medicineContent-info'>{{item.useWay}}</text>
+	</view>
+	<view class='medicineContent' style='margin-bottom:32rpx;  justify-content: flex-end;'>
+		<text class='medicineContent-sum'>总计: ￥{{item.total*number}}</text>
+	</view>
+</view>
+<view class='addMedicine' catchtap='addMedicineInfo'>
+	<image src='/imgSrc/addMedicine.png'></image>
+	<text class='medicineContent-name' style='margin-left:16rpx'>增加药单</text>
+</view>
+<view class='bottomView'>
+	<view class='bottomView-left'>
+		<text class='medicineContent-name'>所有药品</text>
+		<text class='medicineContent-sum'>￥{{sum}}</text>
+	</view>
+	<view class='bottomView-right' catchtap='saveMedia' wx:if="{{type=='0'}}">去发送</view>
+	<view class='bottomView-right' catchtap='saveMedia' wx:else>保存处方</view>
+</view>

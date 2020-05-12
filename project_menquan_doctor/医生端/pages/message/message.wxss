@@ -1,0 +1,53 @@
+/* pages/message/message.wxss */
+page{
+  background-color: #F8F8F8;
+  padding-top: 20rpx;
+}
+.messageItem{
+  width: 100%;
+  height: 196rpx;
+  background-color: #FFFFFF;
+  margin-bottom: 8rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+.messageItem image{
+  width: 136rpx;
+  height: 136rpx;
+  border-radius: 50%;
+  margin-left: 62rpx;
+}
+.messageItem-info{
+  display: flex;
+  flex-direction: column;
+  margin-left: 30rpx;
+  width: 420rpx;
+}
+.messageItem-info-name{
+  font-size: 26rpx;
+  color: #333333;
+  font-weight: bold;
+}
+.messageItem-info-des{
+  /* width: 420rpx; */
+  font-size: 20rpx;
+  color: #333333;
+
+}
+.messageLine{
+  margin-top: 35rpx;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  align-content: center;
+}
+.messageItem-info-time{
+  position: absolute;
+  right: 62rpx;
+  top: 32rpx;
+}

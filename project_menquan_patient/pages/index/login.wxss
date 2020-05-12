@@ -1,0 +1,49 @@
+/* pages/index/login.wxss */
+
+.imgWrap {
+  width: 100%;
+  height: 200px;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.imgWrap image {
+  width: 390px;
+  height: 200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ft-15 {
+  font-size: 15px;
+}
+
+.Btn button {
+  width: 320px;
+  height: 40px;
+  line-height: 40px;
+  background: #449271;
+  color: #fff;
+  margin: 20px auto;
+  font-size: 15px;
+  border-radius: 10rpx;
+}
+
+.Btn {
+  width: 100%;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.bottomFont {
+  text-align: center;
+  height: 98rpx;
+  line-height: 98rpx;
+  background-color: #489775;
+  color: #fff;
+  font-size: 15px;
+  z-index: 999;
+  margin: 0 auto;
+  width: 90%;
+  border-radius: 5px;
+}

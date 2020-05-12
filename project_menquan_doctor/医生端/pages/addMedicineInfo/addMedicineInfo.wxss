@@ -1,0 +1,271 @@
+/* pages/addMedicineInfo/addMedicineInfo.wxss */
+
+page {
+  background-color: #f8f8f8;
+  padding-bottom: 100rpx;
+  padding-top: 104rpx;
+  margin: 0;
+  z-index: 0;
+  position: relative;
+}
+
+.searchView {
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  border-top: 2rpx solid #f8f8f8;
+}
+
+.mask {
+  position: fixed;
+  background-color: #aaa;
+  opacity: 0.7;
+  width: 100%;
+  top: 100rpx;
+  left: 0;
+  z-index: 999;
+}
+
+.maskList {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  top: 102rpx;
+  left: 0;
+  z-index: 999;
+}
+
+.maskItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding-left: 60rpx;
+  padding-right: 50rpx;
+  height: 80rpx;
+}
+
+.maskItem:active {
+  opacity: 0.8;
+}
+
+.maskItem-name {
+  font-size: 24rpx;
+  color: #333;
+  font-weight: bold;
+}
+
+.maskItem-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.maskItem-right text {
+  font-size: 24rpx;
+  color: #969696;
+}
+
+.arrow {
+  width: 16rpx;
+  height: 16rpx;
+  border: solid #999;
+  border-width: 2rpx 2rpx 0 0;
+  transform: rotate(45deg);
+  margin-left: 24rpx;
+}
+
+.searchView2 {
+  width: 650rpx;
+  height: 60rpx;
+  background-color: #f8f8f8;
+  border-radius: 28rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.searchView2 input {
+  width: 500rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-left: 40rpx;
+  font-size: 24rpx;
+  color: #333;
+}
+
+.placeholder {
+  font-size: 24rpx;
+  color: #333;
+}
+
+.searchView2 image {
+  width: 32rpx;
+  height: 32rpx;
+  margin-left: 10rpx;
+}
+
+.infoItem {
+  width: 660rpx;
+  height: 92rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fff;
+  margin-bottom: 2rpx;
+  padding: 0 40rpx 0 50rpx;
+}
+
+.infoItem image {
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 40rpx;
+}
+
+.infoItem-name {
+  font-size: 24rpx;
+  color: #333;
+  width: 250rpx;
+  height: 92rpx;
+  line-height: 92rpx;
+}
+
+.infoItem-price {
+  width: 170rpx;
+  height: 92rpx;
+  line-height: 92rpx;
+  font-size: 24rpx;
+  color: #333;
+}
+
+.inputNum {
+  border: 2rpx solid #e1e1e1;
+  width: 74rpx;
+  height: 38rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #333;
+  margin-left: 30rpx;
+}
+
+.unitText {
+  font-size: 24rpx;
+  color: #333;
+  margin-left: 14rpx;
+}
+
+.addBtn {
+  width: 100%;
+  height: 80rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-top: 2rpx solid #f8f8f8;
+}
+
+.addBtn image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.addBtn text {
+  font-size: 24rpx;
+  color: #474747;
+  margin-left: 16rpx;
+}
+
+.medicineCount {
+  width: 700rpx;
+  height: 80rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 50rpx;
+  margin-top: 28rpx;
+}
+
+.medicineCount text {
+  font-size: 26rpx;
+  color: #333;
+}
+
+.medicineCount view {
+  width: 122rpx;
+  height: 52rpx;
+  border: 2rpx solid #e1e1e1;
+  text-align: center;
+  line-height: 52rpx;
+  font-size: 36rpx;
+  color: #333;
+  font-weight: bold;
+}
+
+.bottomBtn {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  flex-direction: row;
+  z-index: 99;
+}
+
+.hideBottomBtn {
+  z-index: 1;
+}
+
+.bottomBtn-count {
+  width: 50%;
+  height: 90rpx;
+  background-color: #fff;
+  text-align: center;
+  line-height: 90rpx;
+}
+
+.sum {
+  font-size: 30rpx;
+  color: #333;
+}
+
+.bottomBtn-save {
+  width: 50%;
+  height: 90rpx;
+  background-color: #449271;
+  text-align: center;
+  line-height: 90rpx;
+  font-size: 36rpx;
+  color: #fff;
+}
+
+.bottomBtn-save:active {
+  opacity: 0.7;
+}
+
+.sure {
+  color: #fff !important;
+  right: 50rpx;
+  position: absolute;
+  border-radius: 5rpx;
+  font-size: 25rpx !important;
+  background: #449271;
+}
+
+.Edit {
+  border: 1px solid #000;
+  width: 100rpx;
+  text-align: center;
+}

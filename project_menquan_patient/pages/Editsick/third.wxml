@@ -1,0 +1,63 @@
+<view class='container'>
+  <view class='stepwrap'>
+    <view class='step'>
+      <text>1</text>
+      <text>2</text>
+      <text class='active'>3</text>
+      <text>4</text>
+    </view>
+  </view>
+  <form bindsubmit='saveInfo'>
+    <view class='sickWrap'>
+      <view class='special'>二便情况：</view>
+      <view class='sickinfo'>
+        <view class='ft16'>大便次数</view>
+        <view class='cusMsgInfo'>
+          <view wx:for='{{bigNums}}' wx:key='index' class="choice {{state1==index?'onchoice':''}}" bindtap="click1" data-key='{{index}}' data-name="{{item}}">
+            {{item}}
+          </view>
+        </view>
+      </view>
+      <view class='sickinfo'>
+        <view class='ft16'>大便颜色</view>
+        <view class='cusMsgInfo'>
+          <view wx:for='{{bigColors}}' wx:key='index' class="choice {{state2==index?'onchoice':''}}" bindtap="click2" data-key='{{index}}' data-name="{{item}}">
+            {{item}}
+          </view>
+        </view>
+      </view>
+      <view class='sickinfo'>
+        <view class='ft16'>大便形态</view>
+        <view class='cusMsgInfo'>
+          <view wx:for='{{likes}}' wx:key='index' class="choice {{state3==index?'onchoice':''}}" bindtap="click3" data-key='{{index}}' data-name="{{item}}">
+            {{item}}
+          </view>
+        </view>
+      </view>
+      <view class='sickinfo'>
+        <view class='ft16'>小便次数</view>
+        <view class='cusMsgInfo'>
+          <view wx:for='{{smallNums}}' wx:key='index' class="choice {{state4==index?'onchoice':''}}" bindtap="click4" data-key='{{index}}' data-name="{{item}}">
+            {{item}}
+          </view>
+        </view>
+      </view>
+      <view class='sickinfo'>
+        <view class='ft16'>小便颜色</view>
+        <view class='cusMsgInfo'>
+          <view wx:for='{{samllColors}}' wx:key='index' class="choice {{state5==index?'onchoice':''}}" bindtap="click5" data-key='{{index}}' data-name="{{item}}">
+            {{item}}
+          </view>
+        </view>
+      </view>
+      <view class='other'>其他补充说明:</view>
+      <textarea placeholder='请输入其他情况' name='addInfo' value='{{addInfo}}'></textarea>
+    </view>
+    <view class='bottomOperate clear'>
+      <view class='left bottomFont' style='background:#f3f3f3;color:#333;' bindtap='backFor'>上一步</view>
+      <button form-type="submit" type="default" size="defaultSize" hover-class="none">下一步</button>
+    </view>
+  </form>
+</view>
+<import src="/pages/component/modal.wxml" />
+<template is="toolips" data="{{toolips}}" />

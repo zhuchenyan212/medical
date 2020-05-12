@@ -1,0 +1,42 @@
+<!--pages/patientInfo/patientInfo.wxml-->
+<view class='topContainer'>
+  <image src='{{patientInfo.wxLoc}}' class='usrIcon'></image>
+  <view class='topContainer-right'>
+    <text class='topContainer-right-nickName'>{{patientInfo.name}}</text>
+    <text class='topContainer-right-realName' bindtap="detail">患者历史问诊</text>
+    <view class='address-phone' style='margin-top:24rpx'>
+      <image src='/imgSrc/phone.png'></image>
+      <text>{{patientInfo.phone}}</text>
+    </view>
+    <view class='address-phone' style='margin-top:14rpx'>
+      <image src='/imgSrc/address.png'></image>
+      <text>{{patientInfo.address}}</text>
+    </view>
+    <view></view>
+  </view>
+</view>
+<view class='title'>
+  <text>历史病情</text>
+</view>
+<scroll-view class='patientInfo' style='height:{{scrollH}}rpx' scroll-y>
+  <view class='patientInfo-item' wx:for='{{patientInfo.diseaseHistory}}' bindtap='checkPatientInfo' data-item='{{item}}'>
+    <view class='patientInfo-item-infoTIme'>
+      <view class='infoPoint'>
+        <view class='point'></view>
+        <text class='infoTime-Info'>病情详情:  <text class='infoTime-Info-infos'>{{item.condition}}</text></text>
+      </view>
+      <text class='patientInfo-item-infoTIme-time'>{{item.time}}</text>
+    </view>
+    <view class='patientInfo-item-infoTIme' style='margin-top: 16rpx;'>
+      <view class='infoPoint'>
+        <view class='point'></view>
+        <text class='infoTime-Info2'>处方内容:  <text class='infoTime-Info-infos medice'>{{item.medicineContent}}</text></text>
+      </view>
+      <text class='more'>详情>></text>
+    </view>
+  </view>
+</scroll-view>
+<view class='message' catchtap='sendMsg'>
+  <image src='/imgSrc/sendMessage.png'></image>
+  <text>发消息</text>
+</view>

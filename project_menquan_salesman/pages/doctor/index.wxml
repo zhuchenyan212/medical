@@ -1,0 +1,133 @@
+<!--pages/doctor/index.wxml-->
+<view class="container">
+	<view class="head_t">
+		<view class="get_score">
+			<view class="score">
+				<block wx:for="{{imageList}}" wx:for-item="image" wx:key='index'>
+					<view class="weui-uploader__file">
+						<image class="weui-uploader__img" src="{{image}}" data-src="{{image}}"></image>
+					</view>
+				</block>
+			</view>
+		</view>
+		<view class='clickupload clear' bindtap="chooseImage">
+			<view class='left'>点击上传医生照片</view>
+			<view class='right'>
+				<image class='nav' src='/images/nav.png'></image>
+			</view>
+		</view>
+	</view>
+	<!-- 填写我的医生资料 -->
+	<form bindsubmit="saveDoctorInfo">
+		<view class='attrInfo'>
+			<view class='infoItem'>
+				<view class='left'>姓名:</view>
+				<view class='left m24'>
+					<input name='docName' value='{{docName}}' placeholder='请输入医生姓名' />
+				</view>
+			</view>
+			<view class='infoItem'>
+				<view class='left'>年龄:</view>
+				<view class='left m24'>
+					<input name='age' value='{{age}}' placeholder='请输入医生年龄' />
+				</view>
+			</view>
+			<view class='infoItem'>
+				<view class='left'>性别:</view>
+				<view class='infoCont'>
+					<view class="section_check">
+						<radio-group class="weui-radiobox" bindchange="bindSelect">
+							<block wx:for="{{radioList}}" wx:key="radio" wx:for-item="item">
+								<label class="weui-check__label">
+									<radio class="weui-check" value="{{item.state}}" checked="{{item.checked}}" />
+									<view class="weui-cell__hd weui-check__hd_in-checkbox">
+										<icon class="weui-icon-checkbox_success" type="success" size="15" color="#489775" wx:if="{{item.checked}}"></icon>
+										<icon class="weui-icon-checkbox_circle" type="success" size="15" color="#ccc" wx:else></icon>
+									</view>
+									<view class="weui-cell__text">{{item.name}}</view>
+								</label>
+							</block>
+						</radio-group>
+					</view>
+				</view>
+			</view>
+			<view class='infoItem'>
+				<view class='left'>号码:</view>
+				<view class='left m24'>
+					<input name='phone' value='{{phone}}' placeholder='请输入医生联系电话' maxlength='11' />
+				</view>
+			</view>
+			<view class='infoItem'>
+				<view class='left'>医院:</view>
+				<view class='left m24' style='margin-left:88rpx;'>
+					<input name='hospital' value='{{hospital}}' placeholder='请输入医生所在医院' />
+				</view>
+			</view>
+			<view class='infoItem'>
+				<view class='left'>医院类型:</view>
+				<view class='infoCont'>
+					<view class="section_check">
+						<radio-group class="weui-radiobox" bindchange="bindSelects">
+							<block wx:for="{{radioLists}}" wx:key="radio" wx:for-item="item">
+								<label class="weui-check__label">
+									<radio class="weui-check" value="{{item.state}}" checked="{{item.checked}}" />
+									<view class="weui-cell__hd weui-check__hd_in-checkbox">
+										<icon class="weui-icon-checkbox_success" type="success" size="15" color="#489775" wx:if="{{item.checked}}"></icon>
+										<icon class="weui-icon-checkbox_circle" type="success" size="15" color="#ccc" wx:else></icon>
+									</view>
+									<view class="weui-cell__text">{{item.name}}</view>
+								</label>
+							</block>
+						</radio-group>
+					</view>
+				</view>
+			</view>
+			<view class='infoItem'>
+				<view class='left'>职称:</view>
+				<view class='left' style='margin-left:88rpx;'>
+					<picker range='{{titleNameList}}' value='{{titleNameListIndex}}' bindchange='selectLevel' range-key="{{'title_name'}}">
+						<text wx:if="{{userInfo.title}}">{{userInfo.title}}</text>
+						<block wx:else>
+							<text wx:if='{{titleNameListIndex > -1}}'>{{titleNameList[titleNameListIndex].title_name}}</text>
+							<text wx:else>请选择医生职称</text>
+						</block>
+					</picker>
+				</view>
+			</view>
+			<view class='infoItem'>
+				<view class='left'>地址:</view>
+				<view class='left' style='margin-left:88rpx;'>
+					<picker mode="region" name="address" value="{{address}}" bindchange="bindaddressChange">
+						<text class="ft-22 color-9" wx:if="{{addresschange==false}}">请选择医生所在地址</text>
+						<text wx:else>{{address}}</text>
+					</picker>
+				</view>
+				<view class='right'>
+					<image class='nav' src='/images/nav.png'></image>
+				</view>
+			</view>
+			<view class='infoItemGood' bindtap='choosekeshi'>
+				<view class='left'>擅长治疗:</view>
+				<view class='left' style='margin-left:22rpx;width:60%;'>
+					<view class='left'>
+						<input style='margin-top:24rpx;' wx:if="{{goodAt == '请选择医生擅长科室疾病'}}" name='goodAt' value='{{goodAt}}' disabled='disabled'></input>
+						<view wx:else>
+							<block wx:for="{{goodAt}}" wx:key='index'>
+								<text style='color:#489775;font-weight:bold;'>{{item.departmentName}}：</text>
+								<text wx:for="{{item.diseaseList}}" wx:key='index'>{{item.name}}、</text>
+							</block>
+						</view>
+					</view>
+				</view>
+				<view class='right'>
+					<image class='nav' src='/images/nav.png'></image>
+				</view>
+			</view>
+		</view>
+		<view class='bottomOperate'>
+			<button class='bottomFont' form-type="submit" type="default" size="defaultSize" hover-class="none">提交医生信息</button>
+		</view>
+	</form>
+</view>
+<import src="/pages/component/modal.wxml" />
+<template is="toolips" data="{{toolips}}" />

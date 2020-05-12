@@ -1,0 +1,262 @@
+/* pages/medicineInfo/medicineInfo.wxss */
+page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 56rpx;
+}
+.userInfo{
+  display: flex;
+  flex-direction: column;
+  /* margin-left: 68rpx; */
+  width: 650rpx;
+}
+.userInfo-name{
+  font-size: 24rpx;
+  color: #333333;
+  font-weight: bold;
+}
+.userInfo view{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 12rpx;
+}
+.userInfo-sex{
+  font-size: 24rpx;
+  color: #333333;
+}
+
+.illnessInfo-title{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+    align-items: center;
+  width: 650rpx;
+  height: 84rpx;
+}
+.illnessInfo-title-name{
+  font-size: 24rpx;
+  color: #333333;
+  font-weight: bold;
+}
+.illnessInfo-title-time{
+  font-size: 24rpx;
+  color: #333333;
+}
+.illnessInfo-info{
+  width: 594rpx;
+  display: flex;
+  flex-direction: column;
+  background-color: #F3F3F3;
+  border-radius: 10rpx;
+  padding: 14rpx 30rpx 28rpx;
+  margin-bottom: 14rpx;
+}
+.illnessInfo-info text{
+  font-size: 24rpx;
+  color: #333333;
+  /* text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  align-content: center; */
+}
+.illnessInfo-info-item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 18rpx;
+  position: relative;
+}
+.illnessInfo-info-item-name{
+  font-size: 24rpx;
+  color: #333333;
+  font-weight: bold;
+  
+}
+.illnessInfo-info-item-tag{
+  width: auto;
+  height: 32rpx;
+  background-color: #489775;
+  font-size: 22rpx;
+  color: #FFFFFF;
+  border-radius: 10rpx;
+  padding: 2rpx 12rpx;
+  margin-left: 16rpx;
+}
+.illnessInfo-info-item-info{
+    font-size: 24rpx;
+  color: #333333;
+  margin-left: 22rpx;
+    text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  align-content: center;
+}
+
+.getInfo{
+  width: auto;
+  font-size: 20rpx;
+  text-align: center;
+  color: #489775;
+  position: absolute;
+  right: 0;
+}
+
+
+
+
+
+.mask{
+  background-color: #001015;
+  opacity: 0.4;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 999;
+}
+.menu{
+  width: 584rpx;
+  /* height: 680rpx; */
+  background-color: #FFFFFF;
+  border-radius: 46rpx;
+  position: absolute;
+  left: 50rpx;
+  top: 120rpx;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  padding: 30rpx;
+}
+.scrollV{
+  width: auto;
+  height: 210rpx;
+  margin-bottom: 20rpx;
+}
+.medicalInfo{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.medicalInfo-count{
+  font-size: 24rpx;
+  color: #999999;
+}
+.medicalInfo-name{
+  font-size: 24rpx;
+  color: #333333;
+}
+.medicalInfo-sum{
+  font-size: 24rpx;
+  color: #333333;
+  font-weight: bold;
+}
+.cancelItem{
+    display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18rpx;
+}
+.cancel{
+  width: 30rpx;
+  height: 30rpx;
+}
+.cancelText{
+  font-size: 26rpx;
+  color: #333333;
+  margin-left: 16rpx;
+}
+.illnessInfo-info-item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 18rpx;
+  position: relative;
+}
+.illnessInfo-info-item-name{
+  font-size: 24rpx;
+  color: #333333;
+  font-weight: bold;
+  
+}
+.illnessInfo-info-item-tag{
+  width: auto;
+  height: 32rpx;
+  background-color: #489775;
+  font-size: 22rpx;
+  color: #FFFFFF;
+  border-radius: 10rpx;
+  padding: 2rpx 12rpx;
+  margin-left: 16rpx;
+}
+.illnessInfo-info-item-info{
+    font-size: 24rpx;
+  color: #333333;
+  margin-left: 22rpx;
+    text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  align-content: center;
+}
+
+.illnessInfo-title{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+    align-items: center;
+  width: 650rpx;
+  height: 84rpx;
+}
+.illnessInfo-title-name{
+  font-size: 24rpx;
+  color: #333333;
+  font-weight: bold;
+}
+.medicalInfo{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.medicalInfo-count{
+  font-size: 24rpx;
+  color: #999999;
+}
+.medicalInfo-name{
+  font-size: 24rpx;
+  color: #333333;
+}
+.medicalInfo-sum{
+  font-size: 24rpx;
+  color: #333333;
+  font-weight: bold;
+}
+.cancelItem{
+    display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18rpx;
+}
+.cancel{
+  width: 30rpx;
+  height: 30rpx;
+}
+.cancelText{
+  font-size: 26rpx;
+  color: #333333;
+  margin-left: 16rpx;
+}

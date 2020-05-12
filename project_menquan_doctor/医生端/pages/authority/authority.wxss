@@ -1,0 +1,36 @@
+/* pages/authority/authority.wxss */
+
+page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  width: 100%;
+}
+
+.logoText {
+  font-size: 30rpx;
+  caption-side: #383838;
+}
+
+.loginBtn {
+  width: 642rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  color: #fff;
+  background-color: #449271;
+  border-radius: 10rpx;
+  margin-top: 50rpx;
+}
+
+.bangding {
+  text-align: right;
+  font-size: 28rpx;
+  width: 80%;
+  height: 40rpx;
+  line-height: 80rpx;
+}

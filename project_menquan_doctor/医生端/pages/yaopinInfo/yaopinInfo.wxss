@@ -1,0 +1,98 @@
+/* pages/yaopinInfo/yaopinInfo.wxss */
+
+page {
+  background-color: #f8f8f8;
+  padding-bottom: 30rpx;
+}
+
+.listContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  margin-top: 12rpx;
+  width: 700rpx;
+  padding-left: 50rpx;
+  padding-top: 20rpx;
+}
+
+.title {
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #333;
+  font-size: 28rpx;
+  /* margin-top: 20rpx; */
+}
+
+.infoContainer {
+  width: 582rpx;
+  height: 66rpx;
+  background-color: #f3f3f3;
+  border-radius: 10rpx;
+  padding: 22rpx 30rpx 28rpx 28rpx;
+  font-size: 24rpx;
+  color: #666;
+}
+
+.medicineInfo {
+  width: 588rpx;
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx 30rpx 30rpx 22rpx;
+  background-color: #f3f3f3;
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+}
+
+.medicineInfo-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.illnessInfo-info-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.illnessInfo-info-item-name {
+  font-size: 24rpx;
+  color: #333;
+  font-weight: bold;
+}
+
+.illnessInfo-info-item-tag {
+  width: auto;
+  height: 32rpx;
+  background-color: #489775;
+  font-size: 22rpx;
+  color: #fff;
+  border-radius: 10rpx;
+  padding: 2rpx 12rpx;
+  margin-left: 16rpx;
+}
+
+.illnessInfo-info-item-sum {
+  font-size: 24rpx;
+  color: #333;
+  font-weight: normal;
+}
+
+.illnessInfo-info-item-priceUnit {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.illnessInfo-info-item-info {
+  font-size: 24rpx;
+  color: #333;
+  margin-left: 22rpx;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  align-content: center;
+}

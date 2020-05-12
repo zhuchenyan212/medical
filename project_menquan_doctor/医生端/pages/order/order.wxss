@@ -1,0 +1,72 @@
+/* pages/order/order.wxss */
+page{
+  background-color: #F8F8F8;
+  padding-top: 112rpx;
+}
+.topSelection{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 2rpx;
+  background-color: #FFFFFF;
+  height: 80rpx;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.normalMenu{
+  height: 80rpx;
+  font-size: 26rpx;
+  color: #777777;
+  text-align: center;
+  line-height: 80rpx;
+  
+}
+.menuSelected{
+  border-bottom: 2rpx solid #489775;
+  color: #489775;
+}
+.list{
+  display: flex;
+  flex-direction: column;
+}
+.orderItem{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 668rpx;
+  background-color: #FFFFFF;
+  padding: 22rpx 40rpx 26rpx 42rpx;
+
+  margin-bottom: 10rpx;
+}
+.orderItem-V{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.orderItem-name{
+  font-size: 24rpx;
+  color: #333333;
+}
+.orderNum{
+  font-weight: bold;
+}
+.orderPrice{
+  font-size: 30rpx;
+  color: #489775;
+  font-weight: bold;
+}
+.orderItem-status{
+  font-size: 24rpx;
+  color: #777777;
+}
+.orderItem-time{
+  color: #777777;
+  font-size: 20rpx;
+}

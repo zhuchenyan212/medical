@@ -1,0 +1,62 @@
+<view class='container'>
+	<view class='stepwrap'>
+		<view class='step'>
+			<text class='active'>1</text>
+			<text>2</text>
+			<text>3</text>
+			<text>4</text>
+		</view>
+	</view>
+	<form bindsubmit='saveInfo'>
+		<view class='sickWrap'>
+			<view class='special'>特殊情况：</view>
+			<view class='sickinfo'>
+				<view class='ft16'>体温</view>
+				<view class='cusMsgInfo'>
+					<view class="choice {{state1==index?'onchoice':''}}" bindtap="click1" wx:for='{{cents}}' wx:key='index' data-key='{{index}}' data-name="{{item}}">
+						{{item}}
+					</view>
+				</view>
+			</view>
+			<view class='sickinfo'>
+				<view class='ft16'>手脚</view>
+				<view class='cusMsgInfo'>
+					<view wx:for='{{foots}}' wx:key='index' class="choice {{state2==index?'onchoice':''}}" bindtap="click2" data-key='{{index}}' data-name="{{item}}">
+						{{item}}
+					</view>
+				</view>
+			</view>
+			<view class='sickinfo'>
+				<view class='ft16'>咳嗽</view>
+				<view class='cusMsgInfo'>
+					<view wx:for='{{kesos}}' wx:key='index' class="choice {{state3==index?'onchoice':''}}" bindtap="click3" data-key='{{index}}' data-name="{{item}}">
+						{{item}}
+					</view>
+				</view>
+			</view>
+			<view class='sickinfo'>
+				<view class='ft16'>痰</view>
+				<view class='cusMsgInfo'>
+					<view wx:for='{{tans}}' wx:key='index' class="choice {{state4==index?'onchoice':''}}" bindtap="click4" data-key='{{index}}' data-name="{{item}}">
+						{{item}}
+					</view>
+				</view>
+			</view>
+			<view class='sickinfo' wx:if="{{sex == '女'}}">
+				<view class='ft16'>月经</view>
+				<view class='cusMsgInfo'>
+					<view wx:for='{{yuejins}}' wx:key='index' class="choice {{state5==index?'onchoice':''}}" bindtap="click5" data-key='{{index}}' data-name="{{item}}">
+						{{item}}
+					</view>
+				</view>
+			</view>
+			<view class='other'>其他补充说明:</view>
+			<textarea placeholder='请输入其他情况' name='addInfo' value='{{addInfo}}'></textarea>
+		</view>
+		<view class='bottomOperate'>
+			<button class='bottomFont' form-type="submit" type="default" size="defaultSize" hover-class="none">下一步</button>
+		</view>
+	</form>
+</view>
+<import src="/pages/component/modal.wxml" />
+<template is="toolips" data="{{toolips}}" />

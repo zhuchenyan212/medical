@@ -1,0 +1,140 @@
+@import "/pages/component/modal.wxss";
+page{
+  background:#f3f3f3;
+}
+
+.container {
+  background: #f3f3f3;
+  /* height: 100%; */
+}
+
+.swiper-tab {
+  width:100%;
+  text-align:center;
+  height:86rpx;
+  line-height:86rpx;
+  display:flex;
+  flex-flow:row;
+  justify-content:space-between;
+  background:#fff;
+  color:#333;
+  font-size:15px;
+  border-bottom:1px solid #f3f3f3;
+}
+
+.swiper-tab-item {
+  width: 20%;
+  color: #333;
+}
+
+.active {
+  color:#489775;
+  font-size:15px;
+  font-weight:bold;
+  border-bottom:2px solid #489775;
+}
+
+.searchFor {
+  height: 100rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  background: #fff;
+  border-bottom: 1px solid #f3f3f3;
+}
+
+.searchFor .chooseTime {
+  width: 65.5%;
+  height: 100%;
+  line-height: 100rpx;
+}
+
+.searchFor .chooseType {
+  width: 33.5%;
+  height: 100%;
+  line-height: 100rpx;
+  text-align: center;
+  border-left: 1px solid #f3f3f3;
+  position: relative;
+}
+
+.ft13choose {
+  font-size: 13px;
+  color: #787878;
+  padding-top: 25rpx;
+}
+
+.orderAll {
+  height: 88rpx;
+  line-height: 88rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  color: #787878;
+  font-size: 13px;
+  background: #fff;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.orderItem {
+  height: 268rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  color: #a4a4a4;
+  background: #fff;
+  margin-bottom: 15rpx;
+}
+
+.orderItem .orderDoctor {
+  padding-top: 20rpx;
+  font-size: 11px;
+  line-height: 40rpx;
+}
+
+.ft13 {
+  font-size: 13px;
+  color: #787878;
+}
+
+.ft18 {
+  font-size: 18px;
+  color: #489775;
+}
+
+.orderItem  .orderillness {
+  padding-top: 28rpx;
+  font-size: 11px;
+  line-height: 40rpx;
+}
+
+.searchtrans {
+  color: #5b9ac2;
+}
+
+.select_box {
+  background: #eee !important;
+  position: absolute;
+  z-index: 999;
+  width: 113%;
+  font-size: 13px;
+  animation: myfirst 0.5s;
+}
+
+.select_one {
+  height: 60rpx;
+  line-height: 60rpx;
+  border-bottom: 1px solid #ccc;
+}
+
+@keyframes myfirst {
+  from {
+    height: 0rpx;
+  }
+
+  to {
+    height: 210rpx;
+  }
+}
+
+.weui-btn {
+  float: left;
+  margin-right: 10rpx;
+}

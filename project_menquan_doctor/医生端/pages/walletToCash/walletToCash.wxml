@@ -1,0 +1,27 @@
+<!--pages/walletToCash/walletToCash.wxml-->
+
+<view class='cashContainer'>
+   <view class='score'>
+       <text class='scoreText'>总积分：{{maxCount}}</text>
+       <text class='scoreText rule'>100积分可兑换1元</text>
+   </view>
+
+    <view class='score'>
+    <text class='scoreText' style='margin-top:32rpx;'>可兑换金额: ¥{{currentScore}}</text>
+    </view>
+
+    <view class='inputV'>
+      <text class='pricePoint'>¥</text>
+      <input class='input'  type='number' value='{{currentScore}}' bindinput='currentScore' type='number'></input>
+    </view>
+    <text class='infoScore'>*<text class='scoreText'>一周只能兑换2次积分</text></text>
+    <text class='scoreText' style='margin-top:78rpx'>提现方式：</text>
+    <view class='wechat'>
+         <view class='wechat-logo'></view>
+         <image src='/imgSrc/wechat.png'></image>
+         <text class='wechat-text'>提现到微信</text>
+    </view>
+
+
+    <view class='btn' bindtap='scoreToCash'>立即提现 （预计两小时内到账）</view>
+</view>

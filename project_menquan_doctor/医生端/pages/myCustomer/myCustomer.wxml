@@ -1,0 +1,73 @@
+<!--pages/myCustomer/myCustomer.wxml-->
+<view class='topNavigate'>
+	<view class='navBtnContainer'>
+		<text class='navBtntext {{selectedIndex==index? "navBtntext-selected" : ""}}' wx:for='{{navBtn}}' style='margin-left:{{index==0? "" : "40rpx"}}' bindtap='topTabSwitch' data-index='{{index}}'>{{item}}</text>
+	</view>
+	<view class='navImg' catchtap='message'>
+		<image src='/imgSrc/message.png'></image>
+		<text>消息</text>
+	</view>
+</view>
+<!-- 全部患者列表 -->
+<view class='customer' wx:if='{{selectedIndex==0}}'>
+	<!-- 搜索 -->
+	<view class='searchHead'>
+		<view class='searchContent' bindtap='navigatorToSearch'>
+			<input name="keyword" placeholder="请输入患者名称" bindinput="bindSearch" bindblur="bindSearchInput" value="{{illness}}" />
+			<image src='/imgSrc/inllsearch.png'></image>
+		</view>
+	</view>
+	<scroll-view class='scorllH' scroll-y style='height: {{scorllH}}rpx'>
+		<view class='cusItem' wx:for='{{allPatients}}' bindtap='getCustomerInfo' data-item='{{item}}'>
+			<image src='{{item.wxLoc}}'></image>
+			<view class='cusItem-name'>
+				{{item.name}} {{item.province}}
+			</view>
+			<view class='cusItem-time'>上次沟通: {{item.lastTalkTime}}</view>
+		</view>
+	</scroll-view>
+</view>
+<!-- 我的处方列表 -->
+<view class='medicalList' wx:if='{{selectedIndex==1}}'>
+	<scroll-view class='scorllH' scroll-y style='height: {{scorllH}}rpx'>
+		<view class='medicalItem' wx:for='{{myMedicine}}' catchtap='medinceInfo' data-item='{{item}}'>
+			<view class='medicalItem-title'>
+				<view class='medicalItem-title-name'>患者姓名：{{item.name}}</view>
+				<view class='medicalItem-title-time'>{{item.time}}</view>
+			</view>
+			<view class='medicalItem-info'>
+				<view class='medicalItem-title-time' style='margin-left:44rpx'>处方信息：{{item.medicineContent}}</view>
+				<view class='medicalItem-title-time' style='color: #81A9C5'>查看详情>></view>
+			</view>
+		</view>
+	</scroll-view>
+</view>
+<!-- 历史问诊列表 -->
+<view class='historyList' wx:if='{{selectedIndex==2}}'>
+	<scroll-view class='scorllH' scroll-y style='height: {{scorllH}}rpx'>
+		<view class='options'>
+			<view class=' {{state? "showmenuBtn" : "optionsBtn"}}' bindtap='getOptions'>
+				<text class='menuText'>{{selectedMsgMenu}}</text>
+				<view class='arrow1 {{state? "transformArrow" : ""}}'></view>
+				<view id="box" class="{{first_click?'show':'hide'}} {{state?'open':'close'}}">
+					<view id="item_list">
+						<view style='margin-top:{{index==0? "10rpx" : ""}}' wx:for='{{msgMenu}}' catchtap='selectOptions' data-index='{{index}}' data-type='{{item.type}}'>{{item.name}}</view>
+					</view>
+				</view>
+			</view>
+		</view>
+		<block wx:if='{{haveInquiryList == true}}'>
+			<view class='historyItem' wx:for='{{inquiryList}}' bindtap='getHistory' data-item='{{item}}'>
+				<view class='historyItem-nametime'>
+					<view class='historyItem-name' wx:for="{{item.user}}" wx:key="index">患者：{{item.name}}</view>
+					<view class='historyItem-time'>{{item.time}}</view>
+				</view>
+				<view class='historyItem-sexage'>
+					<view class='historyItem-age' wx:for="{{item.user}}" wx:key="index">性别：{{item.sex}}</view>
+					<view class='historyItem-age' style='margin-left:84rpx' wx:for="{{item.user}}" wx:key="index">年龄：{{item.age}}岁</view>
+				</view>
+				<view class='historyItem-text'>{{item.detail}}</view>
+			</view>
+		</block>
+	</scroll-view>
+</view>

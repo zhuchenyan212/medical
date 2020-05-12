@@ -1,0 +1,43 @@
+<view class='container'>
+  <!-- 搜索 -->
+  <form bindsubmit="searchFor">
+    <view class="contA">
+      <view class="searchcontainer">
+        <image class="letf_search" src="{{'/images/ic_search.png'}}" />
+        <input placeholder="搜索关键词" name='searchValue' class="search_input" bindfocus="bindSearchInput" value="{{searchValue}}" placeholder-class="search_placeholder" />
+        <image class="input_delete" hidden="{{content.length<1}}" src="{{'/images/ic_input_delete.png'}}" bindtap="onClickClear" />
+      </view>
+      <button class="search_btn" form-type="submit" type="default" size="mini" hover-class="none">搜索</button>
+    </view>
+  </form>
+  <view class='ft12'>推荐医生</view>
+  <!-- 我的医生列表 -->
+  <view class='myDoctor'>
+    <view class='Doctoritem' wx:for='{{doctorList}}' wx:key='index' data-id="{{item.id}}" bindtap='navigateToDoctor'>
+      <view class='pro-img'>
+        <image src="{{item.wxLoc}}" />
+      </view>
+      <view class='pro-info-box'>
+        <view class='clear'>
+          <view class='left'>
+            <text class='ft-16'>{{item.name}}</text>
+            <text class='lable_Doc'>{{item.title}}</text>
+          </view>
+          <view class='right money'>{{item.fee}}元/次</view>
+        </view>
+        <view>
+          <text class='ft-12'>{{item.hospital}}</text>
+          <text class='lable_hos' style='padding-left:20px;'>{{item.hospitalProperty}}</text>
+        </view>
+        <view class='clear'>
+          <view class='left'>
+            <text class='lable_hos' wx:for='{{item.goodAt}}' wx:key='index'>{{item.name}}</text>
+          </view>
+          <view class='right service'>已服务：{{item.patientSize}}人</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<import src="/pages/component/modal.wxml" />
+<template is="toolips" data="{{toolips}}" />

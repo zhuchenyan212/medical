@@ -1,0 +1,31 @@
+<view class='medincineOptions2'>
+  <view class='medincineOptions2-container' style='margin-bottom:24rpx;height: 60rpx;line-height: 60rpx;' catchtap='selectMedicineInfo'>
+    <text class='medincineOptions-title' style="font-size: 36rpx;">选择药品</text>
+    <view class='arrow'></view>
+  </view>
+  <view class='medincineOptions2-container' wx:for='{{medicineInfo.drugList}}' wx:key="index">
+    <text class='medincineOptions-info2' style='color:#333333'>{{item.drugName}}({{item.drugUnit}})</text>
+    <text class='medincineOptions-info2'>￥{{item.price}}/{{item.drugUnit}}  x {{item.num}}</text>
+  </view>
+  <view class='medincineOptions2-container' style='margin-top:34rpx;'>
+    <text class='medincineOptions-title'>药品副数：{{medicineInfo.drugNumber}}副</text>
+    <text class='medincineOptions-title'>总计: ￥{{medicineInfo.totalFee}}</text>
+  </view>
+</view>
+<view class='medincineOptions2'>
+  <text class='medincineOptions-title'>药品功效: </text>
+  <view class='inputV'>
+    <textarea placeholder='{{medicineInfo.prescriptionEffect}}' placeholder-class='placeholder' class='inputFont' bindinput='editGongxiao'></textarea>
+    <text class='infoFont'>0/20字</text>
+  </view>
+</view>
+<view class='medincineOptions2'>
+  <text class='medincineOptions-title'>药品用法: </text>
+  <view class='inputV'>
+    <textarea placeholder='{{medicineInfo.useWay}}' placeholder-class='placeholder' class='inputFont' bindinput='editUsage'></textarea>
+    <text class='infoFont'>0/50字</text>
+  </view>
+</view>
+<view class='message' bindtap='saveItem'>
+  <text>保存</text>
+</view>

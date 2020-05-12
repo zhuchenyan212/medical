@@ -1,0 +1,102 @@
+<view class="container">
+  <!-- 资料显示 -->
+  <view class="head_t">
+    <view class="get_score">
+      <image src="{{salesmanInfo.wxLoc}}" class="score" />
+    </view>
+    <view class="total_score">
+      <text class='docName'>{{salesmanInfo.name}}</text>
+      <view class='tuiguang'>
+        <image wx:if="{{salesmanInfo.sex !=''}}" data-src='{{salesmanInfo.sex}}' src="{{salesmanInfo.sex=='男'? '/images/nan.png':'/images/nv.png'}}" />
+        <text class='age'>{{salesmanInfo.age}}岁</text>
+      </view>
+    </view>
+    <view class="total_score">
+      <image class='showicon' wx:if="{{salesmanInfo.phone}}" src='/images/phone.png'></image>
+      <text class='docAd'>{{salesmanInfo.phone}}</text>
+      <image class='showicon' wx:if="{{salesmanInfo.hospital}}" src='/images/hospital.png'></image>
+      <text class='docAd'>{{salesmanInfo.hospital}}</text>
+    </view>
+  </view>
+  <!-- 业绩统计 -->
+  <view class='monthyeji'>
+    <view class='topInfo clear'>
+      <view class='left ft12'>本月业绩:</view>
+      <view class='right ft9'>
+        <view>总金额:{{salesmanInfo.monthMoney}}元</view>
+        <view>已完成:{{salesmanInfo.monthOver}}元</view>
+      </view>
+    </view>
+    <view class='orderState'>
+      <view class='orderItem'>
+        <view>
+          <text class='ft15'>{{salesmanInfo.monthOverSize}}</text>单</view>
+        <view>已完成</view>
+      </view>
+      <view class='orderItem'>
+        <view>
+          <text class='ft15'>{{salesmanInfo.monthWaitPaySize}}</text>单</view>
+        <view>待付款</view>
+      </view>
+      <view class='orderItem'>
+        <view>
+          <text class='ft15'>{{salesmanInfo.monthWaitSendSize}}</text>单</view>
+        <view>待收货</view>
+      </view>
+      <view class='orderItem'>
+        <view>
+          <text class='ft15'>{{salesmanInfo.monthCancleSize}}</text>单</view>
+        <view>已取消</view>
+      </view>
+    </view>
+  </view>
+  <!-- 总业绩统计 -->
+  <view class='monthyeji'>
+    <view class='topInfo clear'>
+      <view class='left ft12'>总业绩:</view>
+      <view class='right ft9'>
+        <view>总金额:{{salesmanInfo.totalMoney}}元</view>
+        <view>已完成:{{salesmanInfo.totalOver}}元</view>
+      </view>
+    </view>
+    <view class='orderState'>
+      <view class='orderItem'>
+        <view>
+          <text class='ft15'>{{salesmanInfo.totalOverSize}}</text>单</view>
+        <view>已完成</view>
+      </view>
+      <view class='orderItem'>
+        <view>
+          <text class='ft15'>{{salesmanInfo.totalWaitPaySize}}</text>单</view>
+        <view>待付款</view>
+      </view>
+      <view class='orderItem'>
+        <view>
+          <text class='ft15'>{{salesmanInfo.totalWaitSendSize}}</text>单</view>
+        <view>待收货</view>
+      </view>
+      <view class='orderItem'>
+        <view>
+          <text class='ft15'>{{salesmanInfo.totalCancleSize}}</text>单</view>
+        <view>已取消</view>
+      </view>
+    </view>
+  </view>
+  <!-- people -->
+  <view class='his' bindtap='navigatorTohisDoctor' data-="">
+    <view class='left'>他的医生：总{{salesmanInfo.doctorSize}}人</view>
+    <view class='right color-9'>
+      <text class='nav'>查看详情</text>
+      <image class='navfor' src='/images/nav.png'></image>
+    </view>
+  </view>
+  <view class='his' bindtap='navigatorTohisyaoqin'>
+    <view class='left'>本月邀请：总{{salesmanInfo.monthDoctorSize}}人</view>
+    <view class='right color-9'>
+      <text class='nav'>查看详情</text>
+      <image class='navfor' src='/images/nav.png'></image>
+    </view>
+  </view>
+</view>
+<import src="/pages/component/modal.wxml" />
+<template is="toolips" data="{{toolips}}" />

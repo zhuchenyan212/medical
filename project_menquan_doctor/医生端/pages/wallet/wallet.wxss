@@ -1,0 +1,201 @@
+/* pages/wallet/wallet.wxss */
+page{
+  background-color: #F8F8F8;
+  padding-bottom: 30rpx;
+  padding-top: 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.walletBackContainer{
+  width: 690rpx;
+  height: 288rpx;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+}
+.walletBack{
+  width: 690rpx;
+  height: 288rpx;
+  position: absolute;
+  z-index: -1;
+}
+.title{
+  font-size: 24rpx;
+  color: #FFFEB5;
+  z-index: 99；
+}
+.price{
+  font-size: 36rpx;
+  color: #FFFE9F;
+  font-weight: bold;
+  margin-top: 28rpx;
+}
+.btn{
+  width: 150rpx;
+  height: 48rpx;
+  border-radius: 48rpx;
+  background-color: #FFFFFF;
+  font-size: 24rpx;
+  color: #4C9E7B;
+  text-align: center;
+  line-height: 48rpx;
+  margin-top: 62rpx;
+}
+.menu{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 46rpx;
+}
+.menuItem{
+  font-size: 28rpx;
+  color: #A5A4A4;
+  font-weight: bold;
+  padding-bottom: 10rpx;
+}
+.menuItemSelected{
+  color: #57AF8A;
+  border-bottom: 2rpx solid #57AF8A;
+}
+
+
+.infoContainer{
+  width: 610rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #FFFFFF;
+  border-bottom-left-radius: 30rpx;
+  border-bottom-right-radius: 30rpx;
+  padding: 0 40rpx;
+}
+.timeSelect{
+  padding: 22rpx 40rpx 10rpx 40rpx;
+  width: 610rpx;
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  border-top-left-radius: 30rpx;
+  border-top-right-radius: 30rpx;
+  margin-bottom: 2rpx;
+  margin-top: 26rpx;
+}
+.timeSelect-title{
+  font-size: 28rpx;
+  color: #333333;
+  font-weight: bold;
+  }
+  .timeSelect-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20rpx;
+  }
+  .timeSelect-date{
+    font-size: 24rpx;
+    color: #333333;
+  }
+  .timeSelect-item-left{
+       display: flex;
+    flex-direction: row;
+    align-items: center; 
+  }
+  .timeSelect-item-right{
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+  }
+  .spaceLine{
+    width: 4rpx;
+    height: 30rpx;
+    background-color: #F8F8F8;
+  }
+  .line{
+    width: 22rpx;
+    height: 2rpx;
+    background-color: #333333;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+  }
+
+
+  .arrow{
+    width: 0;
+    height: 0;
+    border-top: 8rpx solid #333333;
+    border-left: 7rpx solid transparent;
+    border-right: 7rpx solid transparent;
+    margin-left: 5rpx;
+  }
+  .score{
+    font-size: 28rpx;
+    color: #FA8802;
+    font-weight: bold;
+  }
+  .cashScore{
+    color: #FA5521;
+  }
+  .scoreContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #F8F8F8;
+  }
+.infoItem{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   width: 610rpx;
+   padding-top: 38rpx;
+   padding-bottom: 31rpx;
+   border-bottom: 2rpx solid #F8F8F8;
+}
+.cashItem{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+   width: 610rpx;
+   height: 78rpx;
+   border-bottom: 2rpx solid #F8F8F8;
+}
+.cashTime{
+  font-size: 22rpx;
+  color: #777777;
+}
+.cashCount{
+  font-size: 28rpx;
+  color: #FA4202;
+  font-weight: bold;
+}
+.infoItem-item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.infoItem-item-left{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.timeSelect-name{
+  font-size: 28rpx;
+  color: #333333;
+}
+.infoItem-price{
+  font-size: 28rpx;
+  color: #5AB28C;
+  font-weight: bold;
+}
+.cashPrice{
+  color: #FA8D12;
+}
+
+    

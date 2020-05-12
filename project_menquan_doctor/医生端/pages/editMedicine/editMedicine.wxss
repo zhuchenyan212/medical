@@ -1,0 +1,122 @@
+/* pages/editMedicine/editMedicine.wxss */
+page{
+  background-color: #F8F8F8;
+  padding-bottom: 30rpx;
+  padding-top: 22rpx;
+}
+.medincineOptions{
+  width: 650rpx;
+  height: 100rpx;
+  background-color: #FFFFFF;
+  padding-left: 50rpx;
+  padding-right: 50rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rpx;
+}
+.textContainer{
+  width: auto;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.medincineOptions-title{
+  font-size: 24rpx;
+  color: #000000;
+  font-weight: bold;
+}
+.medincineOptions-info{
+  font-size: 24rpx;
+  color: #999999;
+  margin-left: 36rpx;
+}
+.arrow{
+  width: 20rpx;
+  height: 20rpx;
+  border:  solid #999;
+  border-width: 2rpx 2rpx 0 0;
+  transform:  rotate(45deg);
+}
+.medincineOptions2{
+    width: 650rpx;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4rpx;
+  padding: 26rpx 50rpx;
+}
+.medincineOptions2-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+}
+.medincineOptions-info2{
+  font-size: 24rpx;
+  color: #999999;
+}
+.inputV{
+  width: auto;
+  height: 150rpx;
+  background-color: #F8F8F8;
+  padding: 7rpx 24rpx 0 12rpx;
+  margin-top: 13rpx;
+  position: relative;
+}
+.placeholder{
+  font-size: 24rpx;
+   color: #999999;
+}
+.inputFont{
+  font-size: 24rpx;
+  color: #999999;
+  width: 100%;
+  height: 125rpx;
+}
+.infoFont{
+  font-size: 20rpx;
+  color: #999999;
+  position: absolute;
+  right: 24rpx;
+  bottom: 11rpx;
+}
+.illnessInfo-info-item-tag{
+  width: auto;
+  height: 32rpx;
+  background-color: #489775;
+  font-size: 22rpx;
+  color: #FFFFFF;
+  border-radius: 10rpx;
+  padding: 2rpx 12rpx;
+  margin-left: 16rpx;
+}
+
+
+.message{
+    width: 100%;
+    height: 100rpx;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #489775;
+  }
+  .message image{
+    width: 50rpx;
+    height: 50rpx;
+  }
+  .message text{
+    font-size: 30rpx;
+    color: #FFFFFF;
+    margin-left: 18rpx;
+  }
+  .message:active{
+    opacity: 0.5;
+  }

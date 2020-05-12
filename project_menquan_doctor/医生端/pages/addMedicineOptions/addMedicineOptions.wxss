@@ -1,0 +1,69 @@
+page{
+  background-color: #F8F8F8;
+  padding-bottom: 30rpx;
+  padding-top: 88rpx;
+}
+.topContainer{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #FFFFFF;
+  height: 70rpx;
+  width: 100%;
+  position: fixed;
+   left: 0rpx;
+   top: 0rpx;
+}
+.menuItem{
+  font-size: 30rpx;
+  color: #333333;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+.menuItemSelected{
+  border-bottom: 4rpx solid #418E6D;
+  color: #418E6D;
+  height: 66rpx;
+}
+.infoItem{
+  width: 100%;
+  height: 100rpx;
+  background-color: #EBEBEB;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  color: #383838;
+  margin-bottom: 10rpx;
+}
+.infoItemSelected{
+  background-color: #489775;
+  color: #FFFFFF;
+}
+
+
+
+.message{
+    width: 100%;
+    height: 100rpx;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #489775;
+  }
+  .message image{
+    width: 50rpx;
+    height: 50rpx;
+  }
+  .message text{
+    font-size: 30rpx;
+    color: #FFFFFF;
+    margin-left: 18rpx;
+  }
+  .message:active{
+    opacity: 0.5;
+  }

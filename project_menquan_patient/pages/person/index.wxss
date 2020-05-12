@@ -1,0 +1,128 @@
+@import "/pages/component/modal.wxss";
+
+.container {
+  background: #f3f3f3;
+}
+
+.head_t {
+  width: 100%;
+  height: 270rpx;
+  background: #489775;
+  color: #fff;
+  padding-left: 70rpx;
+}
+
+.head_t .get_score {
+  padding: 32rpx 0 0 0;
+  position: relative;
+  float: left;
+}
+
+.head_t .get_score .score {
+  width: 134rpx;
+  height: 134rpx;
+  border-radius: 50%;
+  background: #f3f3f3;
+}
+
+.head_t .get_score .score image {
+  width: 134rpx;
+  height: 134rpx;
+  border-radius: 50%;
+}
+
+.head_t .personInfo {
+  float: left;
+  width: 66%;
+  line-height: 55rpx;
+  padding-left: 38rpx;
+  font-size: 15px;
+  color: #fff;
+  padding-top: 25rpx;
+}
+
+.head_t .personInfo .ft17 {
+  font-size: 30rpx;
+}
+
+.head_t .personInfo .ft12 {
+  font-size: 12px;
+}
+
+.spece {
+  padding-right: 26px;
+}
+
+.space {
+  padding-right: 6px;
+}
+
+.head_t .personInfo .ft12 image {
+  float: left;
+  width: 12px;
+  height: 12px;
+  margin-top: 7px;
+}
+
+.illness {
+  height: 180rpx;
+  background: #fff;
+  padding-left: 74rpx;
+  padding-right: 74rpx;
+}
+
+.illness .ft-12 {
+  font-size: 12px;
+  padding-top: 17px;
+}
+
+.illnessInfo {
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius: 30rpx;
+  border: 1px solid #489775;
+  margin-top: 20rpx;
+  font-size: 12px;
+  padding-left: 15rpx;
+  overflow: hidden;
+}
+
+.myInfo {
+  width: 100%;
+  margin-top: 30rpx;
+  padding-bottom: 40px;
+}
+
+.myInfo .infoItem {
+  width: 80%;
+  height: 98rpx;
+  line-height: 98rpx;
+  background: #fff;
+  margin-bottom: 10rpx;
+  padding-left: 74rpx;
+  padding-right: 74rpx;
+}
+
+.myInfo .infoItem .left .leftIcon {
+  width: 50rpx;
+  height: 50rpx;
+  padding-top: 10rpx;
+}
+
+.myInfo .infoItem .left .leftIcon image {
+  width: 100%;
+  height: 100%;
+}
+
+.myInfo .infoItem .left .leftFont {
+  height: 46rpx;
+  padding-left: 20rpx;
+  font-size: 14px;
+}
+
+.myInfo .infoItem .rightnav image {
+  width: 16px;
+  height: 16px;
+  line-height: 98rpx;
+}

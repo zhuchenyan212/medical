@@ -1,0 +1,101 @@
+/* pages/personnal-myMedicine/personnal-myMedicine.wxss */
+
+page {
+  background-color: #f8f8f8;
+  padding-bottom: 30rpx;
+  padding-top: 22rpx;
+}
+
+.listItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+  width: 650rpx;
+  padding: 0 50rpx;
+  height: 202rpx;
+  margin-bottom: 10rpx;
+}
+
+.contentItem {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  align-items: center;
+  margin-bottom: 18rpx;
+  position: relative;
+  width: 100%;
+}
+
+.nameInfo {
+  display: flex;
+  flex-direction: row;
+}
+
+.nameInfo-name {
+  font-size: 26rpx;
+  color: #333;
+  font-weight: bold;
+}
+
+.nameInfo-info {
+  font-size: 26rpx;
+  color: #333;
+}
+
+.nameInfo-name2 {
+  font-size: 24rpx;
+  color: #333;
+  font-weight: bold;
+}
+
+.nameInfo-info2 {
+  font-size: 24rpx;
+  color: #333;
+  width: 400rpx;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  align-content: center;
+}
+
+.positionBtn {
+  font-size: 24rpx;
+  color: #333;
+  position: absolute;
+  right: 0;
+}
+
+.nameInfo-info3 {
+  color: #489775;
+}
+
+.btn {
+  position: fixed;
+  left: 228rpx;
+  bottom: 56rpx;
+  width: 296rpx;
+  height: 86rpx;
+  background-color: #fff;
+  border-radius: 36rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.06);
+  font-size: 26rpx;
+  color: #489775;
+}
+
+.btn image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 26rpx;
+}
+
+.btn:active {
+  opacity: 0.7;
+}

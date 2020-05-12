@@ -1,0 +1,64 @@
+{
+  "pages": [
+    "pages/authority/authority",
+    "pages/userIdentify/userIdentify",
+    "pages/bangding/bangding",
+    "pages/myCustomer/myCustomer",
+    "pages/order/order",
+    "pages/personnal/personnal",
+    "pages/patientInfo/patientInfo",
+    "pages/illness/illness",
+    "pages/medicineInfo/medicineInfo",
+    "pages/askIllnessInfo/askIllnessInfo",
+    "pages/message/message",
+    "pages/orderInfo/orderInfo",
+    "pages/yaopinInfo/yaopinInfo",
+    "pages/personnal-myMedicine/personnal-myMedicine",
+    "pages/personnal-addMedicine/personnal-addMedicine",
+    "pages/personnal-addMedicineInfo/personnal-addMedicineInfo",
+    "pages/addMedicineOptions/addMedicineOptions",
+    "pages/addMedicineInfo/addMedicineInfo",
+    "pages/manageMedicine/manageMedicine",
+    "pages/editMedicine/editMedicine",
+    "pages/standardMedicine/standardMedicine",
+    "pages/standardList/standardList",
+    "pages/standardInfo/standardInfo",
+    "pages/wallet/wallet",
+    "pages/searchBusinessPeople/searchBusinessPeople",
+    "pages/chatSocket/chatSocket",
+    "pages/walletToCash/walletToCash",
+    "pages/choseDisease/choseDisease",
+    "pages/wenzhendan/wenzhendan",
+    "pages/userchange/userchange"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#489775",
+    "list": [
+      {
+        "pagePath": "pages/myCustomer/myCustomer",
+        "text": "我的患者",
+        "iconPath": "/imgSrc/tab1.png",
+        "selectedIconPath": "/imgSrc/tab1-select.png"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "text": "我的订单",
+        "iconPath": "/imgSrc/tab2.png",
+        "selectedIconPath": "/imgSrc/tab2-select.png"
+      },
+      {
+        "pagePath": "pages/personnal/personnal",
+        "text": "个人中心",
+        "iconPath": "/imgSrc/tab3.png",
+        "selectedIconPath": "/imgSrc/tab3-select.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

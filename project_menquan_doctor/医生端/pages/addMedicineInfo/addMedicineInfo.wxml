@@ -1,0 +1,42 @@
+<!--pages/addMedicineInfo/addMedicineInfo.wxml-->
+<!-- 搜索弹窗列表 -->
+<view class='mask' style='height: {{maskH}}rpx' wx:if='{{showSearchList}}' catchtouchmove='catchtouchmove'></view>
+<view class='maskList' wx:if='{{showSearchList}}' catchtouchmove='catchtouchmove'>
+	<view class='maskItem' wx:for='{{drugList}}' catchtap='selectMedicine' data-item='{{item}}' wx:key="index">
+		<text class='maskItem-name'>{{item.drugName}}</text>
+		<view class='maskItem-right'>
+			<text>选择</text>
+			<view class='arrow'></view>
+		</view>
+	</view>
+	<view class='addBtn' style='margin-bottom:0rpx' catchtap='cancelMask'>
+		<image src='/imgSrc/close.png'></image>
+		<text>关闭</text>
+	</view>
+</view>
+<!-- 已经添加药品列表 -->
+<view class='searchView'>
+	<view class='searchView2'>
+		<input placeholder='请输入药品名称、关键字' placeholder-class='placeholder' bindfocus='showMask' bindinput='inputSearch'></input>
+		<image src='/imgSrc/search.png'></image>
+	</view>
+</view>
+<view class='infoItem' wx:for='{{medInfo}}' wx:key="index">
+	<image src='/imgSrc/delet.png' catchtap='deleteItem' data-index='{{index}}'></image>
+	<view class='infoItem-name'>{{item.drugName}}({{item.drugUnit}}/{{item.metering}})</view>
+	<view class='infoItem-price'>￥{{item.price}}/{{item.drugUnit}}</view>
+	<input class='inputNum' placeholder='1' value='{{item.num}}' bindinput='choseNum' data-index='{{index}}'></input>
+	<text class='unitText'>{{item.drugUnit}}</text>
+</view>
+<view class='medicineCount'>
+	<text>药品副数：{{medicineInfo.drugNumber}}</text>
+	<input value="{{length}}" class="Edit" bindinput="doInput" />
+	<text style='margin-left:20rpx'>副</text>
+</view>
+<view class='bottomBtn {{showSearchList? "hideBottomBtn" : ""}}'>
+	<view class='bottomBtn-count'>
+		<text class='sum' style='font-weight:bold'>总计: </text>
+		<text class='sum'>￥{{sum}}</text>
+	</view>
+	<view class='bottomBtn-save' catchtap='save'>保存</view>
+</view>

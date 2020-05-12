@@ -1,0 +1,26 @@
+<view class='wrap'>
+  <view class='patientList'>
+    <view class='patient' wx:for='{{patientList}}' wx:key='index' data-id='{{item.id}}' catchtap='backnavigator'>
+      <view>
+        <text class='ft15'>{{item.name}}</text>
+        <text class='lable' wx:if='{{item.patientId == 0}}'>本人</text>
+      </view>
+      <view class='patientInfo'>
+        <text>{{item.sex}}</text>
+        <text>{{item.age}}岁</text>
+        <text>{{item.height}}cm</text>
+        <text>{{item.weight}}kg</text>
+      </view>
+      <view class='patientNum'>
+        <image src='/images/phone.png'></image>
+        <text>{{item.phone}}</text>
+      </view>
+      <view class='patientNum'>
+        <image src='/images/address.png'></image>
+        <text>{{item.address}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<import src="/pages/component/modal.wxml" />
+<template is="toolips" data="{{toolips}}" />

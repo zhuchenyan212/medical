@@ -1,0 +1,91 @@
+<view class='orderNum'>订单编号：{{orderId}}</view>
+<view class='orderPhone'>
+  <text class='orderPhone-title'>医生：</text>
+  <text class='orderPhone-phone'>{{recipeInfo.doctorName}}</text>
+  <!-- <text class='orderPhone-title' style='margin-left:80rpx'>电话：</text>
+  <text class='orderPhone-phone'>{{recipeInfo.phone}}</text> -->
+</view>
+<view class='patientInfo'>
+  <view class='patientInfo-title'>患者病情：</view>
+  <view class='patientInfo-content'>
+    <text>{{recipeInfo.patientDetail}}</text>
+  </view>
+</view>
+<view class='patientInfo'>
+  <view class='patientInfo-title'>医生诊断病情：</view>
+  <view class='patientInfo-content'>
+    <text>{{recipeInfo.doctorDiagnose}}</text>
+  </view>
+  <view class='patientInfo-title'>处方及用法：</view>
+  <view class='illnessInfo-info' wx:for='{{recipeInfo.prescriptionList}}' wx:key='index'>
+    <view class='illnessInfo-info-item'>
+      <text class='illnessInfo-info-item-name'>属性:</text>
+      <view class='illnessInfo-info-item-tag' wx:for='{{item.property}}' wx:key='index'>{{item}}</view>
+    </view>
+    <view class='illnessInfo-info-item'>
+      <text class='illnessInfo-info-item-name'>药品内容:</text>
+      <text class='illnessInfo-info-item-info' wx:for='{{item.drugList}}' wx:key='index'>{{item.drugName}}</text>
+    </view>
+    <view class='illnessInfo-info-item'>
+      <text class='illnessInfo-info-item-name'>主治功效:</text>
+      <text class='illnessInfo-info-item-info'>{{item.prescriptionEffect}}</text>
+    </view>
+    <view class='illnessInfo-info-item'>
+      <text class='illnessInfo-info-item-name'>药品用法:</text>
+      <text class='illnessInfo-info-item-info' style='width:320rpx'>{{item.useWay}}</text>
+    </view>
+  </view>
+</view>
+<navigator url='../recipe/yaopinInfo?orderid={{orderId}}' class='more'>查看更多药品信息>></navigator>
+<view class='patientInfo' style='padding-bottom:10px;'>
+  <view class='bottomV'>
+    <view class='bottomV-item'>
+      <text>处方号:</text>
+      <text>{{recipeInfo.prescriptionId}}</text>
+    </view>
+    <text style='margin-left:50rpx'>开方时间:</text>
+    <text style='margin-left:22rpx;'>{{recipeInfo.prescribingTime}}</text>
+  </view>
+  <view class='bottomV-item'>
+    <text>处方金额:</text>
+    <text>{{recipeInfo.fee}}元</text>
+  </view>
+  <view class='bottomV-item'>
+    <text>状态:</text>
+    <text>{{recipeInfo.orderStatus==1? "待付款" : recipeInfo.orderStatus==2? "待发货" : recipeInfo.orderStatus==3? "待收货" : recipeInfo.orderStatus==4? "已完成" : "已取消"}}</text>
+  </view>
+  <view style='font-size:12px;width:150px;padding-left:15px;' wx:if="{{recipeInfo.orderStatus == 3}}">
+    <view class='left'>收货信息:</view>
+    <view class='right' style='color:#489775;font-size:12px;font-weight:600;' bindtap='navigatorTo'>查看物流信息</view>
+  </view>
+  <view class='right showMoney' wx:if="{{recipeInfo.orderStatus == 1}}">处方金额：
+    <text>￥{{recipeInfo.fee}}</text>
+  </view>
+</view>
+<!-- 选择收货地址 -->
+<block wx:if="{{recipeInfo.orderStatus == 1}}">
+  <view class='choosesickness' catchtap='navigator'>
+    <view class='algin' style='color:#333;'>
+      请选择地址
+      <image src='/images/nav.png'></image>
+    </view>
+  </view>
+  <view class="showaddress">
+    地址：{{address.province}}{{address.address}}
+  </view>
+</block>
+<!-- 操作按钮 -->
+<view style='width:100%;background:#f3f3f3;height:50px;' wx:if="{{recipeInfo.orderStatus == 1 || recipeInfo.orderStatus == 3}}">
+  <view class='operate' wx:if="{{recipeInfo.orderStatus == 1}}">
+    <button class='primary left' hover-class='none' bindtap="cancel" style='background:#fff;color:#333;'>取消订单</button>
+    <button class='primary right' hover-class='none' bindtap="wexinPay">确认支付</button>
+  </view>
+  <view class='operate' wx:if="{{recipeInfo.orderStatus == 3}}">
+    <view class='left showMoney'>处方金额：
+      <text>￥{{recipeInfo.fee}}</text>
+    </view>
+    <button class='primary right' hover-class='none' bindtap='sureGet'>确认收货</button>
+  </view>
+</view>
+<import src="/pages/component/modal.wxml" />
+<template is="toolips" data="{{toolips}}" />

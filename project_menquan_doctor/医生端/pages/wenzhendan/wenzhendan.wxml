@@ -1,0 +1,25 @@
+<!--pages/wenzhendan/wenzhendan.wxml-->
+<view class='topLine'></view>
+<view class='titleItem'>
+  <text class='titleItem-title'>使用处方: </text>
+  <text class='titleItem-name'>{{item.prescriptionName}}</text>
+</view>
+<view class='titleItem titleItem2'>
+  <text class='titleItem-title'>开方时间：{{time}}</text>
+</view>
+<view class='titleItem titleItem2'>
+  <text class='titleItem-title'>患者病情: </text>
+</view>
+<view class='inputView'>
+  <textarea class='inputV' placeholder='请填写患者病情' bindinput='illness'></textarea>
+</view>
+<view class='titleItem titleItem2'>
+  <text class='titleItem-title'>医生诊断详情：</text>
+</view>
+<view class='inputView'>
+  <textarea class='inputV' placeholder='请填写诊断详情' bindinput='zhenduan'></textarea>
+</view>
+<view class='bottomView-right' bindtap='sendMed'>
+  <image src='/imgSrc/sendMessage.png'></image>
+  <text>发送给患者</text>
+</view>

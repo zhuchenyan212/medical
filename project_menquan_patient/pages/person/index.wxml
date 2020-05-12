@@ -1,0 +1,109 @@
+<view class="container">
+  <view class="head_t">
+    <view class="get_score" bindtap="chooseImage">
+      <view class='score'>
+        <block wx:for="{{imageList}}" wx:for-item="image" wx:key='index'>
+          <view class="weui-uploader__file">
+            <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}"></image>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class='personInfo'>
+      <view style='padding-top:25px;font-size:15px;' wx:if="{{userInfo.name == null}}" bindtap='navigatorToEditPerson'>完善资料>></view>
+      <view wx:else bindtap='navigatorToEditPerson'>
+        <view class='ft17'>{{userInfo.name}}</view>
+        <view class='ft12'>
+          <text class='spece'>{{userInfo.sex}}</text>
+          <text class='spece'>{{userInfo.age}}岁</text>
+          <text class='spece'>{{userInfo.height}}cm</text>
+          <text class='spece'>{{userInfo.weight}}kg</text>
+        </view>
+        <view class='ft12'>
+          <image wx:if='{{userInfo.phone != null}}' class='space' src='/images/tell.png'></image>
+          <text>{{userInfo.phone}}</text>
+        </view>
+        <view class='ft12'>
+          <image wx:if='{{userInfo.address != null}}' class='space' src='/images/adress.png'></image>
+          <text class='spece'>{{userInfo.address}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='illness'>
+    <view class='ft-12'>过往病史：</view>
+    <view class='illnessInfo' wx:if='{{userInfo.medicalHistory == ""}}'>暂无就诊人信息，请先添加就诊人</view>
+    <view class='illnessInfo' wx:else>{{userInfo.medicalHistory}}</view>
+
+  </view>
+  <view class='myInfo'>
+    <view class='infoItem' bindtap='navigatorTojiuzheng'>
+      <view class='left'>
+        <view class='leftIcon left'>
+          <image src='/images/1.png'></image>
+        </view>
+        <view class='leftFont right'>就诊人管理</view>
+      </view>
+      <view class='right rightnav'>
+        <image src='/images/nav.png'></image>
+      </view>
+    </view>
+    <view class='infoItem' bindtap='navigatorToaddress'>
+      <view class='left'>
+        <view class='leftIcon left'>
+          <image src='/images/2.png'></image>
+        </view>
+        <view class='leftFont right'>地址管理</view>
+      </view>
+      <view class='right rightnav'>
+        <image src='/images/nav.png'></image>
+      </view>
+    </view>
+    <view class='infoItem' bindtap='navigatorTodoctor'>
+      <view class='left'>
+        <view class='leftIcon left'>
+          <image src='/images/3.png'></image>
+        </view>
+        <view class='leftFont right'>我的医生</view>
+      </view>
+      <view class='right rightnav'>
+        <image src='/images/nav.png'></image>
+      </view>
+    </view>
+    <view class='infoItem' bindtap='navigatorTorecipe'>
+      <view class='left'>
+        <view class='leftIcon left'>
+          <image src='/images/4.png'></image>
+        </view>
+        <view class='leftFont right'>我的处方</view>
+      </view>
+      <view class='right rightnav'>
+        <image src='/images/nav.png'></image>
+      </view>
+    </view>
+    <view class='infoItem' bindtap='addTo'>
+      <view class='left'>
+        <view class='leftIcon left'>
+          <image src='/images/5.png'></image>
+        </view>
+        <view class='leftFont right'>关于我们</view>
+      </view>
+      <view class='right rightnav'>
+        <image src='/images/nav.png'></image>
+      </view>
+    </view>
+    <view class='infoItem' bindtap='navigatorToPhoto'>
+      <view class='left'>
+        <view class='leftIcon left'>
+          <image src='/images/6.png'></image>
+        </view>
+        <view class='leftFont right'>拍方抓药</view>
+      </view>
+      <view class='right rightnav'>
+        <image src='/images/nav.png'></image>
+      </view>
+    </view>
+  </view>
+</view>
+<import src="/pages/component/modal.wxml" />
+<template is="toolips" data="{{toolips}}" />

@@ -1,0 +1,234 @@
+@import "/pages/component/modal.wxss";
+
+page {
+  background-color: #f3f3f3;
+  padding-bottom: 30rpx;
+}
+
+.orderNum {
+  height: 80rpx;
+  width: 698rpx;
+  padding-left: 52rpx;
+  background-color: #fff;
+  line-height: 80rpx;
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 10rpx;
+}
+
+.orderPhone {
+  height: 80rpx;
+  width: 698rpx;
+  padding-left: 52rpx;
+  background-color: #fff;
+  margin-top: 2rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.orderPhone-phone {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.orderPhone-title {
+  font-weight: bold;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.patientInfo {
+  width: 698rpx;
+  padding-left: 52rpx;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10rpx;
+  background-color: #fff;
+}
+
+.patientInfo-title {
+  width: 100%;
+  font-size: 28rpx;
+  height: 80rpx;
+  color: #333;
+  font-weight: bold;
+  line-height: 80rpx;
+}
+
+.patientInfo-content {
+  background-color: #f3f3f3;
+  border-radius: 10rpx;
+  width: 580rpx;
+  height: 116rpx;
+  margin-bottom: 28rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+
+.patientInfo-content text {
+  font-size: 24rpx;
+  color: #333;
+}
+
+.illnessInfo-info {
+  width: 582rpx;
+  display: flex;
+  flex-direction: column;
+  background-color: #f3f3f3;
+  border-radius: 10rpx;
+  padding: 14rpx 30rpx 28rpx;
+  margin-bottom: 56rpx;
+  padding-top: 20rpx;
+}
+
+.illnessInfo-info text {
+  font-size: 24rpx;
+  color: #333;
+}
+
+.illnessInfo-info-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 18rpx;
+  position: relative;
+}
+
+.illnessInfo-info-item-name {
+  font-size: 24rpx;
+  color: #333;
+  font-weight: bold;
+}
+
+.illnessInfo-info-item-tag {
+  width: auto;
+  height: 32rpx;
+  background-color: #489775;
+  font-size: 22rpx;
+  color: #fff;
+  border-radius: 10rpx;
+  padding: 2rpx 12rpx;
+  margin-left: 16rpx;
+}
+
+.illnessInfo-info-item-info {
+  font-size: 24rpx;
+  color: #333;
+  margin-left: 22rpx;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  align-content: center;
+}
+
+.more {
+  width: 100%;
+  height: 78rpx;
+  font-size: 28rpx;
+  color: #333;
+  line-height: 78rpx;
+  text-align: center;
+  background-color: #fff;
+  margin-top: 2rpx;
+}
+
+.bottomV {
+  border-radius: 10rpx;
+  width: 610rpx;
+  padding-right: 30rpx;
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.bottomV-item {
+  width: 200rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 30rpx;
+  margin-bottom: 16rpx;
+}
+
+.bottomV-item text {
+  font-size: 24rpx;
+  color: #333;
+}
+
+.bottomV text {
+  font-size: 24rpx;
+  color: #333;
+}
+
+.bottomText {
+  font-size: 24rpx;
+  color: #333;
+  margin-left: 30rpx;
+  margin-bottom: 16rpx;
+}
+
+.operate {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  background: #f3f3f3;
+  margin: 0 auto;
+}
+
+.showMoney {
+  font-size: 15px;
+  padding-right: 15px;
+  text-align: right;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+.showMoney text {
+  font-size: 20px;
+}
+
+.primary {
+  width: 50%;
+  height: 50px;
+  line-height: 50px;
+  background: #489775;
+  color: #fff;
+  font-size: 16px;
+}
+
+/* 选择收货地址 */
+
+.choosesickness {
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 25rpx;
+  border: 1px solid #f3f3f3;
+  text-align: right;
+  background: #fff;
+  font-weight: 100%;
+}
+
+.algin {
+  padding-right: 10px;
+}
+
+.choosesickness image {
+  width: 13px;
+  height: 13px;
+  float: right;
+  margin-top: 8px;
+  padding-left: 10px;
+}
+
+.showaddress {
+  height: 60rpx;
+  background: #fff;
+  margin-bottom: 10rpx;
+  line-height: 60rpx;
+  font-size: 20rpx;
+  padding: 0 10rpx 0 10rpx;
+}

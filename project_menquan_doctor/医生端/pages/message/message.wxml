@@ -1,0 +1,9 @@
+<!--pages/message/message.wxml-->
+<view class='messageItem' wx:for='{{imgs}}' bindtap='{{sendMed==true? "send" : "chat"}}' data-id='{{item.patientId}}' data-name='{{item.name}}'>
+  <image src='{{item.wxLoc}}'></image>
+  <view class='messageItem-info'>
+    <text class='messageItem-info-name'>{{item.name}}</text>
+    <text class='messageItem-info-des messageLine'>{{item.msg}}</text>
+    <text class='messageItem-info-des messageItem-info-time'>{{item.time}}</text>
+  </view>
+</view>

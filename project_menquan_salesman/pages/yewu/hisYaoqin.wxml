@@ -1,0 +1,17 @@
+<!--pages/yewu/hisYaoqin.wxml-->
+<view class='container'>
+  <view class='hisDoctor'>Ta邀请的医生：总{{doctorList.length}}人</view>
+  <view class='doctorList'>
+    <view class='doctorItem' wx:for='{{doctorList}}' wx:key='doctorList'>
+      <view class='docImg'>
+        <image src='{{item.wxLoc}}'></image>
+      </view>
+      <view class='docname clear'>
+        <text class=' ft13'>{{item.name}}</text>
+        <text class=' lable_Doc'>{{item.title}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<import src="/pages/component/modal.wxml" />
+<template is="toolips" data="{{toolips}}" />

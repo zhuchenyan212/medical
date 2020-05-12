@@ -1,0 +1,72 @@
+<!--pages/askIllnessInfo/askIllnessInfo.wxml-->
+<scroll-view class='scrollV' scroll-y style='height: {{scrollH}}rpx'>
+  <view class='scrollContainer'>
+    <view class='userInfo'>
+      <text class='userInfo-name' wx:for="{{infoItem.user}}" wx:key="index">患者：{{item.name}}</text>
+      <view>
+        <text class='userInfo-sex' wx:for="{{infoItem.user}}" wx:key="index">性别：{{item.sex}}</text>
+        <text class='userInfo-sex' style='margin-left:40rpx;' wx:for="{{infoItem.user}}" wx:key="index">年龄：{{item.age}}</text>
+        <text class='userInfo-sex' style='margin-left:40rpx;' wx:for="{{infoItem.user}}" wx:key="index">身高：{{item.height}}cm</text>
+        <text class='userInfo-sex' style='margin-left:40rpx;' wx:for="{{infoItem.user}}" wx:key="index">体重：{{item.weight}}kg</text>
+      </view>
+      <text class='userInfo-sex' style='margin-bottom:20rpx' wx:for="{{infoItem.user}}" wx:key="index">电话：{{item.phone}}</text>
+      <text class='userInfo-sex' wx:for="{{infoItem.user}}" wx:key="index">地址：{{item.address}}</text>
+    </view>
+    <view class='infoItem'>
+      <text class='infoItem-title'>特殊情况：</text>
+      <view>
+        <text class='infoItem-title'>体温：<text class='infoItem-content'>{{infoItem.special.cent}}</text></text>
+        <text class='infoItem-title'>手脚：<text class='infoItem-content'>{{infoItem.special.foot}}</text></text>
+        <text class='infoItem-title'>咳嗽：<text class='infoItem-content'>{{infoItem.special.keso}}</text></text>
+        <text class='infoItem-title'>痰：<text class='infoItem-content'>{{infoItem.special.tan}}</text></text>
+      </view>
+      <text class='infoItem-content'>其他补充说明：{{infoItem.special.addInfo}}</text>
+    </view>
+    <view class='infoItem'>
+      <text class='infoItem-title'>基本情况：</text>
+      <view>
+        <text class='infoItem-title'>饮食：<text class='infoItem-content'>{{infoItem.basic.food}}</text></text>
+        <text class='infoItem-title'>饮水：<text class='infoItem-content'>{{infoItem.basic.water}}</text></text>
+        <text class='infoItem-title'>精神：<text class='infoItem-content'>{{infoItem.basic.jinshen}}</text></text>
+        <text class='infoItem-title'>睡眠：<text class='infoItem-content'>{{infoItem.basic.sleep}}</text></text>
+        <text class='infoItem-title'>出汗：<text class='infoItem-content'>{{infoItem.basic.han}}</text></text>
+      </view>
+      <text class='infoItem-content'>其他补充说明：{{infoItem.basic.addInfo}}</text>
+    </view>
+    <view class='infoItem'>
+      <text class='infoItem-title'>二便情况：</text>
+      <view>
+        <text class='infoItem-title'>大便次数：<text class='infoItem-content'>{{infoItem.twoWill.bigNum}}</text></text>
+        <text class='infoItem-title'>大便颜色：<text class='infoItem-content'>{{infoItem.twoWill.bigColor}}</text></text>
+        <text class='infoItem-title'>小便次数：<text class='infoItem-content'>{{infoItem.twoWill.samllNum}}</text></text>
+        <text class='infoItem-title'>小便颜色：<text class='infoItem-content'>{{infoItem.twoWill.samllColor}}</text></text>
+      </view>
+      <text class='infoItem-content'>其他补充说明：{{infoItem.twoWill.addInfo}}</text>
+    </view>
+    <view class='sessionTitle'>患者基本信息：</view>
+    <view class='infoItem' style='width:594rpx;padding-right:60rpx;margin-bottom:2rpx'>
+      <text class='infoItem-title' style='margin-bottom:18rpx'>既往病史：<text class='infoItem-content'>{{infoItem.patientMsg.medicalHistory}}</text></text>
+      <text class='infoItem-title'>补充描述：<text class='infoItem-content'>{{infoItem.patientMsg.description}}</text></text>
+    </view>
+    <view class='infoItem' style='width:594rpx;padding-right:60rpx;margin-bottom:2rpx'>
+      <text class='infoItem-star'>*<text class='infoItem-title' style='margin-bottom:18rpx'>主诉：<text class='infoItem-content'>{{infoItem.patientMsg.mainComplain}}</text></text>
+      </text>
+    </view>
+    <view class='infoItem' style='width:594rpx;padding-right:60rpx;margin-bottom:2rpx'>
+      <text class='infoItem-title'>现病史及现症状：<text class='infoItem-content'>{{infoItem.patientMsg.symptom}}</text></text>
+    </view>
+    <view class='sessionTitle'>
+      <text class='infoItem-star'>*</text>患者照片：</view>
+    <view class='imgItem'>
+      <image src='{{item}}' wx:for='{{infoItem.patientMsg.patientPics}}' wx:key="index" bindtap='clickImg1' data-url="{{item}}"></image>
+    </view>
+    <view class='sessionTitle'>病处照片：</view>
+    <view class='imgItem'>
+      <image src='{{item}}' wx:for='{{infoItem.patientMsg.partPics}}' wx:key="index" bindtap='clickImg' data-url="{{item}}"></image>
+    </view>
+  </view>
+</scroll-view>
+<view class='message' bindtap='sendMsg' data-item='{{infoItem}}'>
+  <image src='/imgSrc/sendMessage.png'></image>
+  <text>发消息</text>
+</view>

@@ -1,0 +1,7 @@
+<!--pages/authority/authority.wxml-->
+<image src='/imgSrc/logo.png' class='logo' mode='widthFix'></image>
+<text class='logoText'>请输入资料，认证医生身份</text>
+<text class='logoText'>立即体验在线诊聊，快捷开方。</text>
+<button class='loginBtn' bindtap="goto">确认进入</button>
+<!-- 业务员已经注册资料 -->
+<navigator class="bangding" url="../bangding/bangding" hover-class="none">去绑定?</navigator>

@@ -1,0 +1,50 @@
+<!--pages/yaopinInfo/yaopinInfo.wxml-->
+<view class='listContainer'>
+  <view class='title'>医生诊断结果:</view>
+  <view class='infoContainer'>{{medincineInfo.doctorDiagnose}}</view>
+  <view class='title'>处方及用法:</view>
+  <view class='medicineInfo' wx:for='{{medincineInfo.prescriptionList}}' wx:for-item='item1' wx:for-index='index1' wx:key="index">
+    <view class='medicineInfo-item'>
+      <view class='illnessInfo-info-item' style='margin-bottom:11rpx'>
+        <text class='illnessInfo-info-item-name'>属性:</text>
+        <view class='illnessInfo-info-item-tag' style='margin-left:{{index==0? "28rpx" : ""}}' wx:for='{{item1.property}}' wx:key="index">{{item}}</view>
+      </view>
+      <text class='illnessInfo-info-item-name'>药品副数:{{item1.drugNumber}}副</text>
+    </view>
+    <view class='medicineInfo-item' style='margin-bottom:16rpx'>
+      <text class='illnessInfo-info-item-name'>药品内容:</text>
+      <text class='illnessInfo-info-item-sum'>总计:¥{{item1.fee}}</text>
+    </view>
+    <view class='medicineInfo-item' wx:for='{{item1.drugList}}' wx:if='{{index<3}}' wx:key="index">
+      <text class='illnessInfo-info-item-sum'>{{item.drugName}}({{item.drugUnit}})</text>
+      <text class='illnessInfo-info-item-priceUnit'>￥{{item.price}}/{{item.drugUnit}}  x{{item.num}}</text>
+    </view>
+    <view class='medicineInfo-item' style='margin-top:20rpx'>
+      <text class='illnessInfo-info-item-sum'>......</text>
+      <text class='illnessInfo-info-item-priceUnit'>更多>></text>
+    </view>
+    <text class='illnessInfo-info-item-name' style='margin-top:36rpx'>主治功效：<text class='illnessInfo-info-item-sum'>{{item1.prescriptionEffect}}</text></text>
+    <text class='illnessInfo-info-item-name' style='margin-top:22rpx'>药品用法：<text class='illnessInfo-info-item-sum'>{{item1.useWay}}</text></text>
+  </view>
+  <!-- 暂无对接 -->
+  <!-- <view class='medicineInfo'>
+    <view class='medicineInfo-item'>
+      <view class='illnessInfo-info-item'>
+        <text class='illnessInfo-info-item-name'>属性:</text>
+        <view class='illnessInfo-info-item-tag' style='margin-left:28rpx'>草药</view>
+        <view class='illnessInfo-info-item-tag'>胶囊</view>
+      </view>
+      <text class='illnessInfo-info-item-name'>药品副数:3副</text>
+    </view>
+    <view class='medicineInfo-item'>
+      <text class='illnessInfo-info-item-name'>药品内容:</text>
+      <text class='illnessInfo-info-item-sum'>总计:¥363.00</text>
+    </view>
+    <view class='medicineInfo-item' wx:for='{{medicine}}'>
+      <text class='illnessInfo-info-item-sum'>金银花(克)</text>
+      <text class='illnessInfo-info-item-priceUnit'>￥30.00/克  x6</text>
+    </view>
+    <text class='illnessInfo-info-item-name'>主治功效：<text class='illnessInfo-info-item-sum'>清热，解毒。</text></text>
+    <text class='illnessInfo-info-item-name'>药品用法：<text class='illnessInfo-info-item-sum'>口服 按煎剂法煎煮，均分6份，一份一剂，每剂煎取药液200ml，一日两次，一次一剂，饭后服用。</text></text>
+  </view> -->
+</view>

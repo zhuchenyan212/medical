@@ -1,0 +1,83 @@
+@import "/pages/component/modal.wxss";
+
+.container {
+  background: #f3f3f3;
+}
+
+.attrInfo {
+  width: 100%;
+  font-size: 15px;
+  background: #fff;
+  margin-bottom: 98rpx;
+}
+
+.attrInfo .infoItem {
+  height: 88rpx;
+  line-height: 88rpx;
+  padding-left: 44rpx;
+  padding-right: 44rpx;
+  border-bottom: 2rpx solid #e1e1e1;
+}
+
+.attrInfo .infoItem .infoCont {
+  font-size: 15px;
+  color: #3f3f3f;
+  margin-left: 88rpx;
+  float: left;
+}
+
+.attrInfo .infoItem .rightnav image {
+  width: 16px;
+  height: 16px;
+  line-height: 98rpx;
+}
+
+.m18 {
+  margin-top: 18rpx;
+  margin-left: 88rpx;
+}
+
+.weui-check__hd_in-checkbox {
+  float: left;
+}
+
+.weui-radiobox {
+  display: flex;
+}
+
+.weui-check__label {
+  height: 87rpx;
+  margin-right: 96rpx;
+  background: #fff;
+}
+
+.weui-cell__text {
+  padding-left: 56rpx;
+}
+
+.illList {
+  height: 100px;
+  padding-left: 24px;
+  padding-right: 24px;
+  border-bottom: 1px solid #f3f3f3;
+}
+
+.illwrap {
+  margin-top: 24rpx;
+  margin-bottom: 24rpx;
+}
+
+.Editinfo {
+  width: 100%;
+  height: 98rpx;
+  border: 1px solid #959595;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  text-align: left;
+  padding-left: 10px;
+  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}

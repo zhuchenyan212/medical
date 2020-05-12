@@ -1,0 +1,76 @@
+<!--pages/medicineInfo/medicineInfo.wxml-->
+<view class='userInfo'>
+  <text class='userInfo-name'>患者姓名：{{infoItem.name}}</text>
+  <view>
+    <text class='userInfo-sex'>患者性别：{{infoItem.sex}}</text>
+    <text class='userInfo-sex' style='margin-left:84rpx'>患者年龄：{{infoItem.age}}岁</text>
+  </view>
+  <text class='userInfo-sex' style='margin-top:14rpx;'>患者地址：{{infoItem.address}}</text>
+</view>
+<view class='illnessInfo-title' style='margin-top:14rpx'>
+  <text class='illnessInfo-title-name'>患者病情：</text>
+  <text class='illnessInfo-title-time'>开方时间：{{infoItem.time}}</text>
+</view>
+<view class='illnessInfo-info'>
+  <text>{{infoItem.condition}}</text>
+</view>
+<view class='illnessInfo-title'>
+  <text class='illnessInfo-title-name'>医生诊断结果：</text>
+</view>
+<view class='illnessInfo-info'>
+  <text>{{infoItem.diagnose}}</text>
+</view>
+<view class='illnessInfo-title'>
+  <text class='illnessInfo-title-name'>处方及用法：</text>
+</view>
+<view class='illnessInfo-info' style='padding-top:20rpx;margin-bottom:10rpx' wx:for='{{infoItem.prescriptionList}}' wx:for-item='medicineItem' wx:for-index='medicineIndex'>
+  <view class='illnessInfo-info-item'>
+    <text class='illnessInfo-info-item-name'>属性:</text>
+    <view class='illnessInfo-info-item-tag' style='margin-left:{{medicineIndex==0? "28rpx" : "32rpx"}}' wx:for='{{medicineItem.property}}'>{{item}}</view>
+  </view>
+  <view class='illnessInfo-info-item'>
+    <text class='illnessInfo-info-item-name'>药品内容:</text>
+    <text class='illnessInfo-info-item-info' wx:for='{{medicineItem.prescriptionContent}}' style='margin-left:{{index==0? "22rpx" : "0rpx"}}'>{{index==0?item.drugName : "、"+item.drugName}}</text>
+  </view>
+  <view class='illnessInfo-info-item'>
+    <text class='illnessInfo-info-item-name'>主治功效:</text>
+    <text class='illnessInfo-info-item-info'>{{medicineItem.prescriptionEffect}}</text>
+  </view>
+  <view class='illnessInfo-info-item'>
+    <text class='illnessInfo-info-item-name'>药品用法:</text>
+    <text class='illnessInfo-info-item-info' style='width:320rpx'>{{medicineItem.useWay}}</text>
+    <view class='getInfo' catchtap='showMask' data-item='{{medicineItem}}'>查看>></view>
+  </view>
+</view>
+<!-- 处方药详情弹窗 -->
+<view class='mask' wx:if='{{showMask}}'></view>
+<view class='menu' wx:if='{{showMask}}' bindtap='cancelMask'>
+  <view class='illnessInfo-info-item'>
+    <text class='illnessInfo-info-item-name' style='font-size:28rpx'>属性:</text>
+    <view class='illnessInfo-info-item-tag' style='margin-left:{{index==0? "28rpx" : ""}}' wx:for='{{seletedContentItem.property}}'>{{item}}</view>
+  </view>
+  <view class='illnessInfo-title'>
+    <text class='illnessInfo-title-name'>药品内容:</text>
+  </view>
+  <scroll-view scroll-y class='scrollV'>
+    <view class='medicalInfo' wx:for='{{seletedContentItem.prescriptionContent}}'>
+      <text class='medicalInfo-name'>{{item.drugName}}</text>
+      <text class='medicalInfo-count'>￥{{item.price}}/{{item.drugUnit}}  x{{item.num}}</text>
+    </view>
+  </scroll-view>
+  <view class='medicalInfo'>
+    <text class='medicalInfo-sum'>药品副数: {{seletedContentItem.drugNumber}}副</text>
+    <text class='medicalInfo-sum'>总计: ￥{{seletedContentItem.totalFee}}</text>
+  </view>
+  <view class='illnessInfo-info-item' style='margin-top:24rpx'>
+    <text class='illnessInfo-title-name'>主治功效:</text>
+    <text class='illnessInfo-info-item-info'>{{seletedContentItem.prescriptionEffect}}</text>
+  </view>
+  <view class='illnessInfo-info-item' style='margin-top:24rpx'>
+    <text class='illnessInfo-title-name'>药品用法:<text class='illnessInfo-info-item-info' >{{seletedContentItem.useWay}}</text> </text>
+  </view>
+  <view class='cancelItem' style='margin-top:24rpx' catchtap='cancelMask'>
+    <image src='/imgSrc/cancel.png' class='cancel'></image>
+    <text class='cancelText'>关闭</text>
+  </view>
+</view>

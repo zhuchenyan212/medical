@@ -1,0 +1,37 @@
+<!--pages/address/Edit.wxml-->
+<view class="container">
+  <form bindsubmit="saveAddressInfo">
+    <view class="form">
+      <view class="section">
+        <view class="section_title">姓名：</view>
+        <input name='username' value='{{username}}' placeholder="请输入姓名" placeholder-style="#999999" />
+      </view>
+      <view class="section">
+        <view class="section_title">电话：</view>
+        <input name="phone" maxlength='11' type='number' value="{{phone}}" placeholder="请输入电话" placeholder-style="#999999" />
+      </view>
+      <view class="section">
+        <view class="section_title">所在地：</view>
+        <view class='left' style='margin-left:40rpx;font-size:15px;'>
+          <picker mode="region" name="address" value="{{address}}" bindchange="bindaddressChange">
+            <text class="ft-22 color-9" wx:if="{{addresschange==false}}">请选择地址</text>
+            <text wx:else>{{address}}</text>
+          </picker>
+        </view>
+      </view>
+      <view class="section">
+        <view class="section_title">详细地址：</view>
+        <input name="addressDetail" value="{{addressDetail}}" placeholder="请输入详细地址" placeholder-style="#999999" />
+      </view>
+      <view class="section" style='margin-top:20px;'>
+        <view class="section_title">设为默认地址:</view>
+        <switch type="switch" name="first" color="#4cd964" bindchange='switchChange' />
+      </view>
+    </view>
+    <view class='bottomOperate'>
+      <button class='bottomFont' form-type="submit" type="default" size="defaultSize" hover-class="none">保存</button>
+    </view>
+  </form>
+</view>
+<import src="/pages/component/modal.wxml" />
+<template is="toolips" data="{{toolips}}" />

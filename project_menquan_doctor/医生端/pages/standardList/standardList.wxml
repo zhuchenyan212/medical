@@ -1,0 +1,30 @@
+<!--pages/standardList/standardList.wxml-->
+<block wx:for='{{infoLists}}' wx:key="index">
+  <view class='item' bindtap='checkInfo' data-item='{{item}}'>
+    <view class='textItem'>
+      <text class='name'>处方名称:</text>
+      <text class='info'>{{item.prescriptionName}}</text>
+    </view>
+    <view class='textItem' style='margin-top:32rpx'>
+      <text class='name'>药品内容：</text>
+      <block wx:for="{{item.prescriptionContent}}" wx:key="index">
+        <text class='info' wx:for="{{item.drugList}}" wx:key="index">{{item.drugName}} {{item.num}}/{{item.drugUnit}}</text>
+      </block>
+    </view>
+    <view class='textItem' style='margin-top:10rpx;'>
+      <text class='name'>功效：</text>
+      <text class='info' wx:for='{{item.prescriptionContent}}' wx:key="index">{{item.prescriptionEffect}}</text>
+    </view>
+    <view class='textItem2' style='margin-top:12rpx;'>
+      <view class='textItem'>
+        <text class='name'>主治疾病：</text>
+        <text class='info2' wx:for='{{item.prescriptionContent}}' wx:key="index">{{item.prescriptionFunction}}</text>
+      </view>
+      <text class='arrow'>查看>></text>
+    </view>
+  </view>
+  <view class='sendBtn' bindtap="sendMedcine" data-infos="{{item}}">
+    <image src='/imgSrc/send.png'></image>
+    <text>发送给患者</text>
+  </view>
+</block>

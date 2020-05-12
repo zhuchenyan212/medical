@@ -1,0 +1,75 @@
+<!--pages/manageMedicine/manageMedicine.wxml-->
+<view class='topItem'>
+  <text class='topItem-name'>诊断：</text>
+  <text class='topItem-info' wx:if='{{operationType==0}}'>{{infos.prescriptionName}}</text>
+  <input class='topItem-info' value='{{infos.prescriptionName}}' bindinput='inputName' wx:else></input>
+  <image src='/imgSrc/fix.png'></image>
+</view>
+<view class='medicineInfo' wx:for='{{infos.prescriptionContent}}' catchtap='{{operationType==0? "showMask" : "editOrder"}}' data-item='{{item}}' data-index='{{index}}' wx:key="index">
+  <view class='medicineInfo-item'>
+    <view class='illnessInfo-info-item' style='margin-bottom:11rpx'>
+      <text class='illnessInfo-info-item-name'>属性:</text>
+      <view class='illnessInfo-info-item-tag' style='margin-left:{{index1==0? "28rpx" : ""}}' wx:for='{{item.property}}' wx:for-item='item1' wx:for-index='index1'>{{item1}}</view>
+    </view>
+    <text class='illnessInfo-info-item-name'>药品副数:{{item.drugNumber}}副</text>
+  </view>
+  <view class='medicineInfo-item' style='margin-bottom:16rpx'>
+    <text class='illnessInfo-info-item-name'>药品内容:</text>
+    <text class='illnessInfo-info-item-sum'>总计:¥{{item.totalFee}}</text>
+  </view>
+  <view class='medicineInfo-item' wx:for='{{item.drugList}}' wx:if='{{index3<3}}' wx:for-item='item3' wx:for-index='index3'>
+    <text class='illnessInfo-info-item-sum'>{{item3.drugName}}({{item3.drugUnit}})</text>
+    <text class='illnessInfo-info-item-priceUnit'>￥{{item3.price}}/{{item3.drugUnit}}  x{{item3.num}}</text>
+  </view>
+  <view class='medicineInfo-item' style='margin-top:20rpx'>
+    <text class='illnessInfo-info-item-sum'>......</text>
+    <view class='chooseMedicine'>管理药单>></view>
+  </view>
+  <text class='illnessInfo-info-item-name' style='margin-top:36rpx'>主治功效：<text class='illnessInfo-info-item-sum'>{{item.prescriptionEffect}}</text></text>
+  <text class='illnessInfo-info-item-name' style='margin-top:22rpx'>药品用法：<text class='illnessInfo-info-item-sum'>{{item.useWay}}</text></text>
+</view>
+<view class='bottomView'>
+  <view class='bottomView-left'>
+    <text class='medicineContent-name'>所有药品</text>
+    <text class='medicineContent-info'>￥{{orderSum}}</text>
+  </view>
+  <view class='bottomView-right' catchtap='{{operationType==0? "sendMedicine" : "saveOrder"}}'>
+    <block wx:if='{{operationType==0}}'>
+      <image src='/imgSrc/send.png'></image>
+      <text>发送给指定患者</text>
+    </block>
+    <text wx:else>保存处方</text>
+  </view>
+</view>
+<!-- 处方药详情弹窗 -->
+<view class='mask' wx:if='{{showMask}}'></view>
+<view class='menu' wx:if='{{showMask}}' bindtap='cancelMask'>
+  <view class='illnessInfo-info-item'>
+    <text class='illnessInfo-info-item-name' style='font-size:28rpx'>属性:</text>
+    <view class='illnessInfo-info-item-tag' style='margin-left:{{index==0? "28rpx" : ""}}' wx:for='{{seletedContentItem.property}}'>{{item}}</view>
+  </view>
+  <view class='illnessInfo-title'>
+    <text class='illnessInfo-title-name'>药品内容:</text>
+  </view>
+  <scroll-view scroll-y class='scrollV'>
+    <view class='medicalInfo' wx:for='{{seletedContentItem.drugList}}'>
+      <text class='medicalInfo-name'>{{item.drugName}}</text>
+      <text class='medicalInfo-count'>￥{{item.price}}/{{item.drugUnit}}  x{{item.num}}</text>
+    </view>
+  </scroll-view>
+  <view class='medicalInfo'>
+    <text class='medicalInfo-sum'>药品副数: {{seletedContentItem.drugNumber}}副</text>
+    <text class='medicalInfo-sum'>总计: ￥{{seletedContentItem.totalFee}}</text>
+  </view>
+  <view class='illnessInfo-info-item' style='margin-top:24rpx'>
+    <text class='illnessInfo-title-name'>主治功效:</text>
+    <text class='illnessInfo-info-item-info'>{{seletedContentItem.prescriptionEffect}}</text>
+  </view>
+  <view class='illnessInfo-info-item' style='margin-top:24rpx'>
+    <text class='illnessInfo-title-name'>药品用法:<text class='illnessInfo-info-item-info' >{{seletedContentItem.useWay}}</text> </text>
+  </view>
+  <view class='cancelItem' style='margin-top:24rpx' catchtap='cancelMask'>
+    <image src='/imgSrc/cancel.png' class='cancel'></image>
+    <text class='cancelText'>关闭</text>
+  </view>
+</view>

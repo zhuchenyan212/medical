@@ -1,0 +1,76 @@
+<!--pages/index/doctor.wxml-->
+<view class="container">
+  <view class="head_t">
+    <view class="get_score">
+      <image src="{{doctorInfo.wxLoc}}" class="score" />
+    </view>
+    <view class="total_score">
+      <text class='docName'>{{doctorInfo.name}}</text>
+      <text class='lable_doc'>{{doctorInfo.title}}</text>
+    </view>
+    <view class="total_score">
+      <text class='docAd'>{{doctorInfo.address}}</text>
+      <text class='docAd'>{{doctorInfo.hospital}}</text>
+      <text class='docAd'>{{doctorInfo.hospitalProperty}}医院</text>
+    </view>
+  </view>
+
+  <view class='doctorWrap'>
+    <view class='doctorIntroduce'>
+      <view class='IntroduceTitle'>医生简介:</view>
+      <view class='leftTop'>
+        <image src='/images/leftTop.png'></image>
+      </view>
+      <view class='IntroduceContent'>{{doctorInfo.detail}}</view>
+      <view class='rightbottom'>
+        <image src='/images/rightbottom.png'></image>
+      </view>
+    </view>
+
+    <view class='doctorInfo'>
+      <view class='IntroduceTitle'>医生信息:</view>
+      <view class='Introducecont'>
+        <view class='doctorInfoitem'>
+          <text>出诊费用:</text>
+          <text class='spaceline speor'>{{doctorInfo.fee}}/次</text>
+        </view>
+        <view class='doctorInfoitem'>
+          <text>出诊时间:</text>
+          <text class='spaceline'>{{doctorInfo.workTime}}</text>
+        </view>
+        <view class='doctorInfoitem'>
+          <text>擅长科室:</text>
+          <text wx:for='{{doctorInfo.diseases}}' wx:key='diseases' class='doc_type'>{{item}}</text>
+        </view>
+        <!-- <view class='doctorInfoitem'>
+          <text>最近一次服务时间:</text>
+          <text class='spaceline'>{{doctorInfo.lastWorkTime}}</text>
+        </view> -->
+        <view class='doctorInfoitem'>
+          <text>服务人数:</text>
+          <text class='spaceline'>{{doctorInfo.serviceNumber}}人</text>
+        </view>
+      </view>
+    </view>
+
+    <view class='doctorillness'>
+      <view class='IntroduceTitle'>
+        <text class='left'>服务患者信息:</text>
+        <navigator wx:if='{{doctorInfo.patientList.length > 3}}' class='right' url='../index/moreill?id={{id}}'>更多>></navigator>
+      </view>
+      <view class='item-img clear'>
+        <view class='ul'>
+          <view class='pro-img' wx:for='{{doctorInfo.patientList}}' wx:key='patientList'>
+            <image src='{{item.wxLoc}}'></image>
+            <view class='illName'>
+              <text class='left speor'>{{item.name}}</text>
+              <text class='right'>{{item.age}}岁</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<import src="/pages/component/modal.wxml" />
+<template is="toolips" data="{{toolips}}" />

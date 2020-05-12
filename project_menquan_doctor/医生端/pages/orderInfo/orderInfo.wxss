@@ -1,0 +1,156 @@
+/* pages/orderInfo/orderInfo.wxss */
+page{
+  background-color: #F8F8F8;
+  padding-bottom: 30rpx;
+}
+.orderNum{
+  height: 80rpx;
+  width: 698rpx;
+  padding-left: 52rpx;
+  background-color: #FFFFFF;
+  line-height: 80rpx;
+  font-size: 24rpx;
+  color: #999999;
+  margin-top: 10rpx;
+}
+.orderPhone{
+    height: 80rpx;
+  width: 698rpx;
+  padding-left: 52rpx;
+  background-color: #FFFFFF;
+  margin-top: 2rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.orderPhone-phone{
+  font-size: 28rpx;
+  color: #333333;
+}
+.orderPhone-title{
+  font-weight: bold;
+    font-size: 28rpx;
+  color: #333333;
+}
+.patientInfo{
+   width: 698rpx;
+  padding-left: 52rpx;
+  display: flex;
+  flex-direction: column;
+  margin-top: 40rpx;
+  background-color: #FFFFFF;
+}
+.patientInfo-title{
+  width: 100%;
+  font-size: 28rpx;
+  height: 80rpx;
+  color: #333333;
+  font-weight: bold;
+  line-height: 80rpx;
+}
+.patientInfo-content{
+  background-color: #F3F3F3;
+  border-radius: 10rpx;
+  width: 580rpx;
+  height: 116rpx;
+  margin-bottom: 28rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+.patientInfo-content text{
+  font-size: 24rpx;
+  color: #333333;
+}
+
+
+.illnessInfo-info{
+  width: 582rpx;
+  display: flex;
+  flex-direction: column;
+  background-color: #F3F3F3;
+  border-radius: 10rpx;
+  padding: 14rpx 30rpx  28rpx;
+  margin-bottom: 56rpx;
+  padding-top:20rpx;
+}
+.illnessInfo-info text{
+  font-size: 24rpx;
+  color: #333333;
+}
+.illnessInfo-info-item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 18rpx;
+  position: relative;
+}
+.illnessInfo-info-item-name{
+  font-size: 24rpx;
+  color: #333333;
+  font-weight: bold;
+  
+}
+.illnessInfo-info-item-tag{
+  width: auto;
+  height: 32rpx;
+  background-color: #489775;
+  font-size: 22rpx;
+  color: #FFFFFF;
+  border-radius: 10rpx;
+  padding: 2rpx 12rpx;
+  margin-left: 16rpx;
+}
+.illnessInfo-info-item-info{
+    font-size: 24rpx;
+  color: #333333;
+  margin-left: 22rpx;
+    text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  align-content: center;
+}
+.more{
+  width: 100%;
+  height: 78rpx;
+  font-size: 28rpx;
+  color: #333333;
+  line-height: 78rpx;
+  text-align: center;
+  background-color: #FFFFFF;
+  margin-top: 2rpx;
+}
+.bottomV{
+  border-radius: 10rpx;
+  width: 610rpx;
+  /* padding-left: 30rpx; */
+  padding-right: 30rpx;
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: row;
+}
+.bottomV-item{
+  width: 200rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 30rpx;
+  margin-bottom: 16rpx;
+}
+.bottomV-item text{
+    font-size: 24rpx;
+  color: #333333;
+}
+.bottomV text{
+  font-size: 24rpx;
+  color: #333333;
+}
+
+.bottomText{
+  font-size: 24rpx;
+  color: #333333;
+  margin-left: 30rpx;
+  margin-bottom: 16rpx;
+}

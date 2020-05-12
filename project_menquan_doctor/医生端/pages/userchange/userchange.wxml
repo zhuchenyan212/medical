@@ -1,0 +1,104 @@
+<form bindsubmit="applyInfo">
+  <view class='uploadImg' bindtap='choseImg'>
+    <view class='item-left'>
+      <image src='{{img}}'></image>
+      <text>点击上传照片</text>
+    </view>
+    <view class='arrow'></view>
+  </view>
+  <view class='item'>
+    <view class='item-left'>
+      <text class='item-title'>姓名</text>
+      <input class='input' placeholder='请输入姓名' bindinput='inputName' value="{{userInfo.name}}"></input>
+    </view>
+  </view>
+  <view class='item'>
+    <view class='item-left'>
+      <text class='item-title'>年龄</text>
+      <input class='input' placeholder='请输入年龄' type='number' bindinput='inputAge' value="{{userInfo.age}}"></input>
+    </view>
+  </view>
+  <view class='item'>
+    <view class='item-left'>
+      <text class='item-title'>性别</text>
+      <view class='{{selectedIndex==0? "circleSelected" : "circle"}}' bindtap='selecUsrSex' data-index='0'></view>
+      <text class='item-title'>男</text>
+      <view class='{{selectedIndex==1? "circleSelected" : "circle"}}' bindtap='selecUsrSex' data-index='1'></view>
+      <text class='item-title'>女</text>
+    </view>
+  </view>
+  <view class='item'>
+    <view class='item-left'>
+      <text class='item-title'>电话</text>
+      <input class='input' placeholder='请输入电话' bindinput='inputPhone' type='number' maxlength="11" value='{{userInfo.phone}}'></input>
+    </view>
+  </view>
+  <view class='item'>
+    <view class='item-left'>
+      <text class='item-title'>出诊费用</text>
+      <input class='input' placeholder='请输入出诊费用' bindinput='inputfee' value='{{userInfo.fee}}'></input>
+    </view>
+  </view>
+  <view class='item'>
+    <view class='item-left'>
+      <text class='item-title'>出诊时间</text>
+      <input class='input' placeholder='请输入出诊时间' bindinput='inputworkTime' value='{{userInfo.workTime}}'></input>
+    </view>
+  </view>
+  <view class='item'>
+    <view class='item-left'>
+      <text class='item-title'>医院</text>
+      <input class='input' placeholder='请输入所属医院' bindinput='inputHospital' value='{{userInfo.hospital}}'></input>
+    </view>
+  </view>
+  <view class='item'>
+    <view class='item-left'>
+      <text class='item-title'>医院类型</text>
+      <view class='{{selectedIndexs==0? "circleSelected" : "circle"}}' bindtap='selecUsrSexs' data-index='0'></view>
+      <text class='item-title'>私立医院</text>
+      <view class='{{selectedIndexs==1? "circleSelected" : "circle"}}' bindtap='selecUsrSexs' data-index='1'></view>
+      <text class='item-title'>公立医院</text>
+    </view>
+  </view>
+  <picker range='{{titleNameList}}' value='{{titleNameListIndex}}' bindchange='selectLevel' range-key="{{'title_name'}}">
+    <view class='item'>
+      <view class='item-left'>
+        <text class='item-title'>职称</text>
+        <text class='hospitalText' wx:if="{{userInfo.title}}">{{userInfo.title}}</text>
+        <block wx:else>
+          <text class='hospitalText' wx:if='{{titleNameListIndex > -1}}'>{{titleNameList[titleNameListIndex].title_name}}</text>
+          <text class='hospitalText' wx:else>请选择职称</text>
+        </block>
+      </view>
+    </view>
+  </picker>
+  <view class='item'>
+    <view class='item-left'>
+      <text class='item-title'>简介</text>
+      <input class='input' placeholder='请输入您的简介' bindinput='inputdetail' value='{{userInfo.detail}}'></input>
+    </view>
+  </view>
+  <view class='item'>
+    <view class='item-left'>
+      <text class='item-title'>地址</text>
+      <input class='input' placeholder='请输入省市区地址' bindinput='inputAddress' value="{{userInfo.address}}"></input>
+    </view>
+  </view>
+  <view class='item1' catchtap='selectSkills'>
+    <view class='item1-left'>
+      <text class='item-title'>擅长治疗</text>
+      <text class='placeholder' wx:if='{{showPlaceholder}}'>请选择科室疾病</text>
+      <view class='illList' wx:else>
+        <block wx:for='{{userInfo.goodAt}}'>
+          <text class='illList-title'>{{item.departmentName}}</text>
+          <view class='illList-info-container'>
+            <text class='illList-info' wx:for='{{item.diseaseList}}' wx:for-item='item1' wx:for-index='index1' style='margin-left:{{index1!==0? "20rpx" : ""}}'>{{item1.name}}</text>
+          </view>
+        </block>
+      </view>
+      <view></view>
+    </view>
+    <view class='arrow'></view>
+  </view>
+  <button class='btn' form-type="submit">提交医生信息</button>
+</form>

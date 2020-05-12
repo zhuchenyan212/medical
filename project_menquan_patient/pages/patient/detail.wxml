@@ -1,0 +1,50 @@
+<!--pages/patient/detail.wxml-->
+<view class='wrap'>
+  <view class='patientList'>
+    <view class='patient'>
+      <view>
+        <text class='ft15'>{{patientInfo.name}}</text>
+        <text class='lable'>本人</text>
+      </view>
+      <view class='patientInfo'>
+        <text>{{patientInfo.sex}}</text>
+        <text>{{patientInfo.age}}岁</text>
+        <text>{{patientInfo.height}}cm</text>
+        <text>{{patientInfo.weight}}kg</text>
+      </view>
+      <view class='patientNum'>
+        <image src='/images/phone.png'></image>
+        <text>{{patientInfo.phone}}</text>
+      </view>
+      <view class='patientNum'>
+        <image src='/images/address.png'></image>
+        <text>{{patientInfo.address}}</text>
+      </view>
+    </view>
+    <!-- 过往病史 -->
+    <view class='illList'>
+      <view class='illwrap'>
+        <view class='ft-12'>既往病史：</view>
+        <textarea class='Editinfo' value='{{patientInfo.medicalHistory}}' disabled="disabled"></textarea>
+      </view>
+    </view>
+    <!-- 补充描述 -->
+    <view class='illList'>
+      <view class='illwrap'>
+        <view class='ft-12'>补充描述：</view>
+        <textarea class='Editinfo' value='{{patientInfo.description}}' disabled="disabled"></textarea>
+      </view>
+    </view>
+    <!-- 照片显示 -->
+    <view class='imgwrap' wx:if='{{picList.length > 0}}'>
+      <view class='images' wx:for='{{picList}}' wx:key='index'>
+        <image src='{{item.pic}}'></image>
+      </view>
+    </view>
+  </view>
+  <view class='bottomOperate' bindtap='Editpatient'>
+    <view class='bottomFont'>编辑就诊人信息</view>
+  </view>
+</view>
+<import src="/pages/component/modal.wxml" />
+<template is="toolips" data="{{toolips}}" />

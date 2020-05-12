@@ -1,0 +1,40 @@
+<!-- 暂无收货地址 -->
+<block wx:if='{{patientAddressList.length == 0}}'>
+  <view class='container'>
+    <view class='ifshow'>
+      <view class='nowrap'>
+        <image src='/images/weizhi.png'></image>
+        <view>暂无地址信息，请点击下方按钮</view>
+      </view>
+    </view>
+  </view>
+</block>
+<!-- 收货地址列表 -->
+<block wx:else>
+  <view class='wrap'>
+    <view class='addressList'>
+      <view class='addressitem clear' wx:for='{{patientAddressList}}' wx:key='index' data-id='{{item.id}}' catchtap='backnavigator' data-address="{{item}}">
+        <view class='left'>
+          <view class='lableicon' wx:if='{{item.isDefault == 0}}'>默认地址</view>
+          <view class='address ellipsis'>
+            <text>姓名：{{item.name}}</text>
+            <text>电话：{{item.phone}}</text>
+          </view>
+          <view class='address ellipsis'>
+            <text>地址：{{item.province}}{{item.address}}</text>
+          </view>
+        </view>
+        <view class='right'>
+          <view class='specol' data-id='{{item.id}}' bindtap='navigatorToEdit'>编辑</view>
+          <view class='deletcol' data-id='{{item.id}}' catchtap='deleteAddress'>删除</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</block>
+<view class='addpatient' bindtap='addAddress'>
+  <image src='/images/add.png'></image>
+  <text>添加收货地址</text>
+</view>
+<import src="/pages/component/modal.wxml" />
+<template is="toolips" data="{{toolips}}" />

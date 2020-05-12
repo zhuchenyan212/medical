@@ -1,0 +1,68 @@
+{
+  "pages": [
+    "pages/index/login",
+    "pages/person/index",
+    "pages/index/index",
+    "pages/index/search",
+    "pages/index/keshi",
+    "pages/index/doctorDetail",
+    "pages/index/askill",
+    "pages/Editsick/index",
+    "pages/Editsick/second",
+    "pages/Editsick/third",
+    "pages/Editsick/fourth",
+    "pages/Editsick/myCustomer",
+    "pages/person/Edit",
+    "pages/patient/index",
+    "pages/patient/detail",
+    "pages/patient/add",
+    "pages/patient/Edit",
+    "pages/address/index",
+    "pages/address/add",
+    "pages/address/Edit",
+    "pages/doctor/index",
+    "pages/recipe/index",
+    "pages/recipe/detail",
+    "pages/recipe/yaopinInfo",
+    "pages/recipe/translate",
+    "pages/photo/index",
+    "pages/chatSocket/chatSocket",
+    "pages/about/index"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "医疗患者端",
+    "navigationBarBackgroundColor": "#489775",
+    "backgroundTextStyle": "light",
+    "backgroundColor": "#f01450",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "color": "#969696",
+    "selectedColor": "#489775",
+    "borderStyle": "black",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/hospital.png",
+        "selectedIconPath": "images/hospital0.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/person/index",
+        "iconPath": "images/person.png",
+        "selectedIconPath": "images/person0.png",
+        "text": "个人中心"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true,
+  "sitemapLocation": "sitemap.json"
+}

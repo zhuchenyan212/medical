@@ -1,0 +1,23 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- 搜索 -->
+  <view class='searchHead'>
+    <view class='searchContent' bindtap='navigatorToSearch'>
+      <input name="keyword" placeholder="请点击此处去查询医生信息" disabled='disabled' />
+      <image src='/images/search.png'></image>
+    </view>
+  </view>
+  <!-- 科室 -->
+  <view class='keshiList'>
+    <view class="member-list">
+      <view class="item" wx:for='{{departmentList}}' wx:key='index' data-name='{{item.name}}' data-id='{{item.id}}' bindtap='navigatorTochoose'>
+        <view class="icon">
+          <image src="{{item.pic}}" data-src='{{item.pic}}' />
+        </view>
+        <view class="text">{{item.name}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+<import src="/pages/component/modal.wxml" />
+<template is="toolips" data="{{toolips}}" />

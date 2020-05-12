@@ -1,0 +1,85 @@
+/* pages/walletToCash/walletToCash.wxss */
+page{
+  background-color: #F8F8F8;
+  padding-top: 20rpx;
+}
+.cashContainer{
+  width: 630rpx;
+  display: flex;
+  flex-direction: column;
+  padding: 28rpx 60rpx;
+  background-color: #FFFFFF;
+}
+.score{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.scoreText{
+  font-size: 22rpx;
+  color: #666666;
+}
+.rule{
+  color: #FC9501;
+}
+.inputV{
+  width: 100%;
+  border-bottom: 2rpx solid #EBEBEB;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 72rpx;
+  margin-top: 10rpx;
+}
+.pricePoint{
+  font-size: 28rpx;
+  color: #333333;
+  }
+  .input{
+    font-size: 36rpx;
+    color: #333333;
+    font-weight: bold;
+    margin-left: 20rpx;
+    width: 582rpx;
+  }
+  .infoScore{
+    font-size: 22rpx;
+    color: #CD4848;
+    margin-top: 8rpx;
+  }
+  .wechat{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 42rpx;
+  }
+  .wechat image{
+    width: 60rpx;
+    height: 60rpx;
+    margin-left: 30rpx;
+  }
+  .wechat-logo{
+    width: 14rpx;
+    height: 14rpx;
+    border: 8rpx solid #489775;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+  }
+  .wechat-text{
+    font-size: 24rpx;
+    color: #333333;
+    margin-left: 48rpx;
+  }
+  .btn{
+    width: 642rpx;
+    height: 80rpx;
+    background-color: #449271;
+    border-radius: 10rpx;
+    font-size: 24rpx;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 80rpx;
+    margin-top: 490rpx;
+  }

@@ -1,0 +1,146 @@
+@import "/pages/component/modal.wxss";
+
+.container {
+  background: #f3f3f3;
+  height: 100%;
+}
+
+.head_t {
+  background: #489775;
+  text-align: center;
+  width: 100%;
+  height: 334rpx;
+  color: #fff;
+  margin-bottom: 40rpx;
+}
+
+.head_t .get_score {
+  padding: 15rpx 0 10rpx;
+  position: relative;
+}
+
+.head_t .get_score .score {
+  width: 154rpx;
+  height: 154rpx;
+  border-radius: 50%;
+}
+
+.head_t .total_score {
+  color: #fff;
+  opacity: 0.9;
+  font-size: 32rpx;
+  line-height: 50rpx;
+}
+
+.head_t .total_score .docName {
+  font-size: 16px;
+}
+
+.head_t .total_score .tuiguang {
+  display: inline-block;
+  width: 50px;
+  height: 60rpx;
+  position: absolute;
+  right: 200rpx;
+  top: 191rpx;
+  line-height: 60rpx;
+}
+
+.head_t .total_score .tuiguang image {
+  width: 24rpx;
+  height: 24rpx;
+  float: left;
+  margin-top: 15rpx;
+}
+
+.age {
+  float: right;
+  font-size: 12px;
+}
+
+.head_t .total_score .docAd {
+  display: inline-block;
+  font-size: 11px;
+  padding-right: 45rpx;
+}
+
+.head_t .total_score .showicon {
+  width: 24rpx;
+  height: 24rpx;
+  padding-top: 3rpx;
+  padding-right: 16rpx;
+}
+
+.container .monthyeji {
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  height: 210rpx;
+  background: #fff;
+  border-radius: 40rpx;
+  margin-bottom: 24rpx;
+}
+
+.ft12 {
+  font-size: 12px;
+}
+
+.monthyeji .ft9 {
+  padding-top: 10rpx;
+  font-size: 9px;
+  line-height: 30rpx;
+}
+
+.monthyeji .topInfo {
+  height: 84rpx;
+  line-height: 84rpx;
+  padding-left: 28rpx;
+  padding-right: 28rpx;
+  border-bottom: 2px solid #ebebeb;
+}
+
+.monthyeji .orderState {
+  height: 126rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 12px;
+  line-height: 45rpx;
+}
+
+.monthyeji .orderState .orderItem {
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.monthyeji .orderState  .ft15 {
+  font-size: 15px;
+}
+
+.container .his {
+  height: 82rpx;
+  line-height: 82rpx;
+  border-radius: 40rpx;
+  background: #fff;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  margin-bottom: 24rpx;
+  font-size: 12px;
+  padding-left: 28rpx;
+  padding-right: 28rpx;
+}
+
+.nav {
+  padding-right: 24rpx;
+}
+
+.navfor {
+  width: 30rpx;
+  height: 30rpx;
+  margin-top: 13px;
+  float: right;
+}

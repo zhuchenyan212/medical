@@ -1,0 +1,27 @@
+<view class="container">
+  <!-- 左侧边栏 -->
+  <view class="nav_left">
+    <block wx:for='{{departmentList}}' wx:key="index">
+      <view class="nav_left_items {{curNav == item.id ? 'active' : ''}}" bindtap="switchRightTab" data-index="{{index}}" data-id="{{item.id}}" data-name="{{item.name}}">{{item.name}}
+        <!-- 判断已选科室疾病状态-->
+        <!-- <image class='showP' src='/images/point.png'></image> -->
+      </view>
+    </block>
+  </view>
+  <!-- 右侧边栏 -->
+  <view class="nav_right">
+    <view wx:if='{{departmentList[curIndex].diseaseList.length > 0}}'>
+      <block wx:for="{{departmentList[curIndex].diseaseList}}" wx:key='index'>
+        <view class="{{item.status == 1 ? 'nav_right_active' : 'nav_right_items'}}" bindtap="chooseillitem" data-curIndex='{{curIndex}}' data-index="{{index}}" data-id="{{item.id}}" data-status="{{item.status}}">
+          <text>{{item.name}}</text>
+        </view>
+      </block>
+    </view>
+    <view class="nodata_text" wx:else>该分类暂无数据</view>
+  </view>
+  <view class='bottomOperate'>
+    <view class='bottomFont left' data-='' style='background-color:#489775;color:#fff;' bindtap='sureadd'>确认</view>
+  </view>
+</view>
+<import src="/pages/component/modal.wxml" />
+<template is="toolips" data="{{toolips}}" />

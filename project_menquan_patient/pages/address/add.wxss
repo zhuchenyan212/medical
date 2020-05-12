@@ -1,0 +1,32 @@
+@import "/pages/component/modal.wxss";
+
+.container {
+  min-height: 100%;
+  background-color: #f3f3f3;
+}
+
+.section {
+  height: 50px;
+  line-height: 50px;
+  padding-left: 27px;
+  padding-right: 27px;
+  background: #fff;
+  border-bottom: 1px solid #f3f3f3;
+}
+
+.section .section_title {
+  float: left;
+  font-size: 15px;
+}
+
+.section input {
+  float: left;
+  font-size: 15px;
+  margin-top: 12px;
+  margin-left: 15px;
+  width: 70%;
+}
+
+.section switch {
+  float: right;
+}

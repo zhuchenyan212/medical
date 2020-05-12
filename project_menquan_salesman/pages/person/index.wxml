@@ -1,0 +1,70 @@
+<view class="container">
+	<view class="head_t">
+		<view class="get_score">
+			<image src="{{userInfo.wxLoc}}" class="score" />
+			<text class='lable_doc' bindtap='navigateToEdit'>编辑资料</text>
+		</view>
+		<view class="total_score">
+			<text class='docName'>{{userInfo.name}}</text>
+			<!-- <view class='tuiguang'> -->
+			<!-- <image src='/images/erweima.png'></image> -->
+			<!-- </view> -->
+		</view>
+		<view class="total_score">
+			<text class='docAd'>{{userInfo.sex}}</text>
+			<text class='docAd' wx:if="{{userInfo.age != '' && userInfo.age > 0}}">{{userInfo.age}}岁</text>
+			<text class='docAd'>{{userInfo.birthday}}</text>
+		</view>
+		<view class="total_score">
+			<view class='left'>
+				<image class='showicon' src='/images/phone.png' wx:if='{{userInfo.phone != ""}}'></image>
+				<text class='docAdc'>{{userInfo.phone}}</text>
+			</view>
+			<view class='left'>
+				<image class='showicon' src='/images/adress.png' wx:if='{{userInfo.address != ""}}'></image>
+				<text class='docAdc'>{{userInfo.address}}</text>
+			</view>
+			<view class='left'>
+				<image class='showicon' src='/images/hospital.png' wx:if='{{userInfo.hospital != ""}}'></image>
+				<text class='docAdc'>{{userInfo.hospital}}</text>
+			</view>
+		</view>
+	</view>
+
+	<view class='myInfo'>
+		<view class='infoItem' bindtap='navigateToyeji'>
+			<view class='left'>
+				<view class='leftIcon left'>
+					<image src='/images/myyeji.png'></image>
+				</view>
+				<view class='leftFont right'>查询我的业绩</view>
+			</view>
+			<view class='right rightnav'>
+				<image src='/images/nav.png'></image>
+			</view>
+		</view>
+		<view class='infoItem' wx:if='{{userInfo.level == 1}}' bindtap='navigateToyewu'>
+			<view class='left'>
+				<view class='leftIcon left'>
+					<image src='/images/myyewu.png'></image>
+				</view>
+				<view class='leftFont right'>我的区域业务人员</view>
+			</view>
+			<view class='right rightnav'>
+				<image src='/images/nav.png'></image>
+			</view>
+		</view>
+		<view class='infoItem' wx:if='{{userInfo.level == 1}}' bindtap='navigateTomyDoc'>
+			<view class='left'>
+				<view class='leftIcon left'>
+					<image src='/images/mydoctor.png'></image>
+				</view>
+				<view class='leftFont right'>添加我的医生</view>
+			</view>
+			<view class='right rightnav'>
+				<image src='/images/nav.png'></image>
+			</view>
+		</view>
+	</view>
+
+</view>

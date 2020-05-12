@@ -1,0 +1,47 @@
+@import "/pages/component/modal.wxss";
+
+page {
+  background: #f8f8f8;
+}
+
+.container .hisDoctor {
+  padding-top: 36rpx;
+  padding-left: 60rpx;
+  font-size: 12px;
+}
+
+.doctorList {
+  width: 100%;
+  padding-left: 28rpx;
+}
+
+.doctorList .doctorItem {
+  margin-right: 15rpx;
+  height: 220rpx;
+  float: left;
+  width: 29.5%;
+  margin-top: 30rpx;
+  background: #fff;
+}
+
+.doctorList .doctorItem .docImg {
+  width: 220rpx;
+  height: 80%;
+}
+
+.doctorList .doctorItem .docImg image {
+  width: 100%;
+  height: 100%;
+}
+
+.illName {
+  font-size: 11px;
+  color: #b4b4b4;
+  padding-top: 4px;
+  padding-left: 8rpx;
+  padding-right: 8rpx;
+}
+
+.speor {
+  color: #489775;
+}

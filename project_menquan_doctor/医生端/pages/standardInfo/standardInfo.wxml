@@ -1,0 +1,46 @@
+<view class='item'>
+  <view class='textItem'>
+    <text class='name2'>处方名称：</text>
+    <text class='info2'>{{info.prescriptionName}}</text>
+  </view>
+  <view class='textItem'>
+    <text class='name'>药品内容：</text>
+    <block wx:for="{{info.prescriptionContent}}" wx:key="index">
+      <text class='info' wx:for="{{item.drugList}}" wx:key="index">{{item.drugName}} {{item.num}}/{{item.drugUnit}}</text>
+    </block>
+  </view>
+  <view class="textItem">
+    <text class='name'>制作方式：</text>
+    <block wx:for="{{info.prescriptionContent}}" wx:key="index">
+      <text class='info'>{{item.makeWay}}</text>
+    </block>
+  </view>
+  <view class="textItem">
+    <text class='name'>处方用法：</text>
+    <block wx:for="{{info.prescriptionContent}}" wx:key="index">
+      <text class='info'>{{item.useWay}}</text>
+    </block>
+  </view>
+  <view class="textItem">
+    <text class='name'>功效：</text>
+    <block wx:for="{{info.prescriptionContent}}" wx:key="index">
+      <text class='info'>{{item.prescriptionEffect}}</text>
+    </block>
+  </view>
+  <view class="textItem">
+    <text class='name'>主治疾病：</text>
+    <block wx:for="{{info.prescriptionContent}}" wx:key="index">
+      <text class='info'>{{item.prescriptionFunction}}</text>
+    </block>
+  </view>
+</view>
+<view class='price'>
+  <text class='name2'>处方价格：</text>
+  <block wx:for="{{info.prescriptionContent}}" wx:key="index">
+    <text class='priceText'>¥{{item.totalFee}}</text>
+  </block>
+</view>
+<view class='message' hover-class="none" bindtap="sendMedcine" data-infos="{{info}}">
+  <image src='/imgSrc/send.png'></image>
+  <text>发送给患者</text>
+</view>

@@ -1,0 +1,41 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='searchHead'>
+    <form bindsubmit="searchFor">
+      <view class="contA">
+        <view class="searchcontainer">
+          <image class="letf_search" src="{{'/images/ic_search.png'}}" />
+          <input placeholder="搜索关键词" name='searchValue' class="search_input" bindfocus="bindSearchInput" value="{{searchValue}}" placeholder-class="search_placeholder" />
+          <image class="input_delete" hidden="{{content.length<1}}" src="{{'/images/ic_input_delete.png'}}" bindtap="onClickClear" />
+        </view>
+        <button class="search_btn" form-type="submit" type="default" size="mini" hover-class="none">搜索</button>
+      </view>
+    </form>
+  </view>
+  <!-- 我的医生列表 -->
+  <view class='myDoctor'>
+    <block wx:for="{{doctorList}}" wx:key="doctorList">
+      <view class='Doctoritem' data-id="{{item.id}}" bindtap='navigateToDoctor'>
+        <view class='pro-img'>
+          <image src="{{item.wxLoc}}" />
+        </view>
+        <view class='pro-info-box'>
+          <view>
+            <text class='ft-16'>{{item.name}}</text>
+            <text class='lable_Doc'>{{item.title}}</text>
+            <view style="width: 40%;float: right;height: 40rpx;" wx:if="{{item.uuid}}">
+              <input class="yaoqinma" value="{{item.uuid}}" />
+              <view class="copy" data-uuid="{{item.uuid}}" catchtap="copy">复制</view>
+            </view>
+          </view>
+          <view>
+            <text class='ft-12'>{{item.hospitalName}}</text>
+            <text class='lable_hos'>公立医院</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+<import src="/pages/component/modal.wxml" />
+<template is="toolips" data="{{toolips}}" />

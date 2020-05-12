@@ -1,0 +1,102 @@
+@import "/pages/component/modal.wxss";
+
+.container {
+  background: #f3f3f3;
+  height: 100%;
+}
+
+.infoItem {
+  width: 88%;
+  height: 98rpx;
+  line-height: 98rpx;
+  background: #fff;
+  margin-bottom: 10rpx;
+  padding-left: 74rpx;
+  padding-right: 74rpx;
+}
+
+.infoItem .left .leftIcon {
+  width: 40rpx;
+  height: 50rpx;
+  padding-top: 10rpx;
+}
+
+.infoItem .left .leftIcon image {
+  width: 100%;
+  height: 100%;
+}
+
+.infoItem .left .leftFont {
+  height: 46rpx;
+  padding-left: 20rpx;
+  font-size: 14px;
+  color: #489775;
+}
+
+.infoItem .rightnav image {
+  width: 16px;
+  height: 16px;
+  line-height: 98rpx;
+}
+
+.EditInfo .textLine {
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  background: #fff;
+  padding-left: 20rpx;
+  border-bottom: 1px solid #f8f8f8;
+  font-size: 14px;
+}
+
+.EditInfo .textLine .label {
+  float: left;
+  width: 20%;
+  text-align: center;
+}
+
+.EditInfo .textLine input {
+  float: right;
+  width: 80%;
+  height: 45px;
+  font-size: 14px;
+}
+
+.imgwrap {
+  width: 100%;
+  background: #fff;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding-left: 10px;
+}
+
+.imgwrap .images {
+  width: 80px;
+  height: 80px;
+  padding: 3px;
+  border: 1px solid #959595;
+  text-align: center;
+  line-height: 22px;
+  border-radius: 5px;
+  margin: 15px 5px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgwrap .images image {
+  width: 100%;
+  height: 100%;
+}
+
+.showTitle {
+  font-size: 14px;
+  padding: 10rpx;
+  background: #fff;
+  height: 35px;
+  line-height: 35px;
+}

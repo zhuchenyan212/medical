@@ -1,0 +1,16 @@
+<!--pages/recipe/translate.wxml-->
+<view class='deliveryItem' wx:for='{{wuliuMsg}}' wx:key='index' style='margin-top:{{index>0? "44rpx" : "" }}'>
+  <view class='dateTime'>
+    <text style='margin-top:8rpx' class='dateTimeText {{index==0? "" : "dateTimeText2"}}'>{{item.AcceptTime}}</text>
+  </view>
+  <view class='delivInfo' style='margin-left:{{index==length-1? "72rpx" : ""}}'>
+    <view class='arrowContainer' wx:if='{{index==0 && index!==length-1}}'>
+      <view class='arrow'></view>
+    </view>
+    <view class='arrow2' wx:if='{{index!==0 && index!==length-1}}'></view>
+    <text class='info {{index==0? "" : "info2"}}'>{{item.AcceptStation}}</text>
+    <view class='{{index==0? "line2" : "line"}}' wx:if='{{index!==length-1}}'></view>
+  </view>
+</view>
+<import src="/pages/component/modal.wxml" />
+<template is="toolips" data="{{toolips}}" />

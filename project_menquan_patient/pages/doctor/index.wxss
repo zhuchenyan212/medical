@@ -1,0 +1,107 @@
+@import "/pages/component/modal.wxss";
+
+page {
+  background: #fff;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.ifshow {
+  position: relative;
+}
+
+.ifshow .nowrap {
+  width: 220px;
+  position: absolute;
+  left: 50%;
+  margin-top: 180rpx;
+  margin-left: -110px;
+  text-align: center;
+  font-size: 15px;
+  color: #489775;
+  font-weight: bold;
+}
+
+.container .nowrap image {
+  width: 170px;
+  height: 150px;
+}
+
+/* 医生列表 */
+
+.doctorList {
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 15px;
+}
+
+.doctorList .doctoritem {
+  width: 100%;
+  height: 98px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #489775;
+  overflow:scroll;
+}
+
+.doctorList .doctoritem > view {
+  float: left;
+}
+
+.doctorList .doctoritem .touxiang {
+  width: 15%;
+  margin-top: 15px;
+  text-align: center;
+  padding-left: 10px;
+}
+
+.doctorList .doctoritem .touxiang image {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #f3f3f3;
+}
+
+.doctorList .doctoritem .doctorInfo {
+  width: 50%;
+  font-size: 12px;
+  color: #989898;
+  line-height: 25px;
+  padding-top: 10px;
+  padding-left: 20px;
+}
+
+.doctorList .doctoritem .doctorother {
+  width: 24%;
+  font-size: 10px;
+  color: #989898;
+  line-height: 40px;
+  padding-top: 10px;
+}
+
+.ft16 {
+  font-size: 16px;
+  color: #333;
+  margin-right: 10px;
+}
+
+.specol {
+  color: #489775;
+  padding-right: 10px;
+}
+
+.num {
+  font-size: 12px;
+  color: #373737;
+}
+
+.labledoc {
+  padding: 1px 5px;
+  color: #489775;
+  border: 1px solid #489775;
+  border-radius: 10px;
+  font-size: 10px;
+}

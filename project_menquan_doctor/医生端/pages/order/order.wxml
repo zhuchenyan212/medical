@@ -1,0 +1,88 @@
+<!--pages/order/order.wxml-->
+<view class='topSelection'>
+  <view wx:for='{{menu}}' catchtap='menuSelet' data-index='{{index}}' class=' normalMenu {{selectedIndex==index? "menuSelected" : ""}}'>{{item}}</view>
+</view>
+<view class='list'>
+  <!-- 全部处方 -->
+  <block wx:if='{{selectedIndex==0}}'>
+    <view class='orderItem' wx:for='{{orderList}}' catchtap='orderInfo' data-item='{{item}}'>
+      <view class='orderItem-V'>
+        <text class='orderItem-name orderNum'>订单编号：{{item.orderId}}</text>
+        <text class='orderPrice'>{{item.money}}元</text>
+      </view>
+      <view class='orderItem-V' style='margin-top:9rpx'>
+        <text class='orderItem-name'>姓名：{{item.patientName}}</text>
+        <text class='orderItem-status'>{{item.orderStatus==1? "待付款" : item.orderStatus==2? "待发货" : item.orderStatus==3? "待收货" : item.orderStatus==4? "已完成" : "已取消"}}</text>
+      </view>
+      <view class='orderItem-V' style='margin-top:14rpx'>
+        <text class='orderItem-name'>处方号：{{item.prescriptionNum}}</text>
+        <text class='orderItem-time'>开方时间: {{item.orderTime}}</text>
+      </view>
+    </view>
+  </block>
+  <!-- 待付款 -->
+  <block wx:if='{{selectedIndex==1}}'>
+    <view class='orderItem' wx:for='{{orderList}}' catchtap='orderInfo' wx:if='{{item.orderStatus==1}}' data-item='{{item}}'>
+      <view class='orderItem-V'>
+        <text class='orderItem-name orderNum'>订单编号：{{item.orderId}}</text>
+        <text class='orderPrice'>{{item.money}}元</text>
+      </view>
+      <view class='orderItem-V' style='margin-top:9rpx'>
+        <text class='orderItem-name'>姓名：{{item.patientName}}</text>
+        <text class='orderItem-status'>{{item.orderStatus==1? "待付款" : item.orderStatus==2? "待发货" : item.orderStatus==3? "待收货" : item.orderStatus==4? "已完成" : "已取消"}}</text>
+      </view>
+      <view class='orderItem-V' style='margin-top:14rpx'>
+        <text class='orderItem-name'>处方号：{{item.prescriptionNum}}</text>
+        <text class='orderItem-time'>开方时间: {{item.orderTime}}</text>
+      </view>
+    </view>
+  </block>
+  <block wx:if='{{selectedIndex==2}}'>
+    <view class='orderItem' wx:for='{{orderList}}' catchtap='orderInfo' wx:if='{{item.orderStatus==3}}' data-item='{{item}}'>
+      <view class='orderItem-V'>
+        <text class='orderItem-name orderNum'>订单编号：{{item.orderId}}</text>
+        <text class='orderPrice'>{{item.money}}元</text>
+      </view>
+      <view class='orderItem-V' style='margin-top:9rpx'>
+        <text class='orderItem-name'>姓名：{{item.patientName}}</text>
+        <text class='orderItem-status'>{{item.orderStatus==1? "待付款" : item.orderStatus==2? "待发货" : item.orderStatus==3? "待收货" : item.orderStatus==4? "已完成" : "已取消"}}</text>
+      </view>
+      <view class='orderItem-V' style='margin-top:14rpx'>
+        <text class='orderItem-name'>处方号：{{item.prescriptionNum}}</text>
+        <text class='orderItem-time'>开方时间: {{item.orderTime}}</text>
+      </view>
+    </view>
+  </block>
+  <block wx:if='{{selectedIndex==3}}'>
+    <view class='orderItem' wx:for='{{orderList}}' catchtap='orderInfo' wx:if='{{item.orderStatus==4}}' data-item='{{item}}'>
+      <view class='orderItem-V'>
+        <text class='orderItem-name orderNum'>订单编号：{{item.orderId}}</text>
+        <text class='orderPrice'>{{item.money}}元</text>
+      </view>
+      <view class='orderItem-V' style='margin-top:9rpx'>
+        <text class='orderItem-name'>姓名：{{item.patientName}}</text>
+        <text class='orderItem-status'>{{item.orderStatus==1? "待付款" : item.orderStatus==2? "待发货" : item.orderStatus==3? "待收货" : item.orderStatus==4? "已完成" : "已取消"}}</text>
+      </view>
+      <view class='orderItem-V' style='margin-top:14rpx'>
+        <text class='orderItem-name'>处方号：{{item.prescriptionNum}}</text>
+        <text class='orderItem-time'>开方时间: {{item.orderTime}}</text>
+      </view>
+    </view>
+  </block>
+  <block wx:if='{{selectedIndex==4}}'>
+    <view class='orderItem' wx:for='{{orderList}}' catchtap='orderInfo' wx:if='{{item.orderStatus==5}}' data-item='{{item}}'>
+      <view class='orderItem-V'>
+        <text class='orderItem-name orderNum'>订单编号：{{item.orderId}}</text>
+        <text class='orderPrice'>{{item.money}}元</text>
+      </view>
+      <view class='orderItem-V' style='margin-top:9rpx'>
+        <text class='orderItem-name'>姓名：{{item.patientName}}</text>
+        <text class='orderItem-status'>{{item.orderStatus==1? "待付款" : item.orderStatus==2? "待发货" : item.orderStatus==3? "待收货" : item.orderStatus==4? "已完成" : "已取消"}}</text>
+      </view>
+      <view class='orderItem-V' style='margin-top:14rpx'>
+        <text class='orderItem-name'>处方号：{{item.prescriptionNum}}</text>
+        <text class='orderItem-time'>开方时间: {{item.orderTime}}</text>
+      </view>
+    </view>
+  </block>
+</view>

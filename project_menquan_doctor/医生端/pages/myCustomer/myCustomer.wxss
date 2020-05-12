@@ -1,0 +1,392 @@
+/* pages/myCustomer/myCustomer.wxss */
+
+page {
+  background-color: #f8f8f8;
+}
+
+.topNavigate {
+  width: 100%;
+  height: 88rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.navBtnContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-left: 20rpx;
+}
+
+.navBtntext {
+  font-size: 30rpx;
+  color: #b2b2b2;
+}
+
+.navBtntext-selected {
+  border-bottom: 2rpx solid #489775;
+  color: #489775;
+}
+
+.navImg {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20rpx;
+}
+
+.navImg image {
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.navImg text {
+  font-size: 20rpx;
+  color: #bababa;
+}
+
+.customer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 88rpx;
+  padding-left: 20rpx;
+}
+
+.cusItem {
+  display: flex;
+  flex-direction: column;
+  width: 220rpx;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+  float: left;
+  margin-right: 20rpx;
+  padding: 15rpx;
+}
+
+.cusItem:active {
+  opacity: 0.5;
+}
+
+.cusItem image {
+  width: 220rpx;
+  height: 228rpx;
+}
+
+.cusItem-name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12rpx 0 12rpx;
+  font-size: 22rpx;
+}
+
+.cusItem-name-title {
+  font-size: 26rpx;
+  color: #606060;
+}
+
+.cusItem-name-address {
+  font-size: 20rpx;
+  color: #bebebe;
+}
+
+.cusItem-time {
+  font-size: 18rpx;
+  color: #b1b1b1;
+  padding: 0rpx 12rpx 5rpx 12rpx;
+}
+
+.medicalList {
+  display: flex;
+  flex-direction: column;
+  margin-top: 88rpx;
+}
+
+.medicalItem {
+  width: 100%;
+  height: 142rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 10rpx;
+}
+
+.medicalItem:active {
+  opacity: 0.5;
+}
+
+.medicalItem-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.medicalItem-title-name {
+  font-size: 24rpx;
+  color: #333;
+  margin-left: 44rpx;
+}
+
+.medicalItem-title-time {
+  font-size: 24rpx;
+  color: #979797;
+  margin-right: 36rpx;
+}
+
+.medicalItem-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 26rpx;
+}
+
+.scorllH {
+  width: 100%;
+}
+
+.historyList {
+  display: flex;
+  flex-direction: column;
+  margin-top: 88rpx;
+}
+
+.options {
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-bottom: 10rpx;
+  padding: 10rpx 15rpx 10rpx 0;
+}
+
+.options-selection {
+  display: flex;
+  flex-direction: column;
+}
+
+.optionsBtn {
+  width: 110rpx;
+  height: 42rpx;
+  border-radius: 20rpx;
+  border: 2rpx solid #ebebeb;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  line-height: 42rpx;
+}
+
+.showmenuBtn {
+  width: 110rpx;
+  height: 42rpx;
+  border-radius: 20rpx;
+  border: 2rpx solid #ebebeb;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  line-height: 42rpx;
+}
+
+#box {
+  width: 110rpx;
+  border-bottom-left-radius: 20rpx;
+  border-bottom-right-radius: 20rpx;
+  overflow: hidden;
+  height: 0;
+  animation-fill-mode: forwards;
+  position: absolute;
+  top: 42rpx;
+  left: -2rpx;
+  background-color: white;
+}
+
+#item_list {
+  background-color: white;
+  width: 100%;
+}
+
+#item_list view {
+  text-align: center;
+  overflow: auto;
+  white-space: nowrap;
+  font-size: 24rpx;
+  color: #919191;
+  margin-bottom: 10rpx;
+}
+
+@keyframes slidedown {
+  from {
+    height: 0;
+    border: 0;
+  }
+
+  to {
+    height: 150rpx;
+    border: 2rpx solid #ebebeb;
+  }
+}
+
+@keyframes slideup {
+  from {
+    height: 150rpx;
+    border: 2rpx solid #ebebeb;
+  }
+
+  to {
+    height: 0;
+    border: 0;
+  }
+}
+
+.open {
+  animation: slidedown 0.6s;
+}
+
+.close {
+  animation: slideup 0.6s;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.historyItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 212rpx;
+  background-color: #fff;
+  margin-bottom: 2rpx;
+  padding: 0 50rpx 0 50rpx;
+}
+
+.historyItem-nametime {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.historyItem-name {
+  font-size: 24rpx;
+  color: #333;
+}
+
+.historyItem-time {
+  font-size: 20rpx;
+  color: #919191;
+}
+
+.historyItem-sexage {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 20rpx;
+}
+
+.historyItem-age {
+  font-size: 24rpx;
+  color: #919191;
+}
+
+.historyItem-info {
+  font-size: 24rpx;
+  color: #919191;
+  margin-top: 20rpx;
+}
+
+.menuText {
+  font-size: 24rpx;
+  color: #919191;
+}
+
+.arrow1 {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  border-width: 10rpx;
+  border-top: 20rpx;
+  border-bottom: 0rpx;
+  border-color: #b5b6bf transparent transparent transparent;
+  border-style: solid dashed dashed dashed;
+  margin-left: 10rpx;
+  transition: transform 0.5s;
+}
+
+.transformArrow {
+  transform: rotate(180deg);
+}
+
+.historyItem-text {
+  font-size: 24rpx;
+  color: #919191;
+  margin-top: 20rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  align-content: center;
+}
+
+/* 搜索 */
+.searchHead {
+  width: 98%;
+  height: 95rpx;
+  display: flex;
+  padding: 4rpx 4rpx 0;
+  box-sizing: border-box;
+  border-top: 1px solid #f8f8f8;
+  border-bottom: 1px solid #f8f8f8;
+
+}
+
+.searchContent {
+  width: 100%;
+  height: 75rpx;
+  border-radius: 20px;
+  font-size: 13px;
+  display: flex;
+  word-break: break-all;
+  color: #b5b5b5;
+  background: #fff;
+}
+
+.searchContent input {
+  width: 92%;
+  height: 75rpx;
+  padding-left: 30rpx;
+  font-size: 26rpx;
+}
+
+.searchContent image {
+  width: 7%;
+  height: 45rpx;
+  margin-right: 10px;
+  margin-top: 10rpx;
+
+}
+
+.member-list .item {
+  width: 33%;
+  height: 130rpx;
+  float: left;
+  margin-top: 24rpx;
+  margin-bottom: 24rpx;
+}

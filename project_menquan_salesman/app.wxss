@@ -1,0 +1,88 @@
+/**app.wxss**/
+@import "/styles/weui_check.wxss";
+@import "/pages/component/modal.wxss";
+
+page {
+  color: #000;
+  font-family: PingFangSC-Regular, sans-serif, PingFang-SC-Medium;
+  height: 100%;
+}
+
+.clear:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.clear {
+  zoom: 1;
+}
+
+.margin {
+  margin: 0 auto;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.font {
+  font-weight: bold;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-all;
+}
+
+.clamp {
+  display: flex;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  word-break: break-all;
+  text-overflow: ellipsis;
+}
+
+.flex {
+  display: flex;
+}
+
+.text {
+  text-align: center;
+}
+
+.color-3 {
+  color: #333;
+}
+
+.color-6 {
+  color: #666;
+}
+
+.color-9 {
+  color: #999;
+}
+
+button {
+  border-radius: 0px;
+}
+
+button::after {
+  border: none;
+}

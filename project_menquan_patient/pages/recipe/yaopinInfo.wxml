@@ -1,0 +1,67 @@
+<view class='listContainer'>
+  <view class='title'>医生诊断结果：</view>
+  <view class='infoContainer'>{{recipeInfo.doctorDiagnose}}</view>
+  <view class='title'>处方及用法：</view>
+  <view class='medicineInfo' wx:for='{{recipeInfo.prescriptionList}}' wx:key='index'>
+    <view class='medicineInfo-item'>
+      <view class='illnessInfo-info-item' style='margin-bottom:11rpx'>
+        <text class='illnessInfo-info-item-name'>属性：</text>
+        <view class='illnessInfo-info-item-tag' wx:for='{{item.property}}' wx:key='index'>{{item}}</view>
+      </view>
+      <text class='illnessInfo-info-item-name'>药品副数：{{item.drugNumber}}副</text>
+    </view>
+    <view class='medicineInfo-item' style='margin-bottom:16rpx'>
+      <text class='illnessInfo-info-item-name'>药品内容：</text>
+      <text class='illnessInfo-info-item-sum'>总计：¥{{item.fee}}</text>
+    </view>
+    <view class='medicineInfo-item' wx:for='{{item.drugList}}' wx:key='index' wx:if='{{index<3}}'>
+      <text class='illnessInfo-info-item-sum'>{{item.drugName}}({{item.drugUnit}})</text>
+      <text class='illnessInfo-info-item-priceUnit'>￥{{item.price}}/{{item.drugUnit}} x{{item.num}}</text>
+    </view>
+    <view data-len='{{item.drugList.length}}' wx:if='{{item.drugList.length > 3}}' class='medicineInfo-item' style='margin-top:20rpx'>
+      <text class='illnessInfo-info-item-sum'>......</text>
+      <text class='illnessInfo-info-item-priceUnit' bindtap='showMask' data-id='{{item.drugMenuId}}'>更多>></text>
+    </view>
+    <view class='illnessInfo-info-item-name' style='margin-top:36rpx'>主治功效：
+      <text class='illnessInfo-info-item-sum'>{{item.prescriptionEffect}}</text>
+    </view>
+    <view class='illnessInfo-info-item-name' style='margin-top:22rpx'>药品用法：
+      <text class='illnessInfo-info-item-sum'>{{item.useWay}}</text>
+    </view>
+  </view>
+  <!-- 处方药详情弹窗 -->
+  <view class='mask' wx:if='{{showMask}}'></view>
+  <view class='menu' wx:if='{{showMask}}' bindtap='cancelMask'>
+    <view class='illnessInfo-info-item'>
+      <text class='illnessInfo-info-item-name' style='font-size:28rpx'>属性：</text>
+      <view class='illnessInfo-info-item-tag' wx:for='{{toast.property}}' wx:key='index'>{{item}}</view>
+    </view>
+    <view class='illnessInfo-title'>
+      <text class='illnessInfo-title-name'>药品内容：</text>
+    </view>
+    <scroll-view scroll-y class='scrollV'>
+      <view class='medicalInfo' wx:for='{{toast.drugList}}' wx:key='index'>
+        <text class='medicalInfo-name'>{{item.drugName}}</text>
+        <text class='medicalInfo-count'>￥{{item.price}}/{{item.drugUnit}}    x{{item.num}}</text>
+      </view>
+    </scroll-view>
+    <view class='medicalInfo'>
+      <text class='medicalInfo-sum'>药品副数: {{toast.drugNumber}}副</text>
+      <text class='medicalInfo-sum'>总计: ￥{{toast.fee}}</text>
+    </view>
+    <view class='illnessInfo-info-item' style='margin-top:24rpx'>
+      <text class='medicalInfo-sum'>主治功效：</text>
+      <text class='illnessInfo-info-item-info'>{{toast.prescriptionEffect}}</text>
+    </view>
+    <view class='illnessInfo-info-item' style='margin-top:24rpx'>
+      <text class='medicalInfo-sum'>药品功效：</text>
+      <text class='illnessInfo-info-item-info'>{{toast.useWay}}</text>
+    </view>
+    <view class='cancelItem' style='margin-top:24rpx' catchtap='cancelMask'>
+      <image src='/images/close.png' class='cancel'></image>
+      <text class='cancelText'>关闭</text>
+    </view>
+  </view>
+</view>
+<import src="/pages/component/modal.wxml" />
+<template is="toolips" data="{{toolips}}" />

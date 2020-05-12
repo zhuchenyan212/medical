@@ -1,0 +1,91 @@
+<view class="container">
+  <!-- 填写我的个人资料 -->
+  <form bindsubmit='saveUserInfo'>
+    <view class='attrInfo'>
+      <view class='infoItem'>
+        <view class='left'>姓名:</view>
+        <view class='left m18'>
+          <input name='username' value='{{username}}' placeholder='请输入姓名' />
+        </view>
+      </view>
+      <view class='infoItem'>
+        <view class='left'>性别:</view>
+        <view class='infoCont'>
+          <view class="section_check">
+            <radio-group class="weui-radiobox" bindchange="bindSelect">
+              <block wx:for="{{radioList}}" wx:key="radio" wx:for-item="item">
+                <label class="weui-check__label">
+                  <radio class="weui-check" value="{{item.state}}" checked="{{item.checked}}" />
+                  <view class="weui-cell__hd weui-check__hd_in-checkbox">
+                    <icon class="weui-icon-checkbox_success" type="success" size="15" color="#489775" wx:if="{{item.checked}}"></icon>
+                    <icon class="weui-icon-checkbox_circle" type="success" size="15" color="#ccc" wx:else></icon>
+                  </view>
+                  <view class="weui-cell__text">{{item.name}}</view>
+                </label>
+              </block>
+            </radio-group>
+          </view>
+        </view>
+      </view>
+      <view class='infoItem'>
+        <view class='left'>年龄:</view>
+        <view class='left m18'>
+          <picker mode="date" bindchange="bindTimeChange">
+            <input type='text' name="age" value='{{age}}'></input>
+          </picker>
+        </view>
+        <view class='right rightnav'>
+          <image src='/images/nav.png'></image>
+        </view>
+      </view>
+      <view class='infoItem'>
+        <view class='left'>身高:</view>
+        <view class='left m18'>
+          <input name='height' value='{{height}}' placeholder='请填写身高（cm）' />
+        </view>
+      </view>
+      <view class='infoItem'>
+        <view class='left'>体重:</view>
+        <view class='left m18'>
+          <input name='weight' value='{{weight}}' placeholder='请填写体重（kg）' />
+        </view>
+      </view>
+      <view class='infoItem'>
+        <view class='left'>电话:</view>
+        <view class='left m18'>
+          <input name='phone' value='{{phone}}' placeholder='请输入您的联系电话' maxlength='11' />
+        </view>
+      </view>
+      <view class='infoItem'>
+        <view class='left'>地址:</view>
+        <view class='left' style='margin-left:88rpx;'>
+          <picker mode="region" name="address" value="{{address}}" bindchange="bindaddressChange">
+            <text class="ft-22 color-9" wx:if="{{addresschange==false}}">请选择地址</text>
+            <text wx:else>{{address}}</text>
+          </picker>
+        </view>
+        <view class='right rightnav'>
+          <image src='/images/nav.png'></image>
+        </view>
+      </view>
+      <!-- 过往病史 -->
+      <view class='illList'>
+        <view class='illwrap'>
+          <view>既往病史：</view>
+          <textarea name='sickness' value='{{sickness}}' class='Editinfo' placeholder='请填写以前的病史，特别是涉及心、肺、肝、脾、肾一些重大脏器以及癫痫史、精神病史。'></textarea>
+        </view>
+      </view>
+      <view class='illList'>
+        <view class='illwrap'>
+          <view>补充描述：</view>
+          <textarea name='description' value='{{description}}' class='Editinfo' placeholder='请描述以往病史，是否痊愈，是否手术，注明何时、何处做过何种手术，目前状况等详细说明。'></textarea>
+        </view>
+      </view>
+    </view>
+    <view class='bottomOperate'>
+      <button form-type="submit" type="default" size="defaultSize" hover-class="none" class='bottomFont'>保存</button>
+    </view>
+  </form>
+</view>
+<import src="/pages/component/modal.wxml" />
+<template is="toolips" data="{{toolips}}" />

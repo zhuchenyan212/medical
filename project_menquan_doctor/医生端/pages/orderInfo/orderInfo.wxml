@@ -1,0 +1,62 @@
+<!--pages/orderInfo/orderInfo.wxml-->
+<view class='orderNum'>订单编号：{{orderId}}</view>
+<view class='orderPhone'>
+  <text class='orderPhone-title'>患者:</text>
+  <text class='orderPhone-phone'>{{orderInfo.patientName}}</text>
+  <text class='orderPhone-title' style='margin-left:80rpx'>电话:</text>
+  <text class='orderPhone-phone'>{{orderInfo.phone}}</text>
+</view>
+<view class='patientInfo'>
+  <view class='patientInfo-title'>患者病情：</view>
+  <view class='patientInfo-content'>
+    <text>{{orderInfo.patientDetail}}</text>
+  </view>
+</view>
+<view class='patientInfo'>
+  <view class='patientInfo-title'>医生诊断病情：</view>
+  <view class='patientInfo-content'>
+    <text>{{orderInfo.doctorDiagnose}}</text>
+  </view>
+  <view class='patientInfo-title'>处方及用法：</view>
+  <view class='illnessInfo-info' wx:for='{{orderInfo.prescriptionList}}' wx:if='{{firstIndex==0}}' wx:for-index='firstIndex' wx:for-item='firstItem'>
+    <view class='illnessInfo-info-item'>
+      <text class='illnessInfo-info-item-name'>属性:</text>
+      <view class='illnessInfo-info-item-tag' style='margin-left:{{index==0? "28rpx" : ""}}' wx:for='{{firstItem.property}}'>{{item}}</view>
+    </view>
+    <view class='illnessInfo-info-item'>
+      <text class='illnessInfo-info-item-name'>药品内容:</text>
+      <text class='illnessInfo-info-item-info' wx:for='{{firstItem.drugList}}'>{{index==0? item.drugName : "、"+item.drugName}}</text>
+    </view>
+    <view class='illnessInfo-info-item'>
+      <text class='illnessInfo-info-item-name'>主治功效:</text>
+      <text class='illnessInfo-info-item-info'>{{firstItem.prescriptionEffect}}</text>
+    </view>
+    <view class='illnessInfo-info-item'>
+      <text class='illnessInfo-info-item-name'>药品用法:</text>
+      <text class='illnessInfo-info-item-info' style='width:320rpx'>{{firstItem.useWay}}</text>
+    </view>
+  </view>
+</view>
+<view class='more' catchtap='moreInfo'>查看更多药品信息>></view>
+<view class='patientInfo'>
+  <view class='bottomV'>
+    <view class='bottomV-item'>
+      <text>处方号:</text>
+      <text>{{orderInfo.prescriptionId}}</text>
+    </view>
+    <text style='margin-left:50rpx'>开方时间:</text>
+    <text style='margin-left:22rpx;'>{{orderInfo.prescribingTime}}</text>
+  </view>
+  <view class='bottomV-item'>
+    <text>处方金额:</text>
+    <text>{{orderInfo.fee}}元</text>
+  </view>
+  <view class='bottomV-item'>
+    <text>状态:</text>
+    <text>{{orderInfo.orderStatus==1? "待付款" : orderInfo.orderStatus==2? "待发货" : orderInfo.orderStatus==3? "待收货" : orderInfo.orderStatus==4? "已完成" : "已取消"}}</text>
+  </view>
+  <!-- <view class='bottomV-item'>
+    <text>收货信息:</text>
+    <text>不知道</text>
+  </view> -->
+</view>

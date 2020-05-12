@@ -1,0 +1,109 @@
+/**app.wxss**/
+@import "/styles/weui_check.wxss";
+
+/* page {
+  color: #333;
+  font-family: PingFangSC-Regular, sans-serif, PingFang-SC-Medium;
+  height: 100%;
+} */
+
+.clear:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.clear {
+  zoom: 1;
+}
+
+.margin {
+  margin: 0 auto;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.font {
+  font-weight: bold;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-all;
+}
+
+.clamp {
+  display: flex;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  word-break: break-all;
+  text-overflow: ellipsis;
+}
+
+.flex {
+  display: flex;
+}
+
+.text {
+  text-align: center;
+}
+
+.color-3 {
+  color: #333;
+}
+
+.color-6 {
+  color: #666;
+}
+
+.color-9 {
+  color: #999;
+}
+
+/* 底部按钮 */
+
+.bottomOperate {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  border-radius: 0;
+  z-index: 999;
+}
+
+.bottomOperate .bottomFont {
+  text-align: center;
+  height: 98rpx;
+  line-height: 98rpx;
+  background-color: #489775;
+  color: #fff;
+  font-size: 15px;
+  z-index: 999;
+  border-radius: 0px;
+}
+
+button {
+  border-radius: 0px;
+}
+
+button::after {
+  border: none;
+}

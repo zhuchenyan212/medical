@@ -1,0 +1,128 @@
+/* pages/personnal-addMedicine/personnal-addMedicine.wxss */
+page{
+  background-color: #F8F8F8;
+  padding-bottom: 120rpx;
+  padding-top: 22rpx;
+}
+.topItem{
+  background-color: #FFFFFF;
+  width: 708rpx;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 42rpx;
+}
+.topItem-name{
+  font-size: 26rpx;
+  color: #333333;
+  font-weight: bold;
+}
+.topItem-info{
+  font-size: 26rpx;
+  color: #333333;
+}
+.topItem image{
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 18rpx;
+}
+.medicineItem{
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  margin-top: 24rpx;
+  padding-top: 16rpx;
+}
+.medicineContent{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 42rpx;
+  padding-right: 64rpx;
+   width: 644rpx;
+
+}
+.medicineContent-name{
+  font-size: 24rpx;
+  color: #333333;
+  font-weight: bold;
+}
+.medicineContent-info{
+  font-size: 24rpx;
+  color: #333333;
+  width: 400rpx;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  align-content: center;
+}
+.medicineContent-sum{
+  font-size: 24rpx;
+  color: #333333;
+}
+
+.medicineContent-tag{
+  width: auto;
+  height: 32rpx;
+  background-color: #489775;
+  font-size: 22rpx;
+  color: #FFFFFF;
+  padding: 0 12rpx;
+  text-align: center;
+  line-height: 32rpx;
+  border-radius: 10rpx;
+  margin-left: 28rpx;
+}
+.addMedicine{
+  width: 100%;
+  height: 80rpx;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rpx;
+}
+.addMedicine image{
+  width: 32rpx;
+  height: 32rpx;
+}
+.addMedicine:active{
+  opacity: 0.5
+}
+.bottomView{
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 0 10rpx rgba(51, 51, 51,0.7)
+}
+.bottomView-left{
+  width: 376rpx;
+  height: 90rpx;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.bottomView-right{
+    width: 374rpx;
+  height: 90rpx;
+  background-color: #489775;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 26rpx;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 90rpx;
+}

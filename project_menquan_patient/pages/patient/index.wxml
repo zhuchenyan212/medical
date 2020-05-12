@@ -1,0 +1,44 @@
+<!-- 没有就诊人 -->
+<view class='container' wx:if='{{patientList.length == 0}}'>
+  <view class='ifshow'>
+    <view class='nowrap'>
+      <image src='/images/yaoshui.png'></image>
+      <view>暂无就诊人信息, 请点击下方添加</view>
+    </view>
+  </view>
+</view>
+<!-- 就诊人列表 -->
+<view class='wrap' wx:else>
+  <view class='patientList'>
+    <view class='patient' wx:for='{{patientList}}' wx:key='index'>
+      <view data-id='{{item.id}}' bindtap='navigatorTodetail'>
+        <text class='ft15'>{{item.name}}</text>
+        <text class='lable' wx:if='{{item.patientId == 0}}'>本人</text>
+      </view>
+      <view class='patientInfo'>
+        <text>{{item.sex}}</text>
+        <text>{{item.age}}岁</text>
+        <text>{{item.height}}cm</text>
+        <text>{{item.weight}}kg</text>
+      </view>
+      <view class='patientNum'>
+        <image src='/images/phone.png'></image>
+        <text>{{item.phone}}</text>
+      </view>
+      <view class='patientNum'>
+        <image src='/images/address.png'></image>
+        <text>{{item.address}}</text>
+      </view>
+      <view class='Edit' bindtap='deleteitem' data-id='{{item.id}}'>
+        <image src='/images/delete.png'></image>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 添加就诊人 -->
+<view class='addpatient' bindtap='addpatient'>
+  <image src='/images/add.png'></image>
+  <text>添加就诊人</text>
+</view>
+<import src="/pages/component/modal.wxml" />
+<template is="toolips" data="{{toolips}}" />

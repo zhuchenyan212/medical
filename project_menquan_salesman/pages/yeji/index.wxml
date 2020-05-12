@@ -1,0 +1,328 @@
+<view class="container">
+  <!-- 切换选项 -->
+  <view class="swiper-tab">
+    <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">待付款</view>
+    <view class="swiper-tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="clickTab">待发货</view>
+    <view class="swiper-tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="clickTab">待收货</view>
+    <view class="swiper-tab-item {{currentTab==4?'active':''}}" data-current="4" bindtap="clickTab">已完成</view>
+    <view class="swiper-tab-item {{currentTab==5?'active':''}}" data-current="5" bindtap="clickTab">已取消</view>
+  </view>
+
+  <!-- 切换内容 -->
+  <view class="{{currentTab == 1 ? 'show':'hide'}}">
+    <!-- 业绩查询 -->
+    <view class='searchFor clear' wx:if='{{wait1 > 0}}'>
+      <view class='left chooseTime'>
+        <view wx:if="{{choosetype == 'AllTime'}}">
+          <input class='hide' value='全部时间' />
+          <text class='ft13choose'>全部时间</text>
+        </view>
+        <view wx:if="{{choosetype == 'AllMonth'}}">
+          <picker class="weui-btn" mode="date" fields="month" value="{{month}}" bindchange="getmonthTime">
+            <text class='ft13choose'>{{month}}</text>
+          </picker>
+        </view>
+        <view wx:if="{{choosetype == 'AllDate'}}">
+          <picker class="weui-btn" mode="date" value="{{start}}" bindchange="bindstartChange">
+            <text class='ft13choose'>{{start}}</text>
+          </picker>
+          <view class='weui-btn'>—</view>
+          <picker class="weui-btn" mode="date" value="{{end}}" bindchange="bindendChange">
+            <text class='ft13choose'>{{end}}</text>
+          </picker>
+        </view>
+      </view>
+      <view class='right chooseType'>
+        <text class='ft13choose' bindtap='bindShowMsg'>{{tihuoWay}}</text>
+        <view class="select_box" wx:if="{{select}}">
+          <view class="select_one" bindtap="mySelect" data-name="全部时间" data-type='AllTime'>全部时间</view>
+          <view class="select_one" bindtap="mySelect" data-name="按月份选择" data-type='AllMonth'>按月份选择</view>
+          <view class="select_one" bindtap="mySelect" data-name="按日期选择" data-type='AllDate'>按日期选择</view>
+        </view>
+      </view>
+    </view>
+    <!-- 统计订单 -->
+    <block wx:if="{{orderList.length > 0}}">
+      <view class='orderAll clear' wx:if='{{wait1 > 0}}'>
+        <text class='left'>待付款订单数：{{wait1}}单</text>
+        <text class='right'>待付款订单金额：￥{{money1}}</text>
+      </view>
+    </block>
+    <!-- 订单 -->
+    <block wx:for='{{orderList}}' wx:key='index'>
+      <view class='orderItem' wx:if='{{item.orderStatus == 1}}'>
+        <view class='orderDoctor clear'>
+          <view class='left'>
+            <view class='ft13'>医生：{{item.doctorName}}</view>
+            <view>处方号：{{item.prescriptionId}}</view>
+            <view>开方时间：{{item.prescribingTime}}</view>
+          </view>
+          <view class='right'>
+            <view class='ft18'>{{item.fee}}元</view>
+            <view class='text'>{{item.orderStatus==1? "待付款" : item.orderStatus==2? "待发货" : item.orderStatus==3? "待收货" : item.orderStatus==4? "已完成" : "已取消"}}</view>
+          </view>
+        </view>
+        <view class='orderillness clear'>
+          <view class='left'>
+            <view class='ft13'>患者：{{item.patientName}}</view>
+            <view>付款时间：{{item.payTime}}</view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="{{currentTab == 2 ? 'show':'hide'}}">
+    <!-- 业绩查询 -->
+    <view class='searchFor clear' wx:if='{{wait2 > 0}}'>
+      <view class='left chooseTime'>
+        <view wx:if="{{choosetype == 'AllTime'}}">
+          <input class='hide' value='全部时间' />
+          <text class='ft13choose'>全部时间</text>
+        </view>
+        <view wx:if="{{choosetype == 'AllMonth'}}">
+          <picker class="weui-btn" mode="date" fields="month" value="{{month}}" bindchange="getmonthTime">
+            <text class='ft13choose'>{{month}}</text>
+          </picker>
+        </view>
+        <view wx:if="{{choosetype == 'AllDate'}}">
+          <picker class="weui-btn" mode="date" value="{{start}}" bindchange="bindstartChange">
+            <text class='ft13choose'>{{start}}</text>
+          </picker>
+          <view class='weui-btn'>—</view>
+          <picker class="weui-btn" mode="date" value="{{end}}" bindchange="bindendChange">
+            <text class='ft13choose'>{{end}}</text>
+          </picker>
+        </view>
+      </view>
+      <view class='right chooseType'>
+        <text class='ft13choose' bindtap='bindShowMsg'>{{tihuoWay}}</text>
+        <view class="select_box" wx:if="{{select}}">
+          <view class="select_one" bindtap="mySelect" data-name="全部时间" data-type='AllTime'>全部时间</view>
+          <view class="select_one" bindtap="mySelect" data-name="按月份选择" data-type='AllMonth'>按月份选择</view>
+          <view class="select_one" bindtap="mySelect" data-name="按日期选择" data-type='AllDate'>按日期选择</view>
+        </view>
+      </view>
+    </view>
+    <!-- 统计订单 -->
+    <block wx:if="{{orderList.length > 0}}">
+      <view class='orderAll clear' wx:if='{{wait2 > 0}}'>
+        <text class='left'>待发货订单数：{{wait2}}单</text>
+        <text class='right'>待发货订单金额：￥{{money2}}</text>
+      </view>
+    </block>
+    <!-- 订单 -->
+    <block wx:for='{{orderList}}' wx:key='index'>
+      <view class='orderItem' wx:if='{{item.orderStatus == 2}}'>
+        <view class='orderDoctor clear'>
+          <view class='left'>
+            <view class='ft13'>医生：{{item.doctorName}}</view>
+            <view>处方号：{{item.prescriptionId}}</view>
+            <view>开方时间：{{item.prescribingTime}}</view>
+          </view>
+          <view class='right'>
+            <view class='ft18'>{{item.fee}}元</view>
+            <view class='text'>{{item.orderStatus==1? "待付款" : item.orderStatus==2? "待发货" : item.orderStatus==3? "待收货" : item.orderStatus==4? "已完成" : "已取消"}}</view>
+          </view>
+        </view>
+        <view class='orderillness clear'>
+          <view class='left'>
+            <view class='ft13'>患者：{{item.patientName}}</view>
+            <view>付款时间：{{item.payTime}}</view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="{{currentTab == 3 ? 'show':'hide'}}">
+    <!-- 业绩查询 -->
+    <view class='searchFor clear' wx:if='{{wait3 > 0}}'>
+      <view class='left chooseTime'>
+        <view wx:if="{{choosetype == 'AllTime'}}">
+          <input class='hide' value='全部时间' />
+          <text class='ft13choose'>全部时间</text>
+        </view>
+        <view wx:if="{{choosetype == 'AllMonth'}}">
+          <picker class="weui-btn" mode="date" fields="month" value="{{month}}" bindchange="getmonthTime">
+            <text class='ft13choose'>{{month}}</text>
+          </picker>
+        </view>
+        <view wx:if="{{choosetype == 'AllDate'}}">
+          <picker class="weui-btn" mode="date" value="{{start}}" bindchange="bindstartChange">
+            <text class='ft13choose'>{{start}}</text>
+          </picker>
+          <view class='weui-btn'>—</view>
+          <picker class="weui-btn" mode="date" value="{{end}}" bindchange="bindendChange">
+            <text class='ft13choose'>{{end}}</text>
+          </picker>
+        </view>
+      </view>
+      <view class='right chooseType'>
+        <text class='ft13choose' bindtap='bindShowMsg'>{{tihuoWay}}</text>
+        <view class="select_box" wx:if="{{select}}">
+          <view class="select_one" bindtap="mySelect" data-name="全部时间" data-type='AllTime'>全部时间</view>
+          <view class="select_one" bindtap="mySelect" data-name="按月份选择" data-type='AllMonth'>按月份选择</view>
+          <view class="select_one" bindtap="mySelect" data-name="按日期选择" data-type='AllDate'>按日期选择</view>
+        </view>
+      </view>
+    </view>
+    <!-- 统计订单 -->
+    <block wx:if="{{orderList.length > 0}}">
+      <view class='orderAll clear' wx:if='{{wait3 > 0}}'>
+        <text class='left'>待收货订单数：{{wait3}}单</text>
+        <text class='right'>待收货订单金额：￥{{money3}}</text>
+      </view>
+    </block>
+    <!-- 订单 -->
+    <block wx:for='{{orderList}}' wx:key='index'>
+      <view class='orderItem' wx:if='{{item.orderStatus == 3}}'>
+        <view class='orderDoctor clear'>
+          <view class='left'>
+            <view class='ft13'>医生：{{item.doctorName}}</view>
+            <view>处方号：{{item.prescriptionId}}</view>
+            <view>开方时间：{{item.prescribingTime}}</view>
+          </view>
+          <view class='right'>
+            <view class='ft18'>{{item.fee}}元</view>
+            <view class='text'>{{item.orderStatus==1? "待付款" : item.orderStatus==2? "待发货" : item.orderStatus==3? "待收货" : item.orderStatus==4? "已完成" : "已取消"}}</view>
+          </view>
+        </view>
+        <view class='orderillness clear'>
+          <view class='left'>
+            <view class='ft13'>患者：{{item.patientName}}</view>
+            <view>付款时间：{{item.payTime}}</view>
+          </view>
+          <view class='right'>
+            <!-- <view class='searchtrans' bindtap='navigator'>物流查询>></view> -->
+            <navigator class='searchtrans' url='../yeji/translate?wuliuCompany={{item.wuliuCompany}}&wuliuNumber={{item.wuliuNumber}}'>物流查询>></navigator>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="{{currentTab == 4 ? 'show':'hide'}}">
+    <!-- 业绩查询 -->
+    <view class='searchFor clear' wx:if='{{wait4 > 0}}'>
+      <view class='left chooseTime'>
+        <view wx:if="{{choosetype == 'AllTime'}}">
+          <input class='hide' value='全部时间' />
+          <text class='ft13choose'>全部时间</text>
+        </view>
+        <view wx:if="{{choosetype == 'AllMonth'}}">
+          <picker class="weui-btn" mode="date" fields="month" value="{{month}}" bindchange="getmonthTime">
+            <text class='ft13choose'>{{month}}</text>
+          </picker>
+        </view>
+        <view wx:if="{{choosetype == 'AllDate'}}">
+          <picker class="weui-btn" mode="date" value="{{start}}" bindchange="bindstartChange">
+            <text class='ft13choose'>{{start}}</text>
+          </picker>
+          <view class='weui-btn'>—</view>
+          <picker class="weui-btn" mode="date" value="{{end}}" bindchange="bindendChange">
+            <text class='ft13choose'>{{end}}</text>
+          </picker>
+        </view>
+      </view>
+      <view class='right chooseType'>
+        <text class='ft13choose' bindtap='bindShowMsg'>{{tihuoWay}}</text>
+        <view class="select_box" wx:if="{{select}}">
+          <view class="select_one" bindtap="mySelect" data-name="全部时间" data-type='AllTime'>全部时间</view>
+          <view class="select_one" bindtap="mySelect" data-name="按月份选择" data-type='AllMonth'>按月份选择</view>
+          <view class="select_one" bindtap="mySelect" data-name="按日期选择" data-type='AllDate'>按日期选择</view>
+        </view>
+      </view>
+    </view>
+    <!-- 统计订单 -->
+    <block wx:if="{{orderList.length > 0}}">
+      <view class='orderAll clear' wx:if='{{wait4 > 0}}'>
+        <text class='left'>已完成订单数：{{wait4}}单</text>
+        <text class='right'>已完成订单金额：￥{{money4}}</text>
+      </view>
+    </block>
+    <!-- 订单 -->
+    <block wx:for='{{orderList}}' wx:key='index'>
+      <view class='orderItem' wx:if='{{item.orderStatus == 4}}'>
+        <view class='orderDoctor clear'>
+          <view class='left'>
+            <view class='ft13'>医生：{{item.doctorName}}</view>
+            <view>处方号：{{item.prescriptionId}}</view>
+            <view>开方时间：{{item.prescribingTime}}</view>
+          </view>
+          <view class='right'>
+            <view class='ft18'>{{item.fee}}元</view>
+            <view class='text'>{{item.orderStatus==1? "待付款" : item.orderStatus==2? "待发货" : item.orderStatus==3? "待收货" : item.orderStatus==4? "已完成" : "已取消"}}</view>
+          </view>
+        </view>
+        <view class='orderillness clear'>
+          <view class='left'>
+            <view class='ft13'>患者：{{item.patientName}}</view>
+            <view>付款时间：{{item.payTime}}</view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="{{currentTab == 5 ? 'show':'hide'}}">
+    <!-- 查询业绩 -->
+    <view class='searchFor clear' wx:if='{{wait5 > 0}}'>
+      <view class='left chooseTime'>
+        <view wx:if="{{choosetype == 'AllTime'}}">
+          <input class='hide' value='全部时间' />
+          <text class='ft13choose'>全部时间</text>
+        </view>
+        <view wx:if="{{choosetype == 'AllMonth'}}">
+          <picker class="weui-btn" mode="date" fields="month" value="{{month}}" bindchange="getmonthTime">
+            <text class='ft13choose'>{{month}}</text>
+          </picker>
+        </view>
+        <view wx:if="{{choosetype == 'AllDate'}}">
+          <picker class="weui-btn" mode="date" value="{{start}}" bindchange="bindstartChange">
+            <text class='ft13choose'>{{start}}</text>
+          </picker>
+          <view class='weui-btn'>—</view>
+          <picker class="weui-btn" mode="date" value="{{end}}" bindchange="bindendChange">
+            <text class='ft13choose'>{{end}}</text>
+          </picker>
+        </view>
+      </view>
+      <view class='right chooseType'>
+        <text class='ft13choose' bindtap='bindShowMsg'>{{tihuoWay}}</text>
+        <view class="select_box" wx:if="{{select}}">
+          <view class="select_one" bindtap="mySelect" data-name="全部时间" data-type='AllTime'>全部时间</view>
+          <view class="select_one" bindtap="mySelect" data-name="按月份选择" data-type='AllMonth'>按月份选择</view>
+          <view class="select_one" bindtap="mySelect" data-name="按日期选择" data-type='AllDate'>按日期选择</view>
+        </view>
+      </view>
+    </view>
+    <!-- 统计订单 -->
+    <block wx:if="{{orderList.length > 0}}">
+      <view class='orderAll clear' wx:if='{{wait5 > 0}}'>
+        <text class='left'>已取消订单数：{{wait5}}单</text>
+        <text class='right'>已取消订单金额：￥{{money5}}</text>
+      </view>
+    </block>
+    <!-- 订单 -->
+    <block wx:for='{{orderList}}' wx:key='index'>
+      <view class='orderItem' wx:if='{{item.orderStatus == 5}}'>
+        <view class='orderDoctor clear'>
+          <view class='left'>
+            <view class='ft13'>医生：{{item.doctorName}}</view>
+            <view>处方号：{{item.prescriptionId}}</view>
+            <view>开方时间：{{item.prescribingTime}}</view>
+          </view>
+          <view class='right'>
+            <view class='ft18'>{{item.fee}}元</view>
+            <view class='text'>{{item.orderStatus==1? "待付款" : item.orderStatus==2? "待发货" : item.orderStatus==3? "待收货" : item.orderStatus==4? "已完成" : "已取消"}}</view>
+          </view>
+        </view>
+        <view class='orderillness clear'>
+          <view class='left'>
+            <view class='ft13'>患者：{{item.patientName}}</view>
+            <view>付款时间：{{item.payTime}}</view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+<import src="/pages/component/modal.wxml" />
+<template is="toolips" data="{{toolips}}" />

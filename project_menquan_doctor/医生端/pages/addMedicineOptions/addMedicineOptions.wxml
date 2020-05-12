@@ -1,0 +1,7 @@
+<view class='topContainer'>
+	<view class='menuItem {{index==selectedMenuIndex? "menuItemSelected" : ""}}' catchtap='selctedMenuItem' wx:for='{{optionsList}}' data-index='{{index}}' wx:key="index" data-typeid="{{item.typeId}}">{{item.typeName}}</view>
+</view>
+<view class='infoItem {{index==selectedItemIndex? "infoItemSelected" : ""}}' wx:for='{{menuItem}}' catchtap='selectInfoItem' data-propertyid="{{item.propertyId}}" data-index='{{index}}' wx:key="index">{{item.propertyName}}</view>
+<view class='message' bindtap="sureType">
+	<text>确认</text>
+</view>

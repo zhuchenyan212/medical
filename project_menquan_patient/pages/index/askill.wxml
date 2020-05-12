@@ -1,0 +1,16 @@
+<!--pages/index/askill.wxml-->
+<view class='container'>
+	<!-- 主要内容 -->
+	<view class='wrap'>
+		<view class='radiusnew' bindtap='navigatorTonewill'>
+			<image src='/images/new.png'></image>
+			<view class='font'>新病情</view>
+		</view>
+		<view class='radiusold' bindtap='chatWe' wx:if="{{showor}}">
+			<image src='/images/old.png'></image>
+			<view class='font'>老病情</view>
+		</view>
+	</view>
+</view>
+<import src="/pages/component/modal.wxml" />
+<template is="toolips" data="{{toolips}}" />

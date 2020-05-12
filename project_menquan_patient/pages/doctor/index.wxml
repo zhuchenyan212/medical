@@ -1,0 +1,36 @@
+<!-- 暂无医生信息 -->
+<view class='container' wx:if='{{doctorList.length == 0}}'>
+  <view class='ifshow'>
+    <view class='nowrap'>
+      <image src='/images/doctor.png'></image>
+      <view>暂无医生信息，请前往首页咨询</view>
+    </view>
+  </view>
+</view>
+<!-- 医生列表 -->
+<view class='doctorList' wx:else>
+  <view class='doctoritem' wx:for='{{doctorList}}' wx:key='index' data-id='{{item.id}}' bindtap='navigatorToDetail'>
+    <view class='touxiang'>
+      <image src='{{item.wxLoc}}'></image>
+    </view>
+    <view class='doctorInfo'>
+      <view>
+        <text class='ft16'>{{item.name}}</text>
+        <text class='labledoc'>{{item.title}}</text>
+      </view>
+      <view>
+        <text>{{item.hospital}}</text>
+        <text class='specol' style='padding-left: 10px'>{{item.hospitalProperty}}</text>
+      </view>
+      <view>
+        <text class='specol' wx:for='{{item.goodAt}}' wx:key='index'>{{item.name}}</text>
+      </view>
+    </view>
+    <view class='doctorother'>
+      <view class='num'>{{item.fee}}元/次</view>
+      <view>已服务：{{item.patientSize}}人</view>
+    </view>
+  </view>
+</view>
+<import src="/pages/component/modal.wxml" />
+<template is="toolips" data="{{toolips}}" />

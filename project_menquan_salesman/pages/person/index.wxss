@@ -1,0 +1,125 @@
+.container {
+  background: #f3f3f3;
+  height: 100%;
+}
+
+.head_t {
+  background: #489775;
+  text-align: center;
+  width: 100%;
+  height: 390rpx;
+  color: #fff;
+}
+
+.head_t .get_score {
+  padding: 32rpx 0 10rpx;
+  position: relative;
+}
+
+.head_t .get_score .score {
+  width: 134rpx;
+  height: 134rpx;
+  border-radius: 50%;
+}
+
+.head_t .total_score {
+  color: #fff;
+  opacity: 0.9;
+  font-size: 32rpx;
+  line-height: 60rpx;
+}
+
+.head_t .total_score .docName {
+  font-size: 16px;
+}
+
+.head_t .lable_doc {
+  font-size: 11px;
+  border-radius: 8px;
+  color: #fff;
+  padding-left: 5px;
+  padding-right: 5px;
+  border: 1px solid #fff;
+  position: absolute;
+  top: 18rpx;
+  right: 40rpx;
+  opacity: 0.9;
+}
+
+.head_t .total_score .tuiguang {
+  display: inline-block;
+  width: 46rpx;
+  height: 46rpx;
+  position: absolute;
+  right: 225rpx;
+  top: 192rpx;
+}
+
+.head_t .total_score .tuiguang image {
+  width: 100%;
+  height: 100%;
+}
+
+.head_t .total_score .docAd {
+  display: inline-block;
+  font-size: 11px;
+  padding-left: 38rpx;
+}
+
+.head_t .total_score .docAdc {
+  display: inline-block;
+  font-size: 10px;
+}
+
+.total_score view {
+  width: 33.333%;
+}
+
+.head_t .total_score .showicon {
+  width: 24rpx;
+  height: 24rpx;
+  padding-right: 10rpx;
+}
+
+.myInfo {
+  width: 100%;
+  margin-top: 40rpx;
+}
+
+.myInfo .infoItem {
+  width: 80%;
+  height: 100rpx;
+  line-height: 100rpx;
+  background: #fff;
+  margin-bottom: 10rpx;
+  padding-left: 76rpx;
+  padding-right: 76rpx;
+}
+
+.myInfo .infoItem .left .leftIcon {
+  width: 46rpx;
+  height: 46rpx;
+  padding-top: 8rpx;
+}
+
+.myInfo .infoItem .left .leftIcon image {
+  width: 100%;
+  height: 100%;
+}
+
+.myInfo .infoItem .left .leftFont {
+  height: 46rpx;
+  padding-left: 20rpx;
+  font-size: 14px;
+  color: #737373;
+}
+
+.myInfo .infoItem .rightnav {
+  color: #ccc;
+  font-size: 16px;
+}
+
+.myInfo .infoItem .rightnav image {
+  width: 32rpx;
+  height: 32rpx;
+}

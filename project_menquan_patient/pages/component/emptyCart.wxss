@@ -1,0 +1,35 @@
+#isEmpty {
+  text-align: center;
+  font-size: 32rpx;
+  background: #fff;
+  height: 545px;
+}
+
+#isEmpty text {
+  margin: 40rpx 0;
+  display: block;
+}
+
+#isEmpty .ico-cart {
+  padding-top: 80rpx;
+}
+
+#isEmpty .ico-cart image {
+  width: 304rpx;
+  height: 312rpx;
+}
+
+#isEmpty .button_sp_area {
+  display: flex;
+  width: 400rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 0 auto;
+}
+
+#isEmpty .button_sp_area .ui_btn_default {
+  width: 100%;
+  display: block;
+}
